@@ -76,7 +76,6 @@ div.about {
 	box-shadow: 0px 1px 3px #c1c1c1;
 }
 div.projectLock {
-	background: green;
 	padding-top: 106px;
 	scroll-snap-align: start;
 	position: absolute;
@@ -105,7 +104,6 @@ div.projects {
 	box-shadow: 0px 1px 3px #c1c1c1;
 }
 div.projects {
-	background: green;
 	width: 100%;
 	position: absolute;
 	top: 125%;
@@ -126,20 +124,65 @@ div.details {
 	margin-top: 1%;
 	float: left;
 }
-div.apology {
-	background: white;
-	box-shadow: 0px 1px 3px #c1c1c1;
-	float: left;
-	margin-bottom: 25px;
-}
 div.detail {
 	float: left;
 	width: 100%;
-	margin-bottom: 20px;
+	margin-bottom: 10%;
 }
 img.detail {
 	float: left;
 	margin-left: 20px;
+}
+div.projectDisplay {
+	font-family: 'Roboto', sans-serif;
+	padding: 0px;
+	float: left;
+	height: 95%;
+	width: calc(100% - 340px);
+	margin-left: 35px;
+	margin-top: 1%;
+	
+}
+div.projectSelect {
+	font-family: 'Fira Sans', sans-serif;
+	margin-top: 40px;
+	margin-left: 40px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: 250px;
+	text-align: center;
+	float: left;
+}
+p.project {
+	margin: 0px;
+	transition: 0.5s;
+	color: #666666;
+	font-size: 35px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	border-color: #dbdbdb;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+	text-decoration: underline;
+	text-decoration-color: transparent;
+}
+p.selected {
+	transition: 0.8s;
+	text-decoration-color: #FFA500;
+}
+p.selected:hover {
+	transition: 0.5s;
+	text-decoration-color: #FFA500 !important;
+}
+p.project:hover {
+	transition: 0.5s;
+	text-decoration-color: #cecece;
 }
 p.link {
 	color: #171516 !important;
@@ -159,21 +202,12 @@ p.detail {
 	margin-left: 25px;
 	margin-bottom: 25px;
 	font-family: 'Fira Sans', sans-serif;
-	color: #878787;
+	color: #7a7a7a;
 	font-weight: bold;
-}
-p.apology {
-	float: left;
-	font-size: 23px;
-	margin-top: 25px;
-	margin-right: 25px;
-	margin-left: 25px;
-	margin-bottom: 25px;
-	color: #878787;
 }
 p.header {
 	transition: 0.75s;
-	color: #878787;
+	color: #7a7a7a;
 	font-size: 20px;
 	font-weight: bold;
 	margin-bottom: 3px;
@@ -205,7 +239,7 @@ p.title {
 	position: absolute;
 	height: 20px;
 	left: 50px;
-	color: #878787;
+	color: #7a7a7a;
 	font-size: 25px;
 	font-weight: bold;
 	margin-bottom: 3px;
@@ -217,14 +251,14 @@ p.title {
     user-select: none; 
 }
 p.about {
-	color: #878787;
+	color: #7a7a7a;
 	font-size: 18px;
 	font-weight: 500;
 	margin: 20px;
 }
 p.type {
 	transition: 0.5s;
-	color: #878787;
+	color: #7a7a7a;
 	font-weight: 500;
 	margin: 0px;
 	padding: 0px;
@@ -296,4 +330,8 @@ p.hide {
 
 button {
 	margin-top: 100px;
+}
+
+a {
+text-decoration: none;
 }

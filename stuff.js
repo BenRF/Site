@@ -45,6 +45,19 @@ function jump(target) {
 	document.getElementById(target).scrollIntoView();
 }
 
+var previous;
+function pick(p) {
+	if (previous != null) {
+		previous.className = "project";
+	}
+	previous = document.getElementById(p)
+	previous.className = "project selected";
+	$.get( "projects/"+ p +"/"+ p +".php", function( data ) {
+		$("#projectDisplay").html( data );
+	});
+	//document.getElementById("projectDisplay").innerHTML = 
+}
+
 
 var message;
 var typing;
@@ -67,7 +80,7 @@ function start() {
 	
 	function update() {
 		clearInterval(message);
-		var script = [["Hey",3],["Hey, welcome to my site.",5],["This site is all about Ben.",5],["He programs stuff.",5],["Because of this he's learnt a few languages.",5],["Such as Python,",2.5],["Such as Php,",1.5],["Such as Css,",1.5],["Such as C++,",1.5],["Such as MySql,",1.5],["Such as Java,",1.5],["Such as Javascript,",1.5],["Such as Jsp,",1.5],["Such as React.",1.5],["And more to come.",8]];
+		var script = [["Hey",3],["Hey, welcome to my site.",5],["This site is all about Ben.",5],["He programs stuff.",5],["Because of this he's learnt a few languages.",5],["Such as Python,",2.5],["Such as PHP,",1.5],["Such as CSS,",1.5],["Such as C++,",1.5],["Such as MySql,",1.5],["Such as Java,",1.5],["Such as JavaScript,",1.5],["Such as jQuery,",1.5],["Such as JSP,",1.5],["Such as React.",1.5],["And more to come.",8]];
 		target = script[position][0];
 		change(script[position][0]);
 		message = setInterval(update,(script[position][1])*1000);

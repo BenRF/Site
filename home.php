@@ -3,6 +3,7 @@
 		<title>Ben R F</title>
 		<link rel="stylesheet" href="styles.css">
 		<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Roboto&display=swap" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 		<script src="stuff.js"></script>
 		<script>
 			window.onscroll = scrollCheck;
@@ -40,14 +41,17 @@ When I was growing up in the 1960s and 70s, the chief fear on behalf of literary
 			</div>
 		</div>
 		<div id="projects" class="projectLock">
+			<div class="projectSelect">
+				<a href="javascript:void(0)" onclick="pick('screeps')"><p id="screeps" class="project">Screeps</p></a>
+				<a href="javascript:void(0)" onclick="pick('benm')"><p id="benm" class="project">BenM</p></a>
+			</div>
+			<div id="projectDisplay" class="projectDisplay">
 			
+			</div>
 		</div>
 		<div id="contact" class="contactLock">
 			<div id="benM" class="benM"></div>
 			<div class="details">
-				<div class="apology">
-					<p class="apology">I will always try my best to respond to chats using the BenM app, however if I am unavailable and the chat request times out then any of the following ways of communication will be responded to as early as possible.</p>
-				</div>
 				<div class="detail">
 					<img class="detail" src="icons/phone.png" height="80" width="80">
 					<p class="detail">07507764316</p>
@@ -66,8 +70,5 @@ When I was growing up in the 1960s and 70s, the chief fear on behalf of literary
 				</div>
 			</div>
 		</div>
-		<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-		<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-		<script src="benM.js"></script>
 	</body>
 </html>
