@@ -89,7 +89,7 @@
 		background: #FFA500;
 		font-size: 25px;
 		height: 30px;
-		width: 30px;
+		width: 80px;
 		padding: 0px;
 		text-align: center;
 		border-radius: 15px;
@@ -240,23 +240,27 @@
 	</div>
 	<img onload="strt()" id="sc" class="sc" src="./projects/screeps/imgs/0.jpg"/>
 	<?php
-		$rooms = array(array("W9N45",5,array(array("Harvester1",array("move","carry","work","attack","rangeAttack","heal","claim","tough")))));
+		require("update.php");
+		$rooms = $result["stats"]["rooms"];
+		$creeps = $result["creeps"];
 		foreach ($rooms as $room) {
 			echo '<div class="room">';
 				echo '<div class="glance">';
 					echo '<p class="rt">Room '. $room[0] .'</p>';
-					echo '<p class="lvl">'. $room[1] .'</p>';
+					echo '<p class="lvl">Lvl: '. $room[1] .'</p>';
 					echo '<div class="bots">';
-						foreach ($room[2] as $bot) {
-							echo '<div class="bot">';
-								echo '<p class="name">'. $bot[0] .'</p>';
+						$keys = array_keys($creeps);
+						foreach ($keys as $c) {
+							$creep = $creeps[$c];
+							 echo '<div class="bot">';
+								echo '<p class="name">'. $c .'</p>';
 								echo '<div class="parts">';
-									foreach ($bot[1] as $part) {
-										echo '<div class="part '. $part .'"></div>';
+									foreach ($creep["build"] as $part) {
+										echo '<div class="part '. $part["type"] .'"></div>';
 									}
 								echo '</div>';
-							echo '</div>';
-						}
+						 	echo '</div>';
+						 }
 					echo '</div>';
 				echo '</div>';
 			echo '</div>';

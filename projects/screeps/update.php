@@ -22,6 +22,6 @@
     $response = json_decode($response,true);
     $response = $response["data"];
     $result = gzdecode(base64_decode(substr($response,3)));
-    echo json_encode($result);
+    $result = json_decode($result,true);
     curl_close($curl);
  ?>
