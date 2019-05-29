@@ -223,7 +223,7 @@
 		is an online RTS game with the twist being that the user controls their units through code
 		(Javascript), this means that the user creates AI for their units which is then executed in a persistant world. Because of this the users solution not only
 		has to perform in an efficient manner but as you progress through the game the users solution must scale and work for all stages. One example of this is the
-		unit creation which involves building each unit out of various parts that will dictate what that unit can do and how well it performs certain actions, this means 
+		unit creation which involves building each unit out of various parts that will dictate what that unit can do and how well it performs certain actions, this means
 		that the user has to ensure their code is robust enough to provide efficient sized and correctly scaled units.
 	</p>
 	<div class="goals">
