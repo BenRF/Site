@@ -3,6 +3,8 @@
 		padding: 15px;
 		padding-left: 20px;
 		font-family: 'Roboto', sans-serif;
+		overflow: auto;
+		height: 100%;
 	}
 	div.bar {
 		width: 95%;
@@ -74,7 +76,6 @@
 	div.room {
 		float: left;
 		width: 96%;
-		height: 150px;
 		margin-top: 30px;
 		padding: 23px;
 		margin-bottom: 20px;
@@ -82,7 +83,7 @@
 	div.glance {
 		float: left;
 		width: 100%;
-		height: 35px;
+		background: green;
 	}
 	p.lvl {
 		float: left;
@@ -122,6 +123,7 @@
 		float: left;
 		margin-left: 20px;
 		padding-bottom: 15px;
+		margin-bottom: 20px;
 	}
 	p.name {
 		font-size: 25px;
@@ -154,7 +156,7 @@
 	div.attack {
 		background: #fc0509;
 	}
-	div.rangeAttack {
+	div.ranged_attack {
 		background: #147fd1;
 	}
 	div.heal {
@@ -268,7 +270,7 @@
 	?>
 	<div class="key">
 		<?php
-			$types = array("move","carry","work","attack","rangeAttack","heal","claim","tough");
+			$types = array("move","carry","work","attack","ranged_attack","heal","claim","tough");
 			foreach ($types as $type) {
 				echo "<div class='k'>";
 					echo "<div class='part ". $type ."'></div>";

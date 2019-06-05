@@ -102,8 +102,6 @@ div.projects {
 	width: 99%;
 	text-align: center;
 	box-shadow: 0px 1px 3px #c1c1c1;
-}
-div.projects {
 	width: 100%;
 	position: absolute;
 	top: 125%;
@@ -134,6 +132,7 @@ img.detail {
 	margin-left: 20px;
 }
 div.projectDisplay {
+	background: red;
 	font-family: 'Roboto', sans-serif;
 	padding: 0px;
 	float: left;
@@ -141,7 +140,7 @@ div.projectDisplay {
 	width: calc(100% - 340px);
 	margin-left: 35px;
 	margin-top: 1%;
-	
+	overflow: auto;
 }
 div.projectSelect {
 	font-family: 'Fira Sans', sans-serif;
@@ -168,7 +167,7 @@ p.project {
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none; 
+    user-select: none;
 	text-decoration: underline;
 	text-decoration-color: transparent;
 }
@@ -248,7 +247,7 @@ p.title {
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none; 
+    user-select: none;
 }
 p.about {
 	color: #7a7a7a;
@@ -269,7 +268,7 @@ p.type {
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none; 
+    user-select: none;
 }
 p.hide {
 	transition: 0.5s;
@@ -284,7 +283,7 @@ p.hide {
 	border-width: 0px 3px 0px 0px;
 	animation: blinker 1.25s step-end infinite;
 }
-@keyframes blinker {  
+@keyframes blinker {
     from, to {
 		border-color: transparent;
 	}
@@ -317,15 +316,15 @@ p.hide {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
 button {

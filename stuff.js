@@ -30,13 +30,44 @@ function scrollCheck() {
 }
 
 window.addEventListener('wheel',snap);
+var scrollCount = 0;
 function snap(e) {
-	if (e.deltaY < 0) {
-		console.log("up");
-		window.scrollBy(0,-(window.innerHeight));
+	if (document.body.scrollTop >= (window.innerHeight*2) && document.body.scrollTop < (window.innerHeight*3)) {
+		var project = document.getElementById("projectDisplay");
+		if (e.deltaY < 0) {
+			console.log("up");
+			if (project.scrollTop <= 0) {
+				if (scrollCount == 2) {
+					window.scrollBy(0,-(window.innerHeight));
+				} else {
+					scrollCount++;
+				}
+			} else {
+				scrollCount = 0;
+				project.scrollBy(0,-150);
+			}
+		} else {
+			console.log("down");
+			if (project.scrollTop >= project.scrollHeight) {
+				if (scrollCount == -2) {
+					window.scrollBy(0,window.innerHeight);
+				} else {
+					scrollCount--;
+				}
+			} else {
+				scrollCount = 0;
+				project.scrollBy(0,150);
+			}
+		}
 	} else {
-		console.log("down");
-		window.scrollBy(0,window.innerHeight);
+		scrollCount = 0;
+		if (e.deltaY < 0) {
+			console.log("up");
+			window.scrollBy(0,-(window.innerHeight));
+		} else {
+			console.log("down");
+			window.scrollBy(0,window.innerHeight);
+		}
 	}
 	e.preventDefault();
 }
@@ -55,7 +86,6 @@ function pick(p) {
 	$.get( "projects/"+ p +"/"+ p +".php", function( data ) {
 		$("#projectDisplay").html( data );
 	});
-	//document.getElementById("projectDisplay").innerHTML = 
 }
 
 
@@ -77,10 +107,10 @@ function start() {
 	message = setInterval(update, 500);
 	var flush;
 	var count = 0;
-	
+
 	function update() {
 		clearInterval(message);
-		var script = [["Hey",3],["Hey, welcome to my site.",5],["This site is all about Ben.",5],["He programs stuff.",5],["Because of this he's learnt a few languages.",5],["Such as Python,",2.5],["Such as PHP,",1.5],["Such as CSS,",1.5],["Such as C++,",1.5],["Such as MySql,",1.5],["Such as Java,",1.5],["Such as JavaScript,",1.5],["Such as jQuery,",1.5],["Such as JSP,",1.5],["Such as React.",1.5],["And more to come.",8]];
+		var script = [["Hey",3],["Hey, welcome to my site.",5],["This site is all about Ben.",5],["He programs stuff.",5],["Because of this he's learnt a few languages.",5],["Such as Python,",2.5],["Such as PHP,",1.5],["Such as CSS,",1.5],["Such as C++,",1.5],["Such as MySql,",1.5],["Such as Java,",1.5],["Such as JavaScript,",1.5],["Such as JSP,",1.5],["Such as jQuery,",1.5],["Such as React.",1.5],["And more to come.",8]];
 		target = script[position][0];
 		change(script[position][0]);
 		message = setInterval(update,(script[position][1])*1000);
@@ -91,7 +121,7 @@ function start() {
 			position++;
 		}
 	}
-	
+
 	function fade() {
 		clearInterval(flush);
 		var items = ["typing","typing1","typing2","typing3"];
@@ -100,7 +130,7 @@ function start() {
 		}
 		flush = setInterval(reappear,500);
 	}
-	
+
 	function reappear() {
 		clearInterval(flush);
 		var items = ["typing","typing1","typing2","typing3"];
@@ -109,7 +139,7 @@ function start() {
 			document.getElementById(items[i]).className = "type";
 		}
 	}
-	
+
 }
 
 function change(target) {
@@ -119,12 +149,12 @@ function change(target) {
 	} else {
 		typing = setInterval(remove, 50);
 	}
-	
+
 	function pause() {
 		clearInterval(typing);
 		typing = setInterval(remove, 50);
 	}
-	
+
 	function store() {
 		document.getElementById("typing").id = "typing1";
 		document.getElementById("typing1").id = "typing2";
@@ -138,7 +168,7 @@ function change(target) {
 		current = document.getElementById("typing");
 		typing = setInterval(pause, 600);
 	}
-	
+
 	function remove() {
 		if (trim(current.innerHTML,target).length === current.innerHTML.length) {
 			clearInterval(typing);
@@ -147,7 +177,7 @@ function change(target) {
 			current.innerHTML = (current.innerHTML).substring(0,current.innerHTML.length-1);
 		}
 	}
-	
+
 	function add() {
 		if (difference(current.innerHTML,target).length < 1) {
 			clearInterval(typing);
@@ -169,7 +199,7 @@ function change(target) {
 		}
 		return s1.substring(0,i);
 	}
-	
+
 	function difference(s1,s2) {
 		if (s1.length > s2.length) {
 			var target = s1.length;
