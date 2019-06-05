@@ -2,8 +2,6 @@
 
 function sTo(target) {
 	document.body.scrollTop = window.innerHeight * target;
-	console.log(window.innerHeight*target);
-	return false;
 }
 
 function scrollCheck() {
@@ -30,46 +28,40 @@ function scrollCheck() {
 }
 
 window.addEventListener('wheel',snap);
-var scrollCount = 0;
+var target = 0;
 function snap(e) {
-	if (document.body.scrollTop >= (window.innerHeight*2) && document.body.scrollTop < (window.innerHeight*3)) {
-		var project = document.getElementById("projectDisplay");
-		if (e.deltaY < 0) {
-			console.log("up");
-			if (project.scrollTop <= 0) {
-				if (scrollCount == 2) {
-					window.scrollBy(0,-(window.innerHeight));
-				} else {
-					scrollCount++;
-				}
-			} else {
-				scrollCount = 0;
-				project.scrollBy(0,-150);
-			}
-		} else {
-			console.log("down");
-			if (project.scrollTop >= project.scrollHeight) {
-				if (scrollCount == -2) {
-					window.scrollBy(0,window.innerHeight);
-				} else {
-					scrollCount--;
-				}
-			} else {
-				scrollCount = 0;
-				project.scrollBy(0,150);
-			}
+	var height = window.innerHeight;
+	var scroll = document.body.scrollTop;
+	var display = document.getElementById("projectDisplay");
+	if (scroll % height === 0) {
+		//scrolling for project pane
+		if (scroll >= height*2 && scroll < height*3 && display.scrollHeight != display.clientHeight) {
+			console.log(document.getElementById("projectDisplay").scrollTop);
+			// console.log(display.scrollTop + " vs " + display.scrollHeight);
+			// if (display.scrollTop === 0 && e.deltaY < 0) {
+			// 	console.log("up");
+			// 	window.scrollBy(0,-(height));
+			// } else if (display.scrollTop >= display.scrollHeight && e.deltaY >= 0) {
+			// 	console.log("down");
+			// 	window.scrollBy(0,height);
+			// }
+
+		//scroll up site
+		} else if (e.deltaY < 0) {
+			window.scrollBy(0,-(height));
+		//scroll down site
+		} else if (e.deltaY >= 0) {
+			window.scrollBy(0,height);
 		}
 	} else {
-		scrollCount = 0;
 		if (e.deltaY < 0) {
-			console.log("up");
-			window.scrollBy(0,-(window.innerHeight));
-		} else {
-			console.log("down");
-			window.scrollBy(0,window.innerHeight);
+			//up
+			window.scrollBy(0,-(scroll%height));
+		} else if (e.deltaY >= 0) {
+			//down
+			window.scrollBy(0,height-(scroll%height));
 		}
 	}
-	e.preventDefault();
 }
 
 function jump(target) {
@@ -83,23 +75,18 @@ function pick(p) {
 	}
 	previous = document.getElementById(p)
 	previous.className = "project selected";
-	$.get( "projects/"+ p +"/"+ p +".php", function( data ) {
-		$("#projectDisplay").html( data );
-	});
+	$.get("projects/"+ p +"/"+ p +".php", function(data) {$("#projectDisplay").html(data);});
 }
-
 
 var message;
 var typing;
 var position = 0;
 var target = "";
 function pause() {
-	console.log("pause");
 	clearInterval(message);
 }
 
 function resume() {
-	console.log("resume");
 	start();
 }
 

@@ -132,7 +132,6 @@ img.detail {
 	margin-left: 20px;
 }
 div.projectDisplay {
-	background: red;
 	font-family: 'Roboto', sans-serif;
 	padding: 0px;
 	float: left;
@@ -313,6 +312,7 @@ p.hide {
 
 ::-webkit-scrollbar {
   width: 0px;
+  height: 0px;
 }
 
 ::-webkit-scrollbar-track {
@@ -332,5 +332,5 @@ button {
 }
 
 a {
-text-decoration: none;
+	text-decoration: none;
 }

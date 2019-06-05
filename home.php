@@ -45,7 +45,7 @@ When I was growing up in the 1960s and 70s, the chief fear on behalf of literary
 				<a href="javascript:void(0)" onclick="pick('screeps')"><p id="screeps" class="project">Screeps</p></a>
 				<a href="javascript:void(0)" onclick="pick('benm')"><p id="benm" class="project">BenM</p></a>
 			</div>
-			<div id="projectDisplay" class="projectDisplay" onscroll=""></div>
+			<div id="projectDisplay" class="projectDisplay"></div>
 		</div>
 		<div id="contact" class="contactLock">
 			<div id="benM" class="benM"></div>
