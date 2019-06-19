@@ -2,6 +2,7 @@
 
 function sTo(target) {
 	document.body.scrollTop = window.innerHeight * target;
+	return false;
 }
 
 function scrollCheck() {

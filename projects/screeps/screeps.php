@@ -83,7 +83,6 @@
 	div.glance {
 		float: left;
 		width: 100%;
-		background: green;
 	}
 	p.lvl {
 		float: left;

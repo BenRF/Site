@@ -2,14 +2,15 @@ html {
 	scroll-behavior: smooth;
 }
 body {
-	background: #f7f7f7;
+	background: #121212;
 	margin: 0px;
 	font-family: 'Roboto', sans-serif;
 	scroll-snap-type: y mandatory;
+	color: white !important;
 }
 div.header {
 	position: fixed;
-	background: #f7f7f7;
+	background: #121212;
 	float: left;
 	width: 100%;
 	font-family: 'Fira Sans', sans-serif;
@@ -71,8 +72,6 @@ div.about {
 	position: absolute;
 	height: 90%;
 	width: 99%;
-	padding-top: 3%;
-	padding-left: 3%;
 }
 div.projectLock {
 	padding-top: 106px;
@@ -106,10 +105,12 @@ div.projects {
 	top: 125%;
 }
 div.benM {
+	background: white;
 	height: 93%;
 	width: 50%;
 	margin-left: 2%;
 	margin-top: 1%;
+	box-shadow: 0px 1px 3px #c1c1c1;
 	float: left;
 }
 div.details {
@@ -189,15 +190,6 @@ p.link:hover {
 	transition: 0.5s;
 	text-decoration-color: #FFA500;
 }
-p.link2 {
-	transition: 0.5s;
-	text-decoration: underline;
-	text-decoration-color: #e75a4d;
-}
-p.link2:hover {
-	transition: 0.5s;
-	text-decoration-color: #FFA500;
-}
 p.detail {
 	float: left;
 	font-size: 25px;
@@ -211,7 +203,7 @@ p.detail {
 }
 p.header {
 	transition: 0.75s;
-	color: #7a7a7a;
+	color: #FFFFFF;
 	font-size: 20px;
 	font-weight: bold;
 	margin-bottom: 3px;
@@ -243,7 +235,7 @@ p.title {
 	position: absolute;
 	height: 20px;
 	left: 50px;
-	color: #7a7a7a;
+	color: white;
 	font-size: 25px;
 	font-weight: bold;
 	margin-bottom: 3px;
@@ -259,11 +251,10 @@ p.about {
 	font-size: 18px;
 	font-weight: 500;
 	margin: 20px;
-	width: 92%;
 }
 p.type {
 	transition: 0.5s;
-	color: #7a7a7a;
+	color: white;
 	font-weight: 500;
 	margin: 0px;
 	padding: 0px;
@@ -299,13 +290,13 @@ p.hide {
 }
 #typing1 {
 	transition: 0.6s;
-	opacity: 0.6;
+	opacity: 0.65;
 	font-size: 50px;
 	top: 40%;
 }
 #typing2 {
 	transition: 0.6s;
-	opacity: 0.5;
+	opacity: 0.50;
 	font-size: 30px;
 	top: 55%;
 }
@@ -315,13 +306,6 @@ p.hide {
 	font-size: 15px;
 	top: 70%;
 	left: 4%;
-}
-
-img.self {
-	box-shadow: 0px 1px 4px #a3a3a3;
-	float: left;
-	margin-right: 70px;
-	width: 25%;
 }
 
 ::-webkit-scrollbar {
@@ -347,35 +331,4 @@ button {
 
 a {
 	text-decoration: none;
-}
-
-div.msg {
-	background-color: white;
-	box-shadow: 0px 1px 1px #a3a3a3;
-	padding-left: 35px;
-	padding-right: 35px;
-	padding-bottom: 15px;
-	padding-top: 15px;
-	border-radius: 40px;
-	height: 50px;
-	position: relative;
-	width: calc(100% - 70px);
-	top: calc(100% - 80px);
-}
-
-input.msg {
-	transition: 1s;
-	width: 90%;
-	height: 50px;
-	font-size: 30px;
-	border-width: 0px 0px 1px 0px;
-	border-color: #7a7a7a;
-	background: transparent;
-}
-
-input.msg:focus {
-	transition: 1s;
-	outline: 0;
-	border-color: #FFA500;
-	border-width: 0px 0px 2px 0px;
 }
