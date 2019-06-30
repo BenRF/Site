@@ -1,5 +1,9 @@
 <html>
 	<head>
+		<?php
+			session_start();
+			$id = session_id();
+		?>
 		<title>Ben R F</title>
 		<link rel="stylesheet" href="styles.css">
 		<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Roboto&display=swap" rel="stylesheet">
@@ -20,10 +24,14 @@
 			<div id="scroll" class="scroll underTitle"></div>
 		</div>
 		<div id="main" class="typingLock">
-			<p id="typing" class="type"></p>
-			<p id="typing1" class="type"></p>
-			<p id="typing2" class="type"></p>
-			<p id="typing3" class="type"></p>
+			<p id="cmd7" class="cmd"></p>
+			<p id="cmd6" class="cmd"></p>
+			<p id="cmd5" class="cmd"></p>
+			<p id="cmd4" class="cmd"></p>
+			<p id="cmd3" class="cmd"></p>
+			<p id="cmd2" class="cmd"></p>
+		  <p id="cmd1" class="cmd">Site:/> <b id="bl" class="blink"> _</b></p>
+			</p>
 		</div>
 		<div id="about" class="aboutLock">
 			<div class="about">
@@ -37,7 +45,7 @@
 				<a href="javascript:void(0)" onclick="pick('screeps')"><p id="screeps" class="project">Screeps</p></a>
 				<a href="javascript:void(0)" onclick="pick('benm')"><p id="benm" class="project">BenM</p></a>
 			</div>
-			<div id="projectDisplay" class="projectDisplay"></div>
+			<div id="projectDisplay" class="projectDisplay" onmouseover="projectHover(1)" onmouseout="projectHover(0)"></div>
 		</div>
 		<div id="contact" class="contactLock">
 			<div id="benMApp" class="benM">
@@ -46,10 +54,6 @@
 				</div>
 			</div>
 			<div class="details">
-				<div class="detail">
-					<img class="detail" src="icons/phone.png" height="80" width="80">
-					<p class="detail">07507764316</p>
-				</div>
 				<div class="detail">
 					<img class="detail" src="icons/mail.png" height="80" width="80">
 					<a href="mailto:benramsayfoster@gmail.com"><p class="detail link2" style="color: #e75a4d !important;">benramsayfoster@gmail.com</p></a>

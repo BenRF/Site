@@ -1,7 +1,13 @@
 //Aren't you a nosy one?
 
+var overProject = false;
+function projectHover(status) {
+	overProject = status;
+}
+
 function sTo(target) {
 	document.body.scrollTop = window.innerHeight * target;
+	console.log(document.body.scrollTop);
 	return false;
 }
 
@@ -28,40 +34,62 @@ function scrollCheck() {
 	}
 }
 
-window.addEventListener('wheel',snap);
-var target = 0;
-function snap(e) {
-	var height = window.innerHeight;
-	var scroll = document.body.scrollTop;
-	var display = document.getElementById("projectDisplay");
-	if (scroll % height === 0) {
-		//scrolling for project pane
-		if (scroll >= height*2 && scroll < height*3 && display.scrollHeight != display.clientHeight) {
-			console.log(document.getElementById("projectDisplay").scrollTop);
-			// console.log(display.scrollTop + " vs " + display.scrollHeight);
-			// if (display.scrollTop === 0 && e.deltaY < 0) {
-			// 	console.log("up");
-			// 	window.scrollBy(0,-(height));
-			// } else if (display.scrollTop >= display.scrollHeight && e.deltaY >= 0) {
-			// 	console.log("down");
-			// 	window.scrollBy(0,height);
-			// }
+window.onkeydown = function(event) {
+	event.preventDefault();
+	switch (event.keyCode) {
+		case 27:
+		console.log("currently at " + document.body.scrollTop);
+		case 37:
+			//left
+			event.preventDefault();
+			break;
+		case 38:
+			event.preventDefault();
+			sc(1);
+			break;
+		case 39:
+			//right
+			event.preventDefault();
+			break;
+		case 40:
+			event.preventDefault();
+			sc(2);
+			break;
+  }
+}
 
-		//scroll up site
-		} else if (e.deltaY < 0) {
+function sc(direction) {
+	var height = Math.floor(window.innerHeight);
+	var scroll = document.body.scrollTop;
+	if (Math.floor(scroll) % height === 0) {
+		var height = height + (scroll % height);
+		if (direction === 1) {
+			//up
 			window.scrollBy(0,-(height));
-		//scroll down site
-		} else if (e.deltaY >= 0) {
+		} else {
+			//down
 			window.scrollBy(0,height);
 		}
 	} else {
-		if (e.deltaY < 0) {
+		if (direction === 1) {
 			//up
 			window.scrollBy(0,-(scroll%height));
-		} else if (e.deltaY >= 0) {
+		} else {
 			//down
 			window.scrollBy(0,height-(scroll%height));
 		}
+	}
+}
+
+window.addEventListener('wheel',snap);
+var target = 0;
+function snap(e) {
+	e.preventDefault();
+	if (e.deltaY < 0) {
+		sc(1);
+	//scroll down site
+	} else if (e.deltaY >= 0) {
+		sc(2);
 	}
 }
 
@@ -92,13 +120,31 @@ function resume() {
 }
 
 function start() {
-	message = setInterval(update, 500);
+  message = setInterval(update, 500);
 	var flush;
 	var count = 0;
 
 	function update() {
 		clearInterval(message);
-		var script = [["Hey",3],["Hey, welcome to my site.",5],["This site is all about Ben.",5],["He programs stuff.",5],["Because of this he's learnt a few languages.",5],["Such as Python,",2.5],["Such as PHP,",1.5],["Such as CSS,",1.5],["Such as C++,",1.5],["Such as MySql,",1.5],["Such as Java,",1.5],["Such as JavaScript,",1.5],["Such as JSP,",1.5],["Such as jQuery,",1.5],["Such as React.",1.5],["And more to come.",8]];
+		var script = [
+			["Site:/> cd scripts",5],
+			["Site:/scripts> greeting.exe",5],
+			["Hey, welcome to my site.",5],
+			["This site is all about Ben.",5],
+			["He programs stuff.",5],
+			["Because of this he's learnt a few languages.",5],
+			["Such as Python,",2.5],
+			["Such as PHP,",1.5],
+			["Such as CSS,",1.5],
+			["Such as C++,",1.5],
+			["Such as MySql,",1.5],
+			["Such as Java,",1.5],
+			["Such as JavaScript,",1.5],
+			["Such as JSP,",1.5],
+			["Such as jQuery,",1.5],
+			["Such as React.",1.5],
+			["And more to come.",8]
+		];
 		target = script[position][0];
 		change(script[position][0]);
 		message = setInterval(update,(script[position][1])*1000);
@@ -110,29 +156,28 @@ function start() {
 		}
 	}
 
+	var items = ["cmd1","cmd2","cmd3","cmd4","cmd5","cmd6","cmd7"];
 	function fade() {
 		clearInterval(flush);
-		var items = ["typing","typing1","typing2","typing3"];
 		for (var i = 0; i < items.length; i++) {
-			document.getElementById(items[i]).className = "type hide";
+			document.getElementById(items[i]).className = "cmd hide";
 		}
 		flush = setInterval(reappear,500);
 	}
 
 	function reappear() {
 		clearInterval(flush);
-		var items = ["typing","typing1","typing2","typing3"];
 		for (var i = 0; i < items.length; i++) {
 			document.getElementById(items[i]).innerHTML = "";
-			document.getElementById(items[i]).className = "type";
+			document.getElementById(items[i]).className = "cmd";
 		}
 	}
 
 }
 
 function change(target) {
-	var current = document.getElementById("typing");
-	if (difference(target,current.innerHTML) === target || difference(target,current.innerHTML) === current.innerHTML) {
+	var current = document.getElementById("cmd1");
+	if (difference(target,current.innerHTML) === target ||difference(target,current.innerHTML) === getGoodCode()) {
 		store();
 	} else {
 		typing = setInterval(remove, 50);
@@ -144,37 +189,72 @@ function change(target) {
 	}
 
 	function store() {
-		document.getElementById("typing").id = "typing1";
-		document.getElementById("typing1").id = "typing2";
-		document.getElementById("typing2").id = "typing3";
-		var four = document.getElementById("typing3");
-		four.parentNode.removeChild(four);
+		//delete the blinker
+		deleteBlink();
+		//move all elements up
+		for (var i = 1; i < 7; i++) {
+				document.getElementById("cmd" + i).id = "cmd" + (i+1);
+		}
+		//remove the last element
+		destroy("cmd7");
+		//create new element to go at the start
 		var first = document.createElement("p");
-		first.setAttribute("id","typing");
-		first.setAttribute("class","type");
+		first.setAttribute("id","cmd1");
+		first.setAttribute("class","cmd");
 		document.getElementById("b").appendChild(first);
-		current = document.getElementById("typing");
+		current = document.getElementById("cmd1");
+		createBlink();
 		typing = setInterval(pause, 600);
 	}
 
+  var el;
+	function destroy(id) {
+		el = document.getElementById(id);
+		el.parentNode.removeChild(el);
+	}
+
+	function getGoodCode() {
+		var result = current.innerHTML;
+		result = result.replace('<b id="bl" class="blink"> _</b>',"");
+		result = result.replace("&gt;",">");
+		return result;
+	}
+
 	function remove() {
-		if (trim(current.innerHTML,target).length === current.innerHTML.length) {
+		if (trim(current.innerHTML,target).length === getGoodCode().length) {
 			clearInterval(typing);
 			typing = setInterval(add, 75);
 		} else {
-			current.innerHTML = (current.innerHTML).substring(0,current.innerHTML.length-1);
+			deleteBlink();
+			current.innerHTML = getGoodCode().substring(0,getGoodCode().length-1);
+			createBlink();
 		}
+	}
+
+	function createBlink() {
+		current.innerHTML = current.innerHTML + '<b id="bl" class="blink"> _</b>';
+	}
+
+	function deleteBlink() {
+		var inner = current.innerHTML;
+		current.innerHTML = inner.replace('<b id="bl" class="blink"> _</b>',"");
 	}
 
 	function add() {
 		if (difference(current.innerHTML,target).length < 1) {
 			clearInterval(typing);
 		} else {
+			deleteBlink();
 			current.innerHTML = current.innerHTML + difference(current.innerHTML,target).substring(0,1);
+			createBlink();
 		}
 	}
 
 	function trim(s1,s2) {
+		s1 = s1.replace('<b id="bl" class="blink"> _</b>',"");
+		s2 = s2.replace('<b id="bl" class="blink"> _</b>',"");
+		s1 = s1.replace("&gt;",">");
+		s2 = s2.replace("&gt;",">");
 		if (s1.length > s2.length) {
 			var target = s1.length;
 		} else {
@@ -189,6 +269,10 @@ function change(target) {
 	}
 
 	function difference(s1,s2) {
+		s1 = s1.replace('<b id="bl" class="blink"> _</b>',"");
+		s2 = s2.replace('<b id="bl" class="blink"> _</b>',"");
+		s1 = s1.replace("&gt;",">");
+		s2 = s2.replace("&gt;",">");
 		if (s1.length > s2.length) {
 			var target = s1.length;
 		} else {

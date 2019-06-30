@@ -5,7 +5,6 @@ body {
 	background: #f7f7f7;
 	margin: 0px;
 	font-family: 'Roboto', sans-serif;
-	scroll-snap-type: y mandatory;
 }
 div.header {
 	position: fixed;
@@ -55,15 +54,13 @@ div.underContact {
 	left: calc(100% - 118px);
 }
 div.typingLock {
-	scroll-snap-align: start;
 }
 div.aboutLock {
 	padding-top: 106px;
-	scroll-snap-align: start;
 	position: absolute;
 	top: 100%;
 	width: 99%;
-	height: 93%;
+	height: 100vh;
 	padding-left: 0.5%;
 	padding-right: 0.5%;
 }
@@ -71,12 +68,11 @@ div.about {
 	position: absolute;
 	height: 90%;
 	width: 99%;
-	padding-top: 3%;
-	padding-left: 3%;
+	padding-top: 1%;
+	padding-left: 1%;
 }
 div.projectLock {
 	padding-top: 106px;
-	scroll-snap-align: start;
 	position: absolute;
 	top: 200%;
 	width: 99%;
@@ -86,7 +82,6 @@ div.projectLock {
 }
 div.contactLock {
 	padding-top: 106px;
-	scroll-snap-align: start;
 	position: absolute;
 	top: 300%;
 	width: 99%;
@@ -106,7 +101,7 @@ div.projects {
 	top: 125%;
 }
 div.benM {
-	height: 93%;
+	height: 80vh;
 	width: 50%;
 	margin-left: 2%;
 	margin-top: 1%;
@@ -270,57 +265,77 @@ p.type {
 	left: 4%;
 	position: absolute;
 	-webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 p.hide {
 	transition: 0.5s;
 	opacity: 0 !important;
 }
-#typing {
-	font-size: 75px;
-	top: 25%;
-	padding-right: 5px;
-	border-style: solid;
-	border-color: #FFA500;
-	border-width: 0px 3px 0px 0px;
-	animation: blinker 1.25s step-end infinite;
+p.cmd {
+	transition: 0.5s;
+	line-height: 3.5vw;
+	font-size: 2.5vw;
+	color: #7a7a7a;
+	font-weight: 500;
+	margin: 0px;
+	padding: 0px;
+	left: 4%;
+	position: absolute;
+	-webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-@keyframes blinker {
+#cmd1 {
+	font-size: 3vw;
+	top: 85%;
+}
+#cmd2 {
+	opacity: 0.95;
+	top: 70%;
+}
+#cmd3 {
+	opacity: 0.85;
+	top: 60%;
+}
+#cmd4 {
+	top: 50%;
+	opacity: 0.75;
+}
+#cmd5 {
+	top: 40%;
+	opacity: 0.5;
+}
+#cmd6 {
+	top: 30%;
+	opacity: 0.25;
+}
+#cmd7 {
+	top: 20%;
+	opacity: 0;
+}
+b.blink {
+	color: transparent;
+	animation: blink 1.25s step-end infinite;
+}
+@keyframes blink {
     from, to {
-		border-color: transparent;
+		color: transparent;
 	}
 	50% {
-		border-color: #FFA500;
+		color: #FFA500;
 	}
 }
-#typing1 {
-	transition: 0.6s;
-	opacity: 0.6;
-	font-size: 50px;
-	top: 40%;
-}
-#typing2 {
-	transition: 0.6s;
-	opacity: 0.5;
-	font-size: 30px;
-	top: 55%;
-}
-#typing3 {
-	transition: 0.6s;
-	opacity: 0;
-	font-size: 15px;
-	top: 70%;
-	left: 4%;
-}
-
 img.self {
 	box-shadow: 0px 1px 4px #a3a3a3;
 	float: left;
-	margin-right: 70px;
+	margin-right: 40px;
 	width: 25%;
 }
 
