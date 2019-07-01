@@ -44,17 +44,45 @@
 			<div class="about">
 				<img class="self" src="./self.jpg"/>
 				<p class="about">
-					<b class="highlight">- </b> Ben Ramsay Foster is an aspiring web developer currently studying Computer science at the University of Essex.
-
+					I am currently studying Computer science at the University of Essex and am just about to start my third and final year of the course.
+				</p>
+				<p class="about">
+					My main interest in coding comes from the enjoyment of finding solutions regardless of if it's getting a complex feature or creating a
+					clear design for a user to interact with.
+				</p>
+				<p class="about">
+					I believe that thanks to this I have been able to create a website that portrays my passion for design and my attention to detail while
+					sufficiently
+				</p>
+				<p class="about">
+					While my main focus is to finish my degree, I am always looking for and are more than welcome to opportunities that can help me gain more experience.
 				</p>
 			</div>
 		</div>
 		<div id="projects" class="projectLock">
 			<div class="projectSelect">
-				<a href="javascript:void(0)" onclick="pick('screeps')"><p id="screeps" class="project">Screeps</p></a>
-				<a href="javascript:void(0)" onclick="pick('benm')"><p id="benm" class="project">BenM</p></a>
+				<?php
+					//<a href="javascript:void(0)" onclick="pick('screeps')"><p id="screeps" class="project">Screeps</p></a>
+					$projects = scandir("projects/");
+					$count = 0;
+					$class = "project";
+					foreach ($projects as $p) {
+						if ($count >= 2) {
+							if ($count == sizeof($projects) - 1) {
+								$class = "project last";
+							}
+							echo '<a href="javascript:void(0)" onclick="pick('. "'" . $p . "'" .')"><p id="'. $p .'" class="'. $class .'">'. $p .'</p></a>';
+						}
+						$count = $count + 1;
+					}
+				 ?>
+				<!-- <a href="javascript:void(0)" onclick="pick('screeps')"><p id="screeps" class="project">Screeps</p></a>
+				<a href="javascript:void(0)" onclick="pick('benm')"><p id="benm" class="project">BenM</p></a> -->
 			</div>
-			<div id="projectDisplay" class="projectDisplay" onmouseover="projectHover(1)" onmouseout="projectHover(0)"></div>
+			<div id="projectDisplay" class="projectDisplay" onmouseover="projectHover(1)" onmouseout="projectHover(0)">
+				<p id="picker" class="picker">Select a project from the list to get started</p>
+				<a href="javascript:void(0)" onclick="random()"><p class="lucky">Suprise me</p></a>
+			</div>
 		</div>
 		<div id="contact" class="contactLock">
 			<div id="benMApp" class="benM">

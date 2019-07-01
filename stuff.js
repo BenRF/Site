@@ -119,19 +119,33 @@ function resume() {
 }
 
 function start() {
-	//change("Scored!!!");
-  message = setInterval(update, 3500);
+  message = setInterval(update, 5000);
 	var flush;
 	var count = 0;
 
 	function update() {
 		clearInterval(message);
 		var script = [
-			["Site:/> cd scripts",5,0,""],
-			["Site:/scripts> greeting.exe",5,1,"Site:/scripts>"],
-			["Hey",3,0,""],
-			["Hey, welcome to my site.",5,0,""],
-			["Site:/scripts> clear",10,1,"Site:/scripts>"],
+			["Site:/> cd scripts",3,0,""],
+			["Site:/scripts> greeting",4,1,"Site:/scripts>"],
+			["Hey",2,0,""],
+			["Hey, welcome to my site",4,0,""],
+			["This is a site about Ben",3.5,0,""],
+			["This is a site about Ben (duh)",1,0,""],
+			["This is a site about Ben",1,0,""],
+			["It tells you who he is",4,0,""],
+			["It tells you what he's done",3.5,0,""],
+			["It tells you how to contact him",3.5,0,""],
+			["So feel free to read in awe",3.5,0,""],
+			["So feel free to look around",4,0,""],
+			//["Site:/scripts> mysql -u root -p",9,1,"Site:/scripts>"],
+			//["Enter password: pa$$word",3,1,"Enter password:"],
+			//["mysql> use BenRF;",3,1,"mysql>"],
+			//["mysql> SELECT count(languages) FROM skills;",6,1,"mysql>"],
+			//["Count(languages) 10",3,1,"Count(languages)"],
+			//["mysql> quit;",3,1,"mysql>"],
+			["Site:/scripts> cd ..",3,1,"Site:/scripts>"],
+			["Site:/> clear",15,1,"Site:/>"],
 		];
 		if (script[position][2] === 1) {
 			//delete the blinker
@@ -155,9 +169,12 @@ function start() {
 			first.innerHTML = script[position][3];
 			document.getElementById("main").appendChild(first);
 			document.getElementById("cmd1").innerHTML = document.getElementById("cmd1").innerHTML + '<b id="bl" class="blink"> _</b>';
+			target = script[position][0];
+			d = setInterval(delay,2000);
+		} else {
+			target = script[position][0];
+			change(script[position][0]);
 		}
-		target = script[position][0];
-		change(script[position][0]);
 		message = setInterval(update,(script[position][1])*1000);
 		if  (position == script.length-1) {
 			flush = setInterval(fade,4000);
@@ -165,6 +182,12 @@ function start() {
 		} else {
 			position++;
 		}
+	}
+
+	var d;
+	function delay() {
+		clearInterval(d);
+		change(target);
 	}
 
 	var items = ["cmd1","cmd2","cmd3","cmd4","cmd5","cmd6","cmd7"];
