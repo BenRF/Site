@@ -3,8 +3,16 @@
 		<?php
 			session_start();
 			$id = session_id();
+			//https://realfavicongenerator.net/, for when you have an actual icon
 		?>
 		<title>Ben R F</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+		<link rel="manifest" href="site.webmanifest">
+		<link rel="mask-icon" href="safari-pinned-tab.svg" color="#4287f5">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="theme-color" content="#ffffff">
 		<link rel="stylesheet" href="styles.css">
 		<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Roboto&display=swap" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -31,14 +39,15 @@
 			<p id="cmd3" class="cmd"></p>
 			<p id="cmd2" class="cmd"></p>
 		  <p id="cmd1" class="cmd">Site:/> <b id="bl" class="blink"> _</b></p>
-			</p>
 		</div>
 		<div id="about" class="aboutLock">
 			<div class="about">
 				<img class="self" src="./self.jpg"/>
 				<p class="about">
-					This block of text goes on and on and does not have any visual separation between what would normally make up a new paragraph. Instead, it will continue to have more text added to it and look like it has not been formatted. It just keeps going and going and going and will start new topics without separating them with paragraphs. You see, even though this is nice, let's talk about CSS (Cascading Style Sheets), often called style sheets, for a minute. Style sheets are often used to affect the appearance of Web pages. CSS code contains selectors and definitions for the various tags, classes, or ids that are used when marking up and HTML document. JavaScript, on the other hand, can add additional functionality to a Web page. Since it is a programming language, you can write code to perform any number of tasks. You could change the content within a block of text, change an image when the user places their mouse over a specific part of the page, validate form content, send alert messages, and more. It can be learned through books, tutorials, or classes that are offered in many place, especially on the Web. If you want to delve into server-side programming, you might look into PHP, ASP, Perl, Java, or other available languages. These allow you to save information into databases, handle feedback forms, create shopping carts, and more. Did you read all of this or give up?
-				</div>
+					<b class="highlight">- </b> Ben Ramsay Foster is an aspiring web developer currently studying Computer science at the University of Essex.
+
+				</p>
+			</div>
 		</div>
 		<div id="projects" class="projectLock">
 			<div class="projectSelect">

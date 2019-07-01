@@ -251,10 +251,12 @@ p.title {
 }
 p.about {
 	color: #7a7a7a;
-	font-size: 18px;
-	font-weight: 500;
+	font-size: 21px;
 	margin: 20px;
 	width: 92%;
+}
+b.highlight {
+	color: #FFA500;
 }
 p.type {
 	transition: 0.5s;
@@ -293,7 +295,7 @@ p.cmd {
   user-select: none;
 }
 #cmd1 {
-	font-size: 3vw;
+	font-size: 3.5vw;
 	top: 85%;
 }
 #cmd2 {
@@ -319,6 +321,9 @@ p.cmd {
 #cmd7 {
 	top: 20%;
 	opacity: 0;
+}
+b.solid {
+	color: #FFA500;
 }
 b.blink {
 	color: transparent;

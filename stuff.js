@@ -7,7 +7,6 @@ function projectHover(status) {
 
 function sTo(target) {
 	document.body.scrollTop = window.innerHeight * target;
-	console.log(document.body.scrollTop);
 	return false;
 }
 
@@ -120,31 +119,43 @@ function resume() {
 }
 
 function start() {
-  message = setInterval(update, 500);
+	//change("Scored!!!");
+  message = setInterval(update, 3500);
 	var flush;
 	var count = 0;
 
 	function update() {
 		clearInterval(message);
 		var script = [
-			["Site:/> cd scripts",5],
-			["Site:/scripts> greeting.exe",5],
-			["Hey, welcome to my site.",5],
-			["This site is all about Ben.",5],
-			["He programs stuff.",5],
-			["Because of this he's learnt a few languages.",5],
-			["Such as Python,",2.5],
-			["Such as PHP,",1.5],
-			["Such as CSS,",1.5],
-			["Such as C++,",1.5],
-			["Such as MySql,",1.5],
-			["Such as Java,",1.5],
-			["Such as JavaScript,",1.5],
-			["Such as JSP,",1.5],
-			["Such as jQuery,",1.5],
-			["Such as React.",1.5],
-			["And more to come.",8]
+			["Site:/> cd scripts",5,0,""],
+			["Site:/scripts> greeting.exe",5,1,"Site:/scripts>"],
+			["Hey",3,0,""],
+			["Hey, welcome to my site.",5,0,""],
+			["Site:/scripts> clear",10,1,"Site:/scripts>"],
 		];
+		if (script[position][2] === 1) {
+			//delete the blinker
+			var inner = document.getElementById("cmd1").innerHTML;
+			inner = inner.replace("&gt;",">");
+			inner = inner.replace("&lt;","<");
+			inner = inner.replace('<b id="bl" class="blink"> _</b>',"");
+			inner = inner.replace('<b id="bl" class="solid"> _</b>',"");
+			document.getElementById("cmd1").innerHTML = inner;
+			//remove the last element
+			var el = document.getElementById("cmd7");
+			el.parentNode.removeChild(el);
+			//move all elements up
+			for (var i = 6; i > 0; i--) {
+					document.getElementById("cmd" + i).id = "cmd" + (i+1);
+			}
+			//create new element to go at the start
+			var first = document.createElement("p");
+			first.setAttribute("id","cmd1");
+			first.setAttribute("class","cmd");
+			first.innerHTML = script[position][3];
+			document.getElementById("main").appendChild(first);
+			document.getElementById("cmd1").innerHTML = document.getElementById("cmd1").innerHTML + '<b id="bl" class="blink"> _</b>';
+		}
 		target = script[position][0];
 		change(script[position][0]);
 		message = setInterval(update,(script[position][1])*1000);
@@ -171,13 +182,13 @@ function start() {
 			document.getElementById(items[i]).innerHTML = "";
 			document.getElementById(items[i]).className = "cmd";
 		}
+		document.getElementById("cmd1").innerHTML = 'Site:/> <b id="bl" class="blink"> _</b>';
 	}
-
 }
 
 function change(target) {
 	var current = document.getElementById("cmd1");
-	if (difference(target,current.innerHTML) === target ||difference(target,current.innerHTML) === getGoodCode()) {
+	if ((difference(target,current.innerHTML) === target || difference(target,current.innerHTML) === getGoodCode()) && getGoodCode().length !== 0) {
 		store();
 	} else {
 		typing = setInterval(remove, 50);
@@ -201,7 +212,7 @@ function change(target) {
 		var first = document.createElement("p");
 		first.setAttribute("id","cmd1");
 		first.setAttribute("class","cmd");
-		document.getElementById("b").appendChild(first);
+		document.getElementById("main").appendChild(first);
 		current = document.getElementById("cmd1");
 		createBlink();
 		typing = setInterval(pause, 600);
@@ -216,7 +227,9 @@ function change(target) {
 	function getGoodCode() {
 		var result = current.innerHTML;
 		result = result.replace('<b id="bl" class="blink"> _</b>',"");
+		result = result.replace('<b id="bl" class="solid"> _</b>',"");
 		result = result.replace("&gt;",">");
+		result = result.replace("&lt;","<");
 		return result;
 	}
 
@@ -227,8 +240,13 @@ function change(target) {
 		} else {
 			deleteBlink();
 			current.innerHTML = getGoodCode().substring(0,getGoodCode().length-1);
-			createBlink();
+			//current.innerHTML = getGoodCode().slice(0,-32) + '<b id="bl" class="solid"> _</b>';
+			createSolid();
 		}
+	}
+
+	function createSolid() {
+		current.innerHTML = current.innerHTML + '<b id="bl" class="solid"> _</b>';
 	}
 
 	function createBlink() {
@@ -236,17 +254,20 @@ function change(target) {
 	}
 
 	function deleteBlink() {
-		var inner = current.innerHTML;
+		var inner = getGoodCode();
 		current.innerHTML = inner.replace('<b id="bl" class="blink"> _</b>',"");
+		current.innerHTML = inner.replace('<b id="bl" class="solid"> _</b>',"");
 	}
 
 	function add() {
-		if (difference(current.innerHTML,target).length < 1) {
+		if (difference(getGoodCode(),target).length < 1) {
+			deleteBlink();
+			createBlink();
 			clearInterval(typing);
 		} else {
 			deleteBlink();
 			current.innerHTML = current.innerHTML + difference(current.innerHTML,target).substring(0,1);
-			createBlink();
+			createSolid();
 		}
 	}
 
