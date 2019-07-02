@@ -24,10 +24,12 @@
     width: 100%;
   }
   div.tab {
+    color: #666666;
     transition: 0.3s;
     display: block;
     opacity: 1;
     padding: 15px;
+    padding-right: 0px;
   }
   div.hidden{
     transition: 0.3s;
@@ -55,13 +57,14 @@
     	text-decoration-color: #FFA500;
     }
     p.desc {
-      float: left;
+      width: auto;
       margin: 0px;
-      width: 53vw;
+      color: #666666;
+      margin-bottom: 10px;
     }
     img.phoneShot {
-      width: 40vh;
-      margin-left: 10px;
+      height: 85%;
+      margin-left: 25px;
       float: right;
       box-shadow: 0px 1px 4px #a3a3a3;
     }
@@ -87,16 +90,18 @@
     </p>
   </div>
   <div id="2d" class = "tab hidden">
+    <img class="phoneShot" src="./projects/BenM/base.png"/>
     <p class="desc">
       The phone app for my side of the messaging was built in React Native and utalized Google Firebase for its notifications and push messaging,
       this allowed for notifications of a incoming message to appear on my phone if the app wasn't open or for a notification handeler to intercept
       the notification and update the app if it was open when recieved. Thanks to these push notifications I only have to directly poll the server
-      when booting the app.<br/>
+      when booting the app.
+    </p>
+    <p class="desc">
       The main screen of the app is split into three tabs, the inital tab displays all active chats (chats where the user is still online) and is
       also where chat requests will appear as they come in to accept or decline. The second tab is where all inactive chats are kept and would allow
       for me to read through any previous chats had with users along with seeing any requests that were declined or timed out and seeing who made them.
     </p>
-    <img class="phoneShot" src="./projects/BenM/base.png"/>
   </div>
   <div id="3d" class = "tab hidden">
     <p>blah blah blah</p>
