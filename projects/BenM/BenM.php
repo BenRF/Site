@@ -2,9 +2,17 @@
 <head>
   <script>
     var picked = '1';
-    function tab(num) {
+    var num;
+    var gone;
+    function tab(n) {
+      num = n;
       document.getElementById(picked + "o").className = "option";
       document.getElementById(picked + "d").className = "tab hidden";
+      gone = setInterval(begone,300);
+    }
+    function begone() {
+      clearInterval(gone);
+      document.getElementById(picked + "d").className = "tab gone";
       document.getElementById(num + "o").className = "option selected";
       document.getElementById(num + "d").className = "tab";
       picked = num;
@@ -16,11 +24,16 @@
     width: 100%;
   }
   div.tab {
-    transition: 1s;
+    transition: 0.3s;
+    display: block;
+    opacity: 1;
     padding: 15px;
   }
-  div.hidden {
-    transition: 1s;
+  div.hidden{
+    transition: 0.3s;
+    opacity: 0;
+  }
+  div.gone {
     display: none;
   }
     p.option {
@@ -41,6 +54,17 @@
     	transition: 0.5s;
     	text-decoration-color: #FFA500;
     }
+    p.desc {
+      float: left;
+      margin: 0px;
+      width: 53vw;
+    }
+    img.phoneShot {
+      width: 40vh;
+      margin-left: 10px;
+      float: right;
+      box-shadow: 0px 1px 4px #a3a3a3;
+    }
   </style>
 </head>
 <body>
@@ -51,10 +75,28 @@
     <a href="javascript:void(0)" onclick="tab('4')"><p id="4o" class="option">Server</p></a>
   </div>
   <div id="1d" class = "tab">
-    <p>blah</p>
+    <p>
+      To build on previous experience of creating a phone app and to learn more about websocket connections I decided to make an application
+      for my website that could provide 'live chat' like functionality, this would then allow for me to respond and chat to anyone on my site
+      from the phone app in real time.<br/>
+      However while a user would be able to get notifications sent to my phone at any time I still wanted there to be a system that would allow
+      for me to notifiy a user that I was unable to chat at that current time, this resulted in a request system being brought in so that when a
+      user wants to start a chat a request notification will be sent to my phone requiring for me to accept that request before a chat begins.
+      This will also allow me to decline chats if busy or for a request to timeout when I'm not around my phone and avoid wasting people's time.<br/>
+      Once the request is accepted it acts like any normal chat system with one side sending a message and for it to appear on the other sides screen.
+    </p>
   </div>
   <div id="2d" class = "tab hidden">
-    <p>blah blah</p>
+    <p class="desc">
+      The phone app for my side of the messaging was built in React Native and utalized Google Firebase for its notifications and push messaging,
+      this allowed for notifications of a incoming message to appear on my phone if the app wasn't open or for a notification handeler to intercept
+      the notification and update the app if it was open when recieved. Thanks to these push notifications I only have to directly poll the server
+      when booting the app.<br/>
+      The main screen of the app is split into three tabs, the inital tab displays all active chats (chats where the user is still online) and is
+      also where chat requests will appear as they come in to accept or decline. The second tab is where all inactive chats are kept and would allow
+      for me to read through any previous chats had with users along with seeing any requests that were declined or timed out and seeing who made them.
+    </p>
+    <img class="phoneShot" src="./projects/BenM/base.png"/>
   </div>
   <div id="3d" class = "tab hidden">
     <p>blah blah blah</p>
