@@ -3,6 +3,7 @@
 		<?php
 			session_start();
 			$id = session_id();
+			$projects = scandir("projects/");
 			//https://realfavicongenerator.net/, for when you have an actual icon
 		?>
 		<title>Ben R F</title>
@@ -21,14 +22,15 @@
 			window.onscroll = scrollCheck;
 			window.onfocus = resume;
 			window.onblur = pause;
+
 		</script>
 	</head>
 	<body id="b" onload="start()">
 		<div id="header" class="header attached">
-			<a href="javascript:void(0)" onclick="sTo(0)"> <p class="title">Ben Ramsay Foster</p> </a>
-			<a href="javascript:void(0)" onclick="sTo(3)"> <p class="header c">Contact</p> </a>
-			<a href="javascript:void(0)" onclick="sTo(2)"> <p class="header p">Projects</p> </a>
-			<a href="javascript:void(0)" onclick="sTo(1)"> <p class="header a">About</p> </a>
+			<a href="javascript:void(0)" onclick="sTo(0)"> <p id="t1" class="title attached">Ben Ramsay Foster</p> </a>
+			<a href="javascript:void(0)" onclick="sTo(3)"> <p id="t2" class="header c attached">Contact</p> </a>
+			<a href="javascript:void(0)" onclick="sTo(2)"> <p id="t3" class="header p attached">Projects</p> </a>
+			<a href="javascript:void(0)" onclick="sTo(1)"> <p id="t4" class="header a attached">About</p> </a>
 			<div id="scroll" class="scroll underTitle"></div>
 		</div>
 		<div id="main" class="typingLock">
@@ -55,23 +57,28 @@
 					sufficiently
 				</p>
 				<p class="about">
-					While my main focus is to finish my degree, I am always looking for and are more than welcome to opportunities that can help me gain more experience.
+					While my main focus is to finish my degree, I am always looking for and are more than welcome to opportunities that can help me gain more experience outside of university.
 				</p>
 			</div>
 		</div>
 		<div id="projects" class="projectLock">
 			<div class="projectSelect">
 				<?php
-					//<a href="javascript:void(0)" onclick="pick('screeps')"><p id="screeps" class="project">Screeps</p></a>
-					$projects = scandir("projects/");
 					$count = 0;
-					$class = "project";
+					$class = "projectOption";
 					foreach ($projects as $p) {
 						if ($count >= 2) {
 							if ($count == sizeof($projects) - 1) {
-								$class = "project last";
+								$class = "projectOption last";
 							}
-							echo '<a href="javascript:void(0)" onclick="pick('. "'" . $p . "'" .')"><p id="'. $p .'" class="'. $class .'">'. $p .'</p></a>';
+							echo '<div class="'.$class.'">';
+								echo '<a href="javascript:void(0)" class="hidden" onclick="pick('. "'" . $p . "'" .')">';
+									echo '<div class="projectOptionInner">';
+										echo file_get_contents("./projects/". $p ."/icon.svg");
+										echo '<p id="'.$p.'" class="project">'.$p.'</p>';
+									echo '</div>';
+								echo '</a>';
+							echo '</div>';
 						}
 						$count = $count + 1;
 					}
@@ -81,7 +88,6 @@
 			</div>
 			<div id="projectDisplay" class="projectDisplay" onmouseover="projectHover(1)" onmouseout="projectHover(0)">
 				<p id="picker" class="picker">Select a project from the list to get started</p>
-				<a href="javascript:void(0)" onclick="random()"><p class="lucky">Suprise me</p></a>
 			</div>
 		</div>
 		<div id="contact" class="contactLock">

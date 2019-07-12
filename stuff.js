@@ -11,10 +11,19 @@ function sTo(target) {
 }
 
 function scrollCheck() {
-	if (document.body.scrollTop > 0) {
+	var height = window.innerHeight;
+	if (document.body.scrollTop > (height*0.75)) {
 		document.getElementById("header").className = "header detached";
+		document.getElementById("t1").className = "title";
+		document.getElementById("t2").className = "header c";
+		document.getElementById("t3").className = "header p";
+		document.getElementById("t4").className = "header a";
 	} else {
 		document.getElementById("header").className = "header attached";
+		document.getElementById("t1").className = "title attached";
+		document.getElementById("t2").className = "header c  attached";
+		document.getElementById("t3").className = "header p  attached";
+		document.getElementById("t4").className = "header a  attached";
 	}
 	var height = window.innerHeight;
 	var s = document.getElementById("scroll");
@@ -96,14 +105,30 @@ function jump(target) {
 	document.getElementById(target).scrollIntoView();
 }
 
-var previous;
+var projects;
+function setProjects(p) {
+	console.log(p);
+}
+
+var intyVal;
+var previous = "";
 function pick(p) {
-	if (previous != null) {
-		previous.className = "project";
+	if (previous != "") {
+		document.getElementById(previous).className = "project";
+		document.getElementById(previous + "I").children[0].setAttribute("fill", "#28303a");
 	}
-	previous = document.getElementById(p)
-	previous.className = "project selected";
-	$.get("projects/"+ p +"/"+ p +".php", function(data) {$("#projectDisplay").html(data);});
+	previous = p;
+	document.getElementById(p).className = "project selected";
+	document.getElementById(p + "I").children[0].setAttribute("fill", "#f0f2ee");
+	$.get("projects/"+ p +"/"+ p +".php", function(data) {
+		$("#projectDisplay").html(data);
+		intyVal = setInterval(panIn,1000);
+	});
+}
+
+function panIn() {
+	clearInterval(intyVal);
+	document.getElementById("projectDisplay").className = "projectDisplay";
 }
 
 var message;
