@@ -62,33 +62,23 @@
 			</div>
 		</div>
 		<div id="projects" class="projectLock">
-			<div class="projectSelect">
-				<?php
-					$count = 0;
-					$class = "projectOption";
-					foreach ($projects as $p) {
-						if ($count >= 2) {
-							if ($count == sizeof($projects) - 1) {
-								$class = "projectOption last";
-							}
-							echo '<div class="'.$class.'">';
-								echo '<a href="javascript:void(0)" class="hidden" onclick="pick('. "'" . $p . "'" .')">';
-									echo '<div class="projectOptionInner">';
-										echo file_get_contents("./projects/". $p ."/icon.svg");
-										echo '<p id="'.$p.'" class="project">'.$p.'</p>';
-									echo '</div>';
-								echo '</a>';
-							echo '</div>';
-						}
-						$count = $count + 1;
-					}
-				 ?>
-				<!-- <a href="javascript:void(0)" onclick="pick('screeps')"><p id="screeps" class="project">Screeps</p></a>
-				<a href="javascript:void(0)" onclick="pick('benm')"><p id="benm" class="project">BenM</p></a> -->
-			</div>
-			<div id="projectDisplay" class="projectDisplay" onmouseover="projectHover(1)" onmouseout="projectHover(0)">
-				<p id="picker" class="picker">Select a project from the list to get started</p>
-			</div>
+			<?php
+			$p = scandir("./projects");
+			$count = 0;
+			foreach ($p as $project) {
+				if ($count > 1) {
+					echo '<div class="card">';
+						echo '<div class="title">';
+							echo file_get_contents("./projects/BenM (phone)/icon.svg");
+							echo '<p class="projectTitle">'.$project.'</p>';
+						echo '</div>';
+						echo '<img src="./projects/'.$project.'/base.jpg" class="card"/>';
+						echo '<p class="projectDesc">Phone app to recieve and respond to messages from the web client. Coded in React Native with push notifications performed by Google Firebase.</p>';
+					echo '</div>';
+				}
+				$count = $count + 1;
+			}
+			?>
 		</div>
 		<div id="contact" class="contactLock">
 			<div id="benMApp" class="benM">

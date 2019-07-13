@@ -105,32 +105,6 @@ function jump(target) {
 	document.getElementById(target).scrollIntoView();
 }
 
-var projects;
-function setProjects(p) {
-	console.log(p);
-}
-
-var intyVal;
-var previous = "";
-function pick(p) {
-	if (previous != "") {
-		document.getElementById(previous).className = "project";
-		document.getElementById(previous + "I").children[0].setAttribute("fill", "#28303a");
-	}
-	previous = p;
-	document.getElementById(p).className = "project selected";
-	document.getElementById(p + "I").children[0].setAttribute("fill", "#f0f2ee");
-	$.get("projects/"+ p +"/"+ p +".php", function(data) {
-		$("#projectDisplay").html(data);
-		intyVal = setInterval(panIn,1000);
-	});
-}
-
-function panIn() {
-	clearInterval(intyVal);
-	document.getElementById("projectDisplay").className = "projectDisplay";
-}
-
 var message;
 var typing;
 var position = 0;
