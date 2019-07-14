@@ -27,10 +27,10 @@
 	</head>
 	<body id="b" onload="start()">
 		<div id="header" class="header attached">
-			<a href="javascript:void(0)" onclick="sTo(0)"> <p id="t1" class="title attached">Ben Ramsay Foster</p> </a>
-			<a href="javascript:void(0)" onclick="sTo(3)"> <p id="t2" class="header c attached">Contact</p> </a>
-			<a href="javascript:void(0)" onclick="sTo(2)"> <p id="t3" class="header p attached">Projects</p> </a>
-			<a href="javascript:void(0)" onclick="sTo(1)"> <p id="t4" class="header a attached">About</p> </a>
+			<a href="javascript:void(0)" onclick="sTo(0)"> <p id="t1" class="title attachedT">Ben Ramsay Foster</p> </a>
+			<a href="javascript:void(0)" onclick="sTo(3)"> <p id="t2" class="header c attachedH">Contact</p> </a>
+			<a href="javascript:void(0)" onclick="sTo(2)"> <p id="t3" class="header p attachedH">Projects</p> </a>
+			<a href="javascript:void(0)" onclick="sTo(1)"> <p id="t4" class="header a attachedH">About</p> </a>
 			<div id="scroll" class="scroll underTitle"></div>
 		</div>
 		<div id="main" class="typingLock">
@@ -67,11 +67,12 @@
 			$count = 0;
 			foreach ($p as $project) {
 				if ($count > 1) {
+					$col = file_get_contents("./projects/".$project."/col.txt");
 					echo '<a href="https://github.com/BenRF/BenM-app-">';
 					echo '<div class="card">';
 						echo '<div class="title">';
 							echo file_get_contents("./projects/".$project."/icon.svg");
-							echo '<p class="projectTitle">'.$project.'</p>';
+							echo '<p class="projectTitle" style="color: '.$col.'">'.$project.'</p>';
 						echo '</div>';
 						echo '<img src="./projects/'.$project.'/base.jpg" class="card"/>';
 						echo '<p class="projectDesc">'. file_get_contents("./projects/".$project."/desc.txt") .'</p>';

@@ -20,10 +20,10 @@ function scrollCheck() {
 		document.getElementById("t4").className = "header a";
 	} else {
 		document.getElementById("header").className = "header attached";
-		document.getElementById("t1").className = "title attached";
-		document.getElementById("t2").className = "header c  attached";
-		document.getElementById("t3").className = "header p  attached";
-		document.getElementById("t4").className = "header a  attached";
+		document.getElementById("t1").className = "title attachedT";
+		document.getElementById("t2").className = "header c attachedH";
+		document.getElementById("t3").className = "header p attachedH";
+		document.getElementById("t4").className = "header a attachedH";
 	}
 	var height = window.innerHeight;
 	var s = document.getElementById("scroll");

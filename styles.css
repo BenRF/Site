@@ -13,9 +13,10 @@ div.header {
 	width: 100%;
 	font-family: 'Fira Sans', sans-serif;
 	z-index : 1;
-	height: 100px;
+	height: 80px
 }
 div.attached {
+	height: 100px;
 	color: white !important;
 	transition: 0.25s;
 	background: #28303a;
@@ -42,19 +43,19 @@ div.underTitle {
 div.underAbout {
 	transition: 0.5s;
 	width: 57px;
-	top: 60px;
+	top: 50px;
 	left: calc(100% - 431px);
 }
 div.underProjects {
 	transition: 0.5s;
 	width: 72px;
-	top: 60px;
+	top: 50px;
 	left: calc(100% - 273px);
 }
 div.underContact {
 	transition: 0.5s;
 	width: 68.8px;
-	top: 60px;
+	top: 50px;
 	left: calc(100% - 118px);
 }
 div.typingLock {
@@ -66,7 +67,7 @@ div.typingLock {
 	background: #28303a;
 }
 div.aboutLock {
-	padding-top: 106px;
+	padding-top: 90px;
 	position: absolute;
 	top: 100%;
 	width: 99%;
@@ -82,7 +83,7 @@ div.about {
 	padding-left: 2%;
 }
 div.projectLock {
-	padding-top: 120px;
+	padding-top: 100px;
 	position: absolute;
 	top: 200%;
 	width: 99%;
@@ -101,7 +102,7 @@ div.contactLock {
 div.card {
 	transition: 0.5s;
 	float: left;
-	width: 30%;
+	width: 458px;
 	height: 250px;
 	background: white;
 	margin: 0px;
@@ -144,9 +145,6 @@ div.title svg {
 	margin-left: 10px;
 	margin-right: 15px;
 	float: left;
-}
-div.title path {
-	fill: #2d75b6;
 }
 p.projectTitle {
 	font-size: 25px;
@@ -249,10 +247,17 @@ p.header {
     -ms-user-select: none;
     user-select: none;
 	position: absolute;
-	top: 20px;
+	top: 10px;
 	height: 3%;
 }
-p.attached {
+p.attachedT {
+	transition: 0.25s;
+	top: 10px !important;
+	color: #f0f2ee !important;
+}
+p.attachedH {
+	transition: 0.25s;
+	top: 20px !important;
 	color: #f0f2ee !important;
 }
 p.a {
@@ -269,8 +274,9 @@ p.header:hover {
 	color: #c99149 !important;
 }
 p.title {
+	transition: 0.25s;
 	color: #28303a;
-	top: 10px;
+	top: 0px;
 	position: absolute;
 	height: 20px;
 	left: 50px;
