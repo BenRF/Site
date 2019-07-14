@@ -47,7 +47,7 @@ div.underAbout {
 }
 div.underProjects {
 	transition: 0.5s;
-	width: 73px;
+	width: 72px;
 	top: 60px;
 	left: calc(100% - 273px);
 }
@@ -249,7 +249,7 @@ p.header {
     -ms-user-select: none;
     user-select: none;
 	position: absolute;
-	top: 19px;
+	top: 20px;
 	height: 3%;
 }
 p.attached {
