@@ -1,0 +1,1 @@
+Server for managing and storing chats and messages sent between web client and phone app, done in [PHP/NodeJS].
