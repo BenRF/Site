@@ -34,11 +34,6 @@
 			<div id="scroll" class="scroll underTitle"></div>
 		</div>
 		<div id="main" class="typingLock">
-			<p id="cmd7" class="cmd"></p>
-			<p id="cmd6" class="cmd"></p>
-			<p id="cmd5" class="cmd"></p>
-			<p id="cmd4" class="cmd"></p>
-			<p id="cmd3" class="cmd"></p>
 			<p id="cmd2" class="cmd"></p>
 		  <p id="cmd1" class="cmd">Site:/> <b id="bl" class="blink"> _</b></p>
 		</div>

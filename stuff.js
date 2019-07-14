@@ -12,7 +12,7 @@ function sTo(target) {
 
 function scrollCheck() {
 	var height = window.innerHeight;
-	if (document.body.scrollTop > (height*0.75)) {
+	if (document.body.scrollTop > (height*0.2)) {
 		document.getElementById("header").className = "header detached";
 		document.getElementById("t1").className = "title";
 		document.getElementById("t2").className = "header c";
@@ -27,8 +27,8 @@ function scrollCheck() {
 	}
 	var height = window.innerHeight;
 	var s = document.getElementById("scroll");
-	var scrolled = document.body.scrollTop + (0.5*height);
-	var step1 = height * 1;
+	var scrolled = document.body.scrollTop + 50;
+	var step1 = height * 0.25;
 	var step2 = height * 2;
 	var step3 = height * 3;
 	if (scrolled < step1) {
@@ -39,65 +39,6 @@ function scrollCheck() {
 		s.className = "scroll underProjects";
 	} else if (scrolled >= step3) {
 		s.className = "scroll underContact";
-	}
-}
-
-window.onkeydown = function(event) {
-	event.preventDefault();
-	switch (event.keyCode) {
-		case 27:
-		console.log("currently at " + document.body.scrollTop);
-		case 37:
-			//left
-			event.preventDefault();
-			break;
-		case 38:
-			event.preventDefault();
-			sc(1);
-			break;
-		case 39:
-			//right
-			event.preventDefault();
-			break;
-		case 40:
-			event.preventDefault();
-			sc(2);
-			break;
-  }
-}
-
-function sc(direction) {
-	var height = Math.floor(window.innerHeight);
-	var scroll = document.body.scrollTop;
-	if (Math.floor(scroll) % height === 0) {
-		var height = height + (scroll % height);
-		if (direction === 1) {
-			//up
-			window.scrollBy(0,-(height));
-		} else {
-			//down
-			window.scrollBy(0,height);
-		}
-	} else {
-		if (direction === 1) {
-			//up
-			window.scrollBy(0,-(scroll%height));
-		} else {
-			//down
-			window.scrollBy(0,height-(scroll%height));
-		}
-	}
-}
-
-window.addEventListener('wheel',snap);
-var target = 0;
-function snap(e) {
-	e.preventDefault();
-	if (e.deltaY < 0) {
-		sc(1);
-	//scroll down site
-	} else if (e.deltaY >= 0) {
-		sc(2);
 	}
 }
 
@@ -126,7 +67,7 @@ function start() {
 		clearInterval(message);
 		var script = [
 			["Site:/> cd scripts",3,0,""],
-			["Site:/scripts> greeting",4,1,"Site:/scripts>"],
+			["Site:/scripts> greeting.exe",4,1,"Site:/scripts>"],
 			["Hey",2,0,""],
 			["Hey, welcome to my site",4,0,""],
 			["This is a site about Ben",3.5,0,""],
@@ -136,15 +77,14 @@ function start() {
 			["It tells you what he's done",3.5,0,""],
 			["It tells you how to get in touch",4,0,""],
 			["So feel free to read in awe",3.3,0,""],
-			["So feel free to look around",5,0,""],
+			["So feel free to look around",8,0,""],
 			//["Site:/scripts> mysql -u root -p",9,1,"Site:/scripts>"],
 			//["Enter password: pa$$word",3,1,"Enter password:"],
 			//["mysql> use BenRF;",3,1,"mysql>"],
 			//["mysql> SELECT count(languages) FROM skills;",6,1,"mysql>"],
 			//["Count(languages) 10",3,1,"Count(languages)"],
 			//["mysql> quit;",3,1,"mysql>"],
-			["Site:/scripts> cd ..",5,1,"Site:/scripts>"],
-			["Site:/> clear",15,1,"Site:/>"],
+			["Site:/scripts> cd ..",15,1,"Site:/scripts>"],
 		];
 		if (script[position][2] === 1) {
 			//delete the blinker
@@ -155,12 +95,10 @@ function start() {
 			inner = inner.replace('<b id="bl" class="solid"> _</b>',"");
 			document.getElementById("cmd1").innerHTML = inner;
 			//remove the last element
-			var el = document.getElementById("cmd7");
+			var el = document.getElementById("cmd2");
 			el.parentNode.removeChild(el);
 			//move all elements up
-			for (var i = 6; i > 0; i--) {
-					document.getElementById("cmd" + i).id = "cmd" + (i+1);
-			}
+			document.getElementById("cmd1").id = "cmd2";
 			//create new element to go at the start
 			var first = document.createElement("p");
 			first.setAttribute("id","cmd1");
@@ -189,7 +127,7 @@ function start() {
 		change(target);
 	}
 
-	var items = ["cmd1","cmd2","cmd3","cmd4","cmd5","cmd6","cmd7"];
+	var items = ["cmd1","cmd2"];
 	function fade() {
 		clearInterval(flush);
 		for (var i = 0; i < items.length; i++) {
