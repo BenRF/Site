@@ -34,6 +34,93 @@
 			<div id="scroll" class="scroll underTitle"></div>
 		</div>
 		<div id="main" class="typingLock">
+			<style>
+				div.screen {
+					box-shadow: 1px 1px 3px #28303a;
+					position: absolute;
+					height: 400px;
+					width: 650px;
+					background: #28303a;
+					border-radius: 20px;
+					top: 15%;
+					left: calc(50% - 350px);
+					padding: 0px;
+				}
+				div.innerScreen {
+					box-shadow: inset 0px 0px 6px 0px #28303a;
+					padding: 0px;
+					background: #333d4a;
+					width: 93%;
+					height: 88%;
+					border-radius: 3px;
+					margin-left: 3.5%;
+					margin-top: 3.5%;
+				}
+				div.stand {
+					box-shadow: inset 7px 0px 15px -10px #6b7785, inset -7px 0px 15px -10px #6b7785;
+					background: #212830;
+					width: 75px;
+					height: 100px;
+					position: absolute;
+					left: calc(50% - 60px);
+					top: 475px;
+					border-radius: 0px;
+				}
+				div.base {
+					filter: drop-shadow(0 1px 5px rgba(0,0,0,.5));
+					border-bottom: 75px solid #28303a;
+					border-left: 25px solid transparent;
+					border-right: 25px solid transparent;
+					height: 0;
+					width: 150px;
+					position: absolute;
+					top: 535px;
+					left: calc(50% - 120px);
+				}
+				div.desk {
+					box-shadow: 0px 0px 5px #212830;
+					background: #755b28;
+					width: 100%;
+					height: 195px;
+					position: absolute;
+					bottom: 10px;
+				}
+				div.pcSide {
+					clip-path: polygon(0 70%, 0 0, 100% 25%, 100% 100%);
+					background: #28303a;
+					width: 125px;
+					height: 600px;
+					position: absolute;
+					right: 100px;
+					bottom: 20px;
+				}
+				div.pcFront {
+					background: #2e3742;
+					width: 100px;
+					height: 450px;
+					position: absolute;
+					right: 0px;
+					bottom: 20px;
+				}
+				div.pcTop {
+					clip-path: polygon(33% 100%, 0 0, 50% 0, 85% 100%);
+					background: #313b47;
+					width: 375px;
+					height: 150px;
+					position: absolute;
+					right: -150px;
+					bottom: 469px;
+				}
+			</style>
+			<div class="desk"></div>
+			<div class="pcSide"></div>
+			<div class="pcFront"></div>
+			<div class="pcTop"></div>
+			<div class="base"></div>
+			<div class="stand"></div>
+			<div class="screen">
+				<div class="innerScreen"></div>
+			</div>
 			<p id="cmd2" class="cmd"></p>
 		  <p id="cmd1" class="cmd">Site:/> <b id="bl" class="blink"> _</b></p>
 		</div>

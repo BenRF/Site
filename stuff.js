@@ -12,7 +12,7 @@ function sTo(target) {
 
 function scrollCheck() {
 	var height = window.innerHeight;
-	if (document.body.scrollTop > (height*0.2)) {
+	if (document.body.scrollTop > (height*0.85)) {
 		document.getElementById("header").className = "header detached";
 		document.getElementById("t1").className = "title";
 		document.getElementById("t2").className = "header c";
@@ -28,7 +28,7 @@ function scrollCheck() {
 	var height = window.innerHeight;
 	var s = document.getElementById("scroll");
 	var scrolled = document.body.scrollTop + 50;
-	var step1 = height * 0.25;
+	var step1 = height * 0.95;
 	var step2 = height * 2;
 	var step3 = height * 3;
 	if (scrolled < step1) {
