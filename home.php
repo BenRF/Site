@@ -76,6 +76,7 @@
 					position: absolute;
 					top: 535px;
 					left: calc(50% - 120px);
+					border-radius: 23px;
 				}
 				div.desk {
 					box-shadow: 0px 0px 5px #212830;
