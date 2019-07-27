@@ -25,12 +25,12 @@ function scrollCheck() {
 		document.getElementById("t3").className = "header p attachedH";
 		document.getElementById("t4").className = "header a attachedH";
 	}
-	var height = window.innerHeight;
+	var height = window.innerWidth;
 	var s = document.getElementById("scroll");
-	var scrolled = document.body.scrollTop + 50;
+	var scrolled = document.body.scrollLeft + 50;
 	var step1 = height * 0.95;
-	var step2 = height * 2;
-	var step3 = height * 3;
+	var step2 = height * 1.95;
+	var step3 = height * 2.95;
 	if (scrolled < step1) {
 		s.className = "scroll underTitle";
 	} else if (scrolled >= step1 && scrolled < step2) {
