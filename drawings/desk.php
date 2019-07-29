@@ -7,7 +7,7 @@
         background: #28303a;
         border-radius: 20px;
         bottom: 230px;
-        left: 500px;
+        left: 325px;
         padding: 0px;
     }
     div.innerScreen {
@@ -26,7 +26,7 @@
         width: 75px;
         height: 100px;
         position: absolute;
-        left: 790px;
+        left: 620px;
         bottom: 160px;
         border-radius: 0px;
     }
@@ -39,7 +39,7 @@
         width: 150px;
         position: absolute;
         bottom: 125px;
-        left: 730px;
+        left: 558px;
         border-radius: 23px;
     }
     div.desk {
@@ -47,18 +47,19 @@
         border-bottom: 175px solid #755b28;
         border-left: 100px solid transparent;
         border-right: 120px solid transparent;
-        width: 1430px;
+        width: 1280px;
         height: 0px;
         position: absolute;
-        left: 0px;
+        left: 10px;
         bottom: 30px;
     }
     div.deskFront {
         background: #634d22;
-        width: 1650px;
+        width: 1500px;
         height: 30px;
         position: absolute;
         bottom: 0px;
+        left: 10px;
     }
     div.pcSide {
         clip-path: polygon(0 70%, 0 0, 100% 25%, 100% 100%);
@@ -66,7 +67,7 @@
         width: 125px;
         height: 600px;
         position: absolute;
-        left: 1300px;
+        left: 1150px;
         bottom: 40px;
     }
     div.pcWindow {
@@ -80,10 +81,10 @@
     }
     div.pcFront {
         background: #2e3742;
-        width: 193px;
+        width: 195px;
         height: 450px;
         position: absolute;
-        left: 1425px;
+        left: 1274px;
         bottom: 40px;
     }
     div.pcTop {
@@ -92,7 +93,7 @@
         width: 375px;
         height: 150px;
         position: absolute;
-        left: 1300px;
+        left: 1150px;
         bottom: 489px;
     }
     div.pcBack {
@@ -109,7 +110,7 @@
         border: 2px solid white;
         margin-left: 160px;
         margin-top: 20px;
-        border-radius: 5px;
+        border-radius: 10px;
         animation: fade 3s infinite;
     }
     @keyframes fade {
@@ -148,12 +149,12 @@
     div.leg1 {
         filter: drop-shadow(0 1px 5px rgba(0,0,0,.5));
         bottom: 45px;
-        left: 1380px;
+        left: 1230px;
     }
     div.leg2 {
         filter: drop-shadow(0 1px 5px rgba(0,0,0,.5));
-        bottom: 130px;
-        left: 1320px;
+        bottom: 150px;
+        left: 1158px;
     }
     div.frame {
         background: #3da1cc;

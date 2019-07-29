@@ -327,7 +327,7 @@ p.cmd {
 	font-weight: 500;
 	margin: 0px;
 	padding: 0px;
-	left: 540px;
+	left: 360px;
 	position: absolute;
 	-webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -338,7 +338,7 @@ p.cmd {
 }
 #cmd1 {
 	font-size: 30px;
-	bottom: 250px;
+	bottom: 255px;
 }
 #cmd2 {
 	opacity: 0;
