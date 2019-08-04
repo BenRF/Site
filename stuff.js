@@ -27,7 +27,7 @@ function scrollCheck() {
 	}
 	var height = window.innerWidth;
 	var s = document.getElementById("scroll");
-	var scrolled = document.body.scrollLeft + 50;
+	var scrolled = document.body.scrollTop + 50;
 	var step1 = height * 0.95;
 	var step2 = height * 1.95;
 	var step3 = height * 2.95;
@@ -66,8 +66,6 @@ function start() {
 	function update() {
 		clearInterval(message);
 		var script = [
-			["Site:/> cd scripts",3,0,""],
-			["Site:/scripts> greeting.exe",4,1,"Site:/scripts>"],
 			["Hey",2,0,""],
 			["Hey, welcome to my site",4,0,""],
 			["This is a site about Ben",3.5,0,""],
@@ -78,13 +76,6 @@ function start() {
 			["It tells you how to get in touch",4,0,""],
 			["So feel free to read in awe",3.3,0,""],
 			["So feel free to look around",8,0,""],
-			//["Site:/scripts> mysql -u root -p",9,1,"Site:/scripts>"],
-			//["Enter password: pa$$word",3,1,"Enter password:"],
-			//["mysql> use BenRF;",3,1,"mysql>"],
-			//["mysql> SELECT count(languages) FROM skills;",6,1,"mysql>"],
-			//["Count(languages) 10",3,1,"Count(languages)"],
-			//["mysql> quit;",3,1,"mysql>"],
-			["Site:/scripts> cd ..",15,1,"Site:/scripts>"],
 		];
 		if (script[position][2] === 1) {
 			//delete the blinker

@@ -34,52 +34,58 @@
 			<div id="scroll" class="scroll underTitle"></div>
 		</div>
 		<div id="main" class="typingLock">
-			<?php
-				echo file_get_contents("./drawings/desk.php");
-			?>
 			<p id="cmd2" class="cmd"></p>
-		  <p id="cmd1" class="cmd">Site:/> <b id="bl" class="blink"> _</b></p>
-		</div>
-		<div id="about" class="aboutLock">
-			<div class="about">
-				<img class="self" src="./self.jpg"/>
-				<p class="about">
-					I am currently studying Computer science at the University of Essex and am just about to start my third and final year of the course.
-				</p>
-				<p class="about">
-					My main interest in coding comes from the enjoyment of finding solutions regardless of if it's getting a complex feature or creating a
-					clear design for a user to interact with.
-				</p>
-				<p class="about">
-					I believe that thanks to this I have been able to create a website that portrays my passion for design and my attention to detail while
-					sufficiently
-				</p>
-				<p class="about">
-					While my main focus is to finish my degree, I am always looking for and are more than welcome to opportunities that can help me gain more experience outside of university.
-				</p>
-			</div>
+		  <p id="cmd1" class="cmd"><b id="bl" class="blink"> _</b></p>
 		</div>
 		<div id="projects" class="projectLock">
 			<?php
-			$p = scandir("./projects");
-			$count = 0;
-			foreach ($p as $project) {
-				if ($count > 1) {
-					$col = file_get_contents("./projects/".$project."/col.txt");
-					echo '<a href="https://github.com/BenRF/BenM-app-">';
-					echo '<div class="card">';
-						echo '<div class="title">';
-							echo file_get_contents("./projects/".$project."/icon.svg");
-							echo '<p class="projectTitle" style="color: '.$col.'">'.$project.'</p>';
-						echo '</div>';
-						echo '<img src="./projects/'.$project.'/base.jpg" class="card"/>';
-						echo '<p class="projectDesc">'. file_get_contents("./projects/".$project."/desc.txt") .'</p>';
-					echo '</div>';
-					echo '</a>';
-				}
-				$count = $count + 1;
-			}
+			// $p = scandir("./projects");
+			// $count = 0;
+			// foreach ($p as $project) {
+			// 	if ($count > 1) {
+			// 		$col = file_get_contents("./projects/".$project."/col.txt");
+			// 		echo '<a href="https://github.com/BenRF/BenM-app-">';
+			// 		echo '<div class="card">';
+			// 			echo '<div class="title">';
+			// 				echo file_get_contents("./projects/".$project."/icon.svg");
+			// 				echo '<p class="projectTitle" style="color: '.$col.'">'.$project.'</p>';
+			// 			echo '</div>';
+			// 			echo '<img src="./projects/'.$project.'/base.jpg" class="card"/>';
+			// 			echo '<p class="projectDesc">'. file_get_contents("./projects/".$project."/desc.txt") .'</p>';
+			// 		echo '</div>';
+			// 		echo '</a>';
+			// 	}
+			// 	$count = $count + 1;
+			// }
 			?>
+			<div class="project" style="background: #4192cc;">
+				<div class="icon">
+					<?php
+						echo file_get_contents("./projects/BenM (client)/icon.svg");
+					?>
+				</div>
+				<p class="projectTitle">BenM</p>
+				<p class="projectDescription">
+					A web application that allows for a site owner to offer live chat functionality on their website using their mobile phone. Using NodeJS for websockets between the
+					Javascript web client and the React Native phone app allowing for easier and more accessible communication with potential customers.
+				</p>
+				<div class="projectLinks">
+					<div class="projectLink">
+						<p class="projectButtonTag">Demo</p>
+					</div>
+				</div>
+			</div>
+			<div class="project" style="background: #838c84;">
+				<div class="icon">
+					<?php
+						echo file_get_contents("./projects/website/icon.svg");
+					?>
+				</div>
+				<p class="projectTitle">Site</p>
+				<p class="projectDescription">
+					My personal site to act as a digital portfolio.
+				</p>
+			</div>
 		</div>
 		<div id="contact" class="contactLock">
 			<div id="benMApp" class="benM">
