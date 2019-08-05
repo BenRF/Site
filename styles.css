@@ -2,13 +2,13 @@ html {
 	scroll-behavior: smooth;
 }
 body {
-	background: #f3f3f1;
+	background: white;
 	margin: 0px;
 	font-family: 'Roboto', sans-serif;
 }
 div.header {
 	position: fixed;
-	background: #f7f7f7;
+	background: transparent;
 	float: left;
 	width: 100%;
 	font-family: 'Fira Sans', sans-serif;
@@ -16,16 +16,13 @@ div.header {
 	height: 100px
 }
 div.attached {
-	box-shadow: 0px 0px 15px #28303a;
 	color: white !important;
 	transition: 0.25s;
-	background: transparent;
 	box-shadow: 0px 1px 10px transparent;
 }
 div.detached {
-	color: #28303a !important;
+	color: #949494 !important;
 	transition: 0.25s;
-	box-shadow: 0px 1px 10px #c1c1c1;
 }
 div.scroll {
 	border-style: solid;
@@ -70,12 +67,13 @@ div.typingLock {
 div.aboutLock {
 	padding-top: 100px;
 	position: absolute;
-	top: 0%;
-	left: 100%;
+	top: 650px;
+	left: 0%;
 	width: 99%;
-	height: 100vh;
+	height: 400px;
 	padding-left: 0.5%;
 	padding-right: 0.5%;
+	background: #dbdbdb;
 }
 div.about {
 	position: absolute;
@@ -85,7 +83,7 @@ div.about {
 	padding-left: 2%;
 }
 div.projectLock {
-	top: 650px;
+	top: 1050px;
 	left: 0%;
 	width: 100%;
 	position: absolute;
@@ -165,7 +163,7 @@ p.projectDescription {
 	color: #f3f3f1;
 	margin: 0px;
 	padding: 0px;
-	padding-top: 50px;
+	padding-top: 40px;
 	padding-left: 20px;
 	max-width: 40%;
 }
@@ -263,7 +261,7 @@ p.detail {
 	font-weight: bold;
 }
 p.header {
-	color: #403937;
+	color: #7a7a7a;
 	transition: 0.75s;
 	font-size: 20px;
 	font-weight: bold;
@@ -301,7 +299,7 @@ p.header:hover {
 }
 p.title {
 	transition: 0.25s;
-	color: #403937;
+	color: #7a7a7a;
 	top: 10px;
 	position: absolute;
 	height: 20px;
@@ -317,7 +315,7 @@ p.title {
     user-select: none;
 }
 p.about {
-	color: #818b96;
+	color: #7a7a7a;
 	font-size: 21px;
 	margin-left: 20px;
 	margin-top: 10px;
@@ -353,21 +351,21 @@ p.cmd {
 	font-weight: 500;
 	margin: 0px;
 	padding: 0px;
-	left: 175px;
-	position: absolute;
+	padding-top: 125px;
 	-webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  top: 275px;
 }
 #cmd1 {
 	opacity: 1;
+	transition: 0.5s;
 }
 #cmd2 {
 	opacity: 0;
+	transition: 0.5s;
 }
 b.solid {
 	color: #c99149;
@@ -438,7 +436,6 @@ div.msg {
 	width: calc(100% - 70px);
 	top: calc(100% - 80px);
 }
-
 input.msg {
 	transition: 0.5s;
 	width: 90%;
@@ -448,10 +445,24 @@ input.msg {
 	border-color: #7a7a7a;
 	background: transparent;
 }
-
 input.msg:focus {
 	transition: 1s;
 	outline: 0;
 	border-color: #c99149;
 	border-width: 0px 0px 2px 0px;
+}
+div.phoneDrawing {
+	background: #28303a;
+	width: 325px;
+	height: 371px;
+	float: right;
+	margin-right: 425px;
+	border-radius: 30px 30px 0px 0px ;
+}
+div.phoneScreen {
+	background: #dbdbdb;
+	width: 295px;
+	height: 325px;
+	margin-left: 15px;
+	margin-top: 46px;
 }

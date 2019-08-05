@@ -22,7 +22,6 @@
 			window.onscroll = scrollCheck;
 			window.onfocus = resume;
 			window.onblur = pause;
-
 		</script>
 	</head>
 	<body id="b" onload="start()">
@@ -36,6 +35,13 @@
 		<div id="main" class="typingLock">
 			<p id="cmd2" class="cmd"></p>
 		  <p id="cmd1" class="cmd"><b id="bl" class="blink"> _</b></p>
+		</div>
+		<div class="aboutLock">
+			<div class="about">
+				<p class="about">
+					He is Ben.
+				</p>
+			</div>
 		</div>
 		<div id="projects" class="projectLock">
 			<?php
@@ -59,6 +65,9 @@
 			// }
 			?>
 			<div class="project" style="background: #4192cc;">
+				<div class="phoneDrawing">
+					<div class="phoneScreen"></div>
+				</div>
 				<div class="icon">
 					<?php
 						echo file_get_contents("./projects/BenM (client)/icon.svg");
@@ -75,7 +84,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="project" style="background: #838c84;">
+			<div class="project" style="background: #818fa2;">
 				<div class="icon">
 					<?php
 						echo file_get_contents("./projects/website/icon.svg");

@@ -12,7 +12,8 @@ function sTo(target) {
 
 function scrollCheck() {
 	var height = window.innerHeight;
-	if (document.body.scrollTop > (height*0.85)) {
+	var scrolled = document.body.scrollTop;
+	if (scrolled > 600 && scrolled < 1000) {
 		document.getElementById("header").className = "header detached";
 		document.getElementById("t1").className = "title";
 		document.getElementById("t2").className = "header c";
@@ -27,9 +28,8 @@ function scrollCheck() {
 	}
 	var height = window.innerWidth;
 	var s = document.getElementById("scroll");
-	var scrolled = document.body.scrollTop + 50;
-	var step1 = height * 0.95;
-	var step2 = height * 1.95;
+	var step1 = 600;
+	var step2 = 1000;
 	var step3 = height * 2.95;
 	if (scrolled < step1) {
 		s.className = "scroll underTitle";
@@ -133,7 +133,7 @@ function start() {
 			document.getElementById(items[i]).innerHTML = "";
 			document.getElementById(items[i]).className = "cmd";
 		}
-		document.getElementById("cmd1").innerHTML = 'Site:/> <b id="bl" class="blink"> _</b>';
+		document.getElementById("cmd1").innerHTML = '<b id="bl" class="blink"> _</b>';
 	}
 }
 
