@@ -64,10 +64,8 @@
 			// 	$count = $count + 1;
 			// }
 			?>
-			<div class="project" style="background: #4192cc;">
-				<div class="phoneDrawing">
-					<div class="phoneScreen"></div>
-				</div>
+			<div class="project" style="background: #4192cc;height: auto;">
+			<div class="desc">
 				<div class="icon">
 					<?php
 						echo file_get_contents("./projects/BenM (client)/icon.svg");
@@ -80,11 +78,18 @@
 				</p>
 				<div class="projectLinks">
 					<div class="projectLink">
-						<p class="projectButtonTag">Demo</p>
+						<p class="projectButtonTag">Try it out</p>
 					</div>
 				</div>
 			</div>
+			<div class="drawing">
+				<div class="phoneDrawing">
+					<div class="phoneScreen"></div>
+				</div>
+		</div>
+			</div>
 			<div class="project" style="background: #818fa2;">
+				<div class="desc">
 				<div class="icon">
 					<?php
 						echo file_get_contents("./projects/website/icon.svg");
@@ -95,9 +100,11 @@
 					My personal site to act as a digital portfolio.
 				</p>
 			</div>
+			</div>
 		</div>
 		<div id="contact" class="contactLock">
-			<div id="benMApp" class="benM">
+			<p>ADD CONTACT DETAILS HERE</p>
+			<!-- <div id="benMApp" class="benM">
 				<div class="msg">
 					<input class="msg" type="text"/>
 				</div>
@@ -115,7 +122,7 @@
 					<img class="detail" src="icons/discord.png" height="80" width="80">
 					<p class="detail" style="color: #7289da !important;">B3athunter #9950</p>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</body>
 </html>

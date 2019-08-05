@@ -90,12 +90,11 @@ div.projectLock {
 	background: #d1d1cf;
 }
 div.contactLock {
-	padding-top: 106px;
 	position: absolute;
-	top: 300%;
+	top: 275%;
 	left: 0%;
 	width: 99%;
-	height: 85%;
+	height: 300px;
 	padding-left: 0.5%;
 	padding-right: 0.5%;
 }
@@ -148,8 +147,9 @@ div.icon svg {
 }
 div.project {
 	padding-left: 100px;
-	padding-top: 125px;
 	padding-bottom: 155px;
+	height: auto;
+	position: relative;
 }
 p.projectTitle {
 	font-size: 40px;
@@ -159,7 +159,7 @@ p.projectTitle {
 	padding-top: 20px;
 }
 p.projectDescription {
-	font-size: 16px;
+	font-size: 18px;
 	color: #f3f3f1;
 	margin: 0px;
 	padding: 0px;
@@ -169,7 +169,8 @@ p.projectDescription {
 }
 div.projectLinks {
 	background: green;
-	margin-top: 30px;
+	margin-top: 15px;
+	margin-left: 10px;
 }
 div.projectLink {
 	transition: 0.5s;
@@ -451,12 +452,25 @@ input.msg:focus {
 	border-color: #c99149;
 	border-width: 0px 0px 2px 0px;
 }
+div.drawing {
+	float: right;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	width: 55%;
+	height: 100%;
+}
+div.desc {
+	padding-top: 125px;
+	height: 100%;
+}
 div.phoneDrawing {
+	position: absolute;
+	bottom: 0px;
+	right: 20px;
 	background: #28303a;
 	width: 325px;
 	height: 371px;
-	float: right;
-	margin-right: 425px;
 	border-radius: 30px 30px 0px 0px ;
 }
 div.phoneScreen {
