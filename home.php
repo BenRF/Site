@@ -15,7 +15,7 @@
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="theme-color" content="#ffffff">
 		<link rel="stylesheet" href="styles.css">
-		<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Roboto&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Blinker|Fira+Sans|Roboto&display=swap" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 		<script src="stuff.js"></script>
 		<script>
@@ -39,32 +39,14 @@
 		<div class="aboutLock">
 			<div class="about">
 				<p class="about">
-					He is Ben.
+					As a computer science student I find myself coding in a variety of languages and context's ranging from encrypting text in Python, implementing
+					lists in Java to controlling Sql with php. However one area that I keep going back to is design, its nice and all to create functional and
+					efficient code but if presented poorly or not designed well.
 				</p>
 			</div>
 		</div>
 		<div id="projects" class="projectLock">
-			<?php
-			// $p = scandir("./projects");
-			// $count = 0;
-			// foreach ($p as $project) {
-			// 	if ($count > 1) {
-			// 		$col = file_get_contents("./projects/".$project."/col.txt");
-			// 		echo '<a href="https://github.com/BenRF/BenM-app-">';
-			// 		echo '<div class="card">';
-			// 			echo '<div class="title">';
-			// 				echo file_get_contents("./projects/".$project."/icon.svg");
-			// 				echo '<p class="projectTitle" style="color: '.$col.'">'.$project.'</p>';
-			// 			echo '</div>';
-			// 			echo '<img src="./projects/'.$project.'/base.jpg" class="card"/>';
-			// 			echo '<p class="projectDesc">'. file_get_contents("./projects/".$project."/desc.txt") .'</p>';
-			// 		echo '</div>';
-			// 		echo '</a>';
-			// 	}
-			// 	$count = $count + 1;
-			// }
-			?>
-			<div class="project" style="background: #4192cc;height: auto;">
+			<div class="project" style="background: #4192cc; height: auto;">
 			<div class="desc">
 				<div class="icon">
 					<?php
@@ -88,18 +70,32 @@
 				</div>
 		</div>
 			</div>
-			<div class="project" style="background: #818fa2;">
-				<div class="desc">
-				<div class="icon">
-					<?php
-						echo file_get_contents("./projects/website/icon.svg");
-					?>
+			<div class="project" style="background: #929a9d; height: auto;">
+				<div class="stats">
+					<div class="innerStat">
+						<?php
+							$stats = array("Rooms owned","Units","Average unit cost","Average room level");
+							foreach ($stats as $s) {
+								echo '<div class="stat">';
+									echo '<p class="statLabel">'.$s.'</p>';
+									echo '<p class="stat">0</p>';
+								echo '</div>';
+							}
+						?>
+					</div>
 				</div>
-				<p class="projectTitle">Site</p>
-				<p class="projectDescription">
-					My personal site to act as a digital portfolio.
-				</p>
-			</div>
+				<div class="desc" style="padding-left: 650px;">
+					<div class="icon">
+						<?php
+							echo file_get_contents("./projects/Screeps/icon.svg");
+						?>
+					</div>
+					<p class="projectTitle">Screeps</p>
+						<p class="projectDescription" style="max-width: 80%;">
+							An online MMO based around programming unit using Javascript. Requires solutions to be scalable and robust to deal with both other players
+							and AI opponents.
+						</p>
+				</div>
 			</div>
 		</div>
 		<div id="contact" class="contactLock">

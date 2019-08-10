@@ -13,7 +13,7 @@ function sTo(target) {
 function scrollCheck() {
 	var height = window.innerHeight;
 	var scrolled = document.body.scrollTop;
-	if (scrolled > 600 && scrolled < 1000) {
+	if (scrolled > (height - 50) && scrolled < 1000) {
 		document.getElementById("header").className = "header detached";
 		document.getElementById("t1").className = "title";
 		document.getElementById("t2").className = "header c";
@@ -70,12 +70,10 @@ function start() {
 			["Hey",2,0,""],
 			["Hey, welcome to my site",4,0,""],
 			["This is a site about Ben",3.5,0,""],
-			["This is a site about Ben (duh)",1,0,""],
-			["This is a site about Ben",1,0,""],
 			["It tells you who he is",4,0,""],
 			["It tells you what he's done",3.5,0,""],
+			["It tells you what he can do",3.5,0,""],
 			["It tells you how to get in touch",4,0,""],
-			["So feel free to read in awe",3.3,0,""],
 			["So feel free to look around",8,0,""],
 		];
 		if (script[position][2] === 1) {
