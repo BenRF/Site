@@ -56,7 +56,7 @@ div.underContact {
 	left: calc(100% - 118px);
 }
 div.typingLock {
-	position: absolute;
+	float: left;
 	height: 100%;
 	width: 100%;
 	top: 0px;
@@ -65,7 +65,7 @@ div.typingLock {
 	text-align: center;
 }
 div.aboutLock {
-	position: absolute;
+	float: left;
 	top: 100%;
 	left: 0%;
 	width: 100%;
@@ -79,16 +79,13 @@ div.about {
 	padding: 5%;
 }
 div.projectLock {
-	top: 1050px;
-	left: 0%;
+	height: auto;
 	width: 100%;
-	position: absolute;
+	float: left;
 	background: #d1d1cf;
 }
 div.contactLock {
-	position: absolute;
-	top: 275%;
-	left: 0%;
+	float: left;
 	width: 99%;
 	height: 300px;
 	padding-left: 0.5%;
@@ -141,6 +138,9 @@ div.icon svg {
 	margin-right: 15px;
 	float: left;
 }
+div.innerProjects {
+	position: absolute;
+}
 div.project {
 	padding-bottom: 155px;
 	height: auto;
@@ -192,6 +192,28 @@ p.projectButtonTag {
 	margin: 0px;
 	font-size: 20px;
 	color: #f3f3f1;
+}
+div.screepsDrawing {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+div.rock {
+	background: #343738;
+	position: absolute;
+	border-radius: 20px 20px 0px 0px;
+}
+div.rockCorner {
+	background: #343738;
+	position: absolute;
+}
+div.screep {
+	background: red;
+	width: 25px;
+	height: 25px;
+	border-radius: 12.5px;
+	position: absolute;
+	transition: 1s;
 }
 div.stats {
 	position: absolute;

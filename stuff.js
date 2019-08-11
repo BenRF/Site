@@ -53,14 +53,66 @@ var position = 0;
 var target = "";
 function pause() {
 	clearInterval(message);
+	clearInterval(movement);
+	movement = null;
 }
 
 function resume() {
 	start();
 }
 
+var screeps = [0,0,0,0];
+var movement;
+function screep() {
+	for (var i = 1; i < 5; i++) {
+		var s = document.getElementById("screep" + i);
+		var p = screeps[i-1];
+		if (p == 0) {
+			p = 1;
+			screepRight(s);
+		} else if (p == 1) {
+			p = 2;
+			screepUp(s);
+		} else if (p == 2) {
+			p = 3;
+			screepLeft(s);
+		} else {
+			p = 0;
+			screepDown(s);
+		}
+		screeps[i-1] = p;
+	}
+}
+
+function screepLeft(screep) {
+	var currentPos = screep.style.left;
+	currentPos = currentPos.substring(0, currentPos.length - 2);
+	screep.style.left = parseInt(currentPos,10) - 25;
+}
+
+function screepRight(screep) {
+	var currentPos = screep.style.left;
+	currentPos = currentPos.substring(0, currentPos.length - 2);
+	screep.style.left = parseInt(currentPos,10) + 25;
+}
+
+function screepUp(screep) {
+	var currentPos = screep.style.bottom;
+	currentPos = currentPos.substring(0, currentPos.length - 2);
+	screep.style.bottom = parseInt(currentPos,10) + 25;
+}
+
+function screepDown(screep) {
+	var currentPos = screep.style.bottom;
+	currentPos = currentPos.substring(0, currentPos.length - 2);
+	screep.style.bottom = parseInt(currentPos,10) - 25;
+}
+
 function start() {
   message = setInterval(update, 5000);
+	if (movement == null) {
+		movement = setInterval(screep, 2000);
+	}
 	var flush;
 	var count = 0;
 

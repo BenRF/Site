@@ -46,7 +46,7 @@
 			</div>
 		</div>
 		<div id="projects" class="projectLock">
-			<div class="project" style="background: #4192cc; height: auto;">
+			<div class="project" style="background: #4192cc; height: 375px;">
 			<div class="desc">
 				<div class="icon">
 					<?php
@@ -70,7 +70,17 @@
 				</div>
 		</div>
 			</div>
-			<div class="project" style="background: #929a9d; height: auto;">
+			<div class="project" style="background: #686e70; height: 375px;">
+				<div class="screepsDrawing">
+					<div class="rock" style="width: 400px; height: 50px; bottom: 0px; left: 24%;"></div>
+					<div class="rock" style="width: 150px; height: 25px; bottom: 50px; left: 40%;"></div>
+					<div class="rock" style="width: 200px; height: 25px; bottom: 0px; left: -25px;"></div>
+					<div class="rockCorner"></div>
+					<div id="screep1" class="screep" style="left: 250px; bottom: 50px;"></div>
+					<div id="screep2" class="screep" style="left: 150px; bottom: 50px;"></div>
+					<div id="screep3" class="screep" style="left: 50px; bottom: 50px;"></div>
+					<div id="screep4" class="screep" style="left: 250px; bottom: 150px;"></div>
+				</div>
 				<div class="stats">
 					<div class="innerStat">
 						<?php
