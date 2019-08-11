@@ -70,7 +70,7 @@
 				</div>
 		</div>
 			</div>
-			<div class="project" style="background: #686e70; height: 375px;">
+			<div class="project" style="background: #686e70; height: 375px; box-shadow: inset 0px 0px 8px 0px #545354;">
 				<div class="screepsDrawing">
 					<div class="rock" style="width: 50px; height: 325px; top: 25px; left: -25px;"></div>
 					<div class="rock" style="width: 50px; height: 100px; top: 75px; left: -5px;"></div>
