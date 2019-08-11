@@ -107,7 +107,7 @@
 					</div>
 					<p class="projectTitle">Screeps</p>
 						<p class="projectDescription" style="max-width: 80%;">
-							An online MMO based around programming unit using Javascript. Requires solutions to be scalable and robust to deal with both other players
+							An online MMO based around programming units using Javascript. Requires solutions to be scalable and robust to deal with both other players
 							and AI opponents.
 						</p>
 				</div>
