@@ -13,7 +13,7 @@ function sTo(target) {
 function scrollCheck() {
 	var height = window.innerHeight;
 	var scrolled = document.body.scrollTop;
-	if (scrolled > (height - 50) && scrolled < 1000) {
+	if (scrolled > (height - 50) && scrolled < (height + 350)) {
 		document.getElementById("header").className = "header detached";
 		document.getElementById("t1").className = "title";
 		document.getElementById("t2").className = "header c";
@@ -61,26 +61,47 @@ function resume() {
 	start();
 }
 
-var screeps = [0,0,0,0];
+
+//  0  1  2
+//  7  C  3
+//  6  5  4
+
+var screeps = [
+	[0,[3,3,5,4,5,5,4,5,5,5,6,5,5,5,6,6,7,1,1,1,1,1,1,1,1,1,1,1,1,1,1]],
+	[0,[3,4,3,4,3,3,3,3,4,3,3,2,3,2,2,2,1,2,2,3,3,5,4,4,4,6,7,7,7,7,7,7,7,6,7,7,7,7,7,7,7,0,7,7,7,7,7,7,1]]
+];
 var movement;
 function screep() {
-	for (var i = 1; i < 5; i++) {
+	for (var i = 1; i <= screeps.length; i++) {
 		var s = document.getElementById("screep" + i);
-		var p = screeps[i-1];
+		var currentMove = screeps[i-1][0];
+		var p = screeps[i-1][1][currentMove];
 		if (p == 0) {
-			p = 1;
-			screepRight(s);
+			screepUp(s);
+			screepLeft(s);
 		} else if (p == 1) {
-			p = 2;
 			screepUp(s);
 		} else if (p == 2) {
-			p = 3;
-			screepLeft(s);
-		} else {
-			p = 0;
+		  screepUp(s);
+			screepRight(s);
+		} else if (p == 3) {
+			screepRight(s);
+		} else if (p == 4) {
 			screepDown(s);
+			screepRight(s);
+		} else if (p == 5) {
+			screepDown(s);
+		} else if (p == 6) {
+			screepDown(s);
+			screepLeft(s);
+		} else if (p == 7) {
+			screepLeft(s);
 		}
-		screeps[i-1] = p;
+		if (currentMove == screeps[i-1][1].length) {
+			screeps[i-1][0] = 0;
+		} else {
+			screeps[i-1][0] = screeps[i-1][0] + 1;
+		}
 	}
 }
 
@@ -97,15 +118,15 @@ function screepRight(screep) {
 }
 
 function screepUp(screep) {
-	var currentPos = screep.style.bottom;
+	var currentPos = screep.style.top;
 	currentPos = currentPos.substring(0, currentPos.length - 2);
-	screep.style.bottom = parseInt(currentPos,10) + 25;
+	screep.style.top = parseInt(currentPos,10) - 25;
 }
 
 function screepDown(screep) {
-	var currentPos = screep.style.bottom;
+	var currentPos = screep.style.top;
 	currentPos = currentPos.substring(0, currentPos.length - 2);
-	screep.style.bottom = parseInt(currentPos,10) - 25;
+	screep.style.top = parseInt(currentPos,10) + 25;
 }
 
 function start() {

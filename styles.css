@@ -145,6 +145,7 @@ div.project {
 	padding-bottom: 155px;
 	height: auto;
 	position: relative;
+	overflow: hidden;
 }
 p.projectTitle {
 	font-size: 40px;
@@ -201,16 +202,12 @@ div.screepsDrawing {
 div.rock {
 	background: #343738;
 	position: absolute;
-	border-radius: 20px 20px 0px 0px;
-}
-div.rockCorner {
-	background: #343738;
-	position: absolute;
+	border-radius: 20px 20px 20px 20px;
 }
 div.screep {
 	background: red;
-	width: 25px;
-	height: 25px;
+	width: 20px;
+	height: 20px;
 	border-radius: 12.5px;
 	position: absolute;
 	transition: 1s;

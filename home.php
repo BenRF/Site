@@ -72,14 +72,19 @@
 			</div>
 			<div class="project" style="background: #686e70; height: 375px;">
 				<div class="screepsDrawing">
-					<div class="rock" style="width: 400px; height: 50px; bottom: 0px; left: 24%;"></div>
-					<div class="rock" style="width: 150px; height: 25px; bottom: 50px; left: 40%;"></div>
-					<div class="rock" style="width: 200px; height: 25px; bottom: 0px; left: -25px;"></div>
-					<div class="rockCorner"></div>
-					<div id="screep1" class="screep" style="left: 250px; bottom: 50px;"></div>
-					<div id="screep2" class="screep" style="left: 150px; bottom: 50px;"></div>
-					<div id="screep3" class="screep" style="left: 50px; bottom: 50px;"></div>
-					<div id="screep4" class="screep" style="left: 250px; bottom: 150px;"></div>
+					<div class="rock" style="width: 50px; height: 325px; top: 25px; left: -25px;"></div>
+					<div class="rock" style="width: 50px; height: 100px; top: 75px; left: -5px;"></div>
+					<div class="rock" style="width: 75px; height: 100px; top: 125px; left: -5px;"></div>
+					<div class="rock" style="width: 75px; height: 75px; top: 250px; left: -25px;"></div>
+
+					<div class="rock" style="width: 50px; height: 175px; top: 400px; left: -20px;"></div>
+					<div class="rock" style="width: 75px; height: 150px; top: 425px; left: -20px;"></div>
+					<div class="rock" style="width: 50px; height: 50px; top: 475px; left: 25px;"></div>
+
+					<div class="rock" style="width: 175px; height: 50px; top: -20px; left: 75px;"></div>
+
+					<div id="screep1" class="screep" style="left: -22.5px; top: 2.5px"></div>
+					<div id="screep2" class="screep" style="left: -47.5px; top: 350px"></div>
 				</div>
 				<div class="stats">
 					<div class="innerStat">
