@@ -115,25 +115,6 @@
 		</div>
 		<div id="contact" class="contactLock">
 			<p>ADD CONTACT DETAILS HERE</p>
-			<!-- <div id="benMApp" class="benM">
-				<div class="msg">
-					<input class="msg" type="text"/>
-				</div>
-			</div>
-			<div class="details">
-				<div class="detail">
-					<img class="detail" src="icons/mail.png" height="80" width="80">
-					<a href="mailto:benramsayfoster@gmail.com"><p class="detail link2" style="color: #e75a4d !important;">benramsayfoster@gmail.com</p></a>
-				</div>
-				<div class="detail">
-					<img class="detail" src="icons/git.png" height="80" width="80">
-					<a href="https://github.com/BenRF"><p class="detail link">BenRF</p></a>
-				</div>
-				<div class="detail">
-					<img class="detail" src="icons/discord.png" height="80" width="80">
-					<p class="detail" style="color: #7289da !important;">B3athunter #9950</p>
-				</div>
-			</div> -->
 		</div>
 	</body>
 </html>

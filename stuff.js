@@ -27,7 +27,7 @@ function scrollCheck() {
 		document.getElementById("t4").className = "header a attachedH";
 	}
 	var height = window.innerWidth;
-	scrolled = scrolled + (0.15 * height);
+	scrolled = scrolled + (0.08 * window.innerHeight);
 	var s = document.getElementById("scroll");
 	var step1 = 600;
 	var step2 = 1000;
