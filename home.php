@@ -106,15 +106,28 @@
 						?>
 					</div>
 					<p class="projectTitle">Screeps</p>
-						<p class="projectDescription" style="max-width: 80%;">
-							An online MMO based around programming units using Javascript. Requires solutions to be scalable and robust to deal with both other players
-							and AI opponents.
-						</p>
+					<p class="projectDescription" style="max-width: 80%;">
+						An online MMO based around programming units using Javascript. Requires solutions to be scalable and robust to deal with both other players
+						and AI opponents. A good passtime to keep occupied between projects and to introduce new problems to solve without compromising previous work.
+					</p>
 				</div>
 			</div>
 		</div>
 		<div id="contact" class="contactLock">
-			<p>ADD CONTACT DETAILS HERE</p>
+			<div class="details">
+				<div class="detail">
+					<img class="detail" src="./icons/mail.png"/>
+				</div>
+				<div class="detail">
+					<!-- <img class="detail" src="./icons/mail.png"/> -->
+				</div>
+				<div class="detail">
+					<!-- <img class="detail" src="./icons/mail.png"/> -->
+				</div>
+				<div class="detail">
+					<!-- <img class="detail" src="./icons/mail.png"/> -->
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
