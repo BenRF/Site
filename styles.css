@@ -531,7 +531,7 @@ div.screen {
 		background: #28303a;
 		border-radius: 20px;
 		bottom: 150px;
-		left: 50px;
+		left: 80px;
 		padding: 0px;
 }
 div.innerScreen {
@@ -550,7 +550,7 @@ div.stand {
 		width: 50px;
 		height: 75px;
 		position: absolute;
-		left: 245px;
+		left: 290px;
 		bottom: 100px;
 		border-radius: 0px;
 }
@@ -563,22 +563,24 @@ div.base {
 		width: 100px;
 		position: absolute;
 		bottom: 75px;
-		left: 195px;
+		left: 240px;
 		border-radius: 23px;
 }
 div.phoneDrawing {
+	box-shadow: 0px 0px 2px 0px #28303a;
 	position: absolute;
-	bottom: 0px;
-	right: 20px;
+	bottom: 20px;
+	right: 100px;
 	background: #28303a;
 	width: 150px;
 	height: 250px;
 	border-radius: 20px 20px 20px 20px ;
 }
 div.phoneScreen {
+	box-shadow: inset 0px 0px 6px 0px #28303a;
 	background: #dbdbdb;
-	width: 295px;
-	height: 325px;
-	margin-left: 15px;
-	margin-top: 46px;
+	width: 80%;
+	height: 76%;
+	margin-left: 10%;
+	margin-top: 20%;
 }

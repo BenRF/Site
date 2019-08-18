@@ -71,7 +71,7 @@
 						<div class="innerScreen"></div>
 				</div>
 				<div class="phoneDrawing">
-					<!-- <div class="phoneScreen"></div> -->
+					<div class="phoneScreen"></div>
 				</div>
 		</div>
 			</div>
