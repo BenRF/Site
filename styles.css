@@ -501,35 +501,19 @@ div.desc {
 	margin-left: 100px;
 	height: 100%;
 }
-div.phoneDrawing {
-	position: absolute;
-	bottom: 0px;
-	right: 20px;
-	background: #28303a;
-	width: 325px;
-	height: 371px;
-	border-radius: 30px 30px 0px 0px ;
-}
-div.phoneScreen {
-	background: #dbdbdb;
-	width: 295px;
-	height: 325px;
-	margin-left: 15px;
-	margin-top: 46px;
-}
 div.details {
-	width: 20%;
+	width: 276px;
 	height: 60px;
 	position: relative;
-	left: 32.5%;
+	left: calc(50% - 138px);
 	top: calc(50% - 50px);
 }
 div.detail {
 	float: left;
-	width: calc(20% - 4px);
-	height: calc(100% - 4px);
-	margin-left: 2.5%;
-	margin-right: 2.5%;
+	width: 55px;
+	height: 55px;
+	margin-left: 5px;
+	margin-right: 5px;
 	border: 2px solid black;
 	border-radius: 100px;
 }
@@ -538,4 +522,63 @@ img.detail {
 	margin-top: 25%;
 	height: 50%;
 	width: 50%;
+}
+div.screen {
+		box-shadow: 1px 1px 3px #28303a;
+		position: absolute;
+		height: 275px;
+		width: 450px;
+		background: #28303a;
+		border-radius: 20px;
+		bottom: 150px;
+		left: 50px;
+		padding: 0px;
+}
+div.innerScreen {
+		box-shadow: inset 0px 0px 6px 0px #28303a;
+		padding: 0px;
+		background: #333d4a;
+		width: 93%;
+		height: 88%;
+		border-radius: 3px;
+		margin-left: 3.5%;
+		margin-top: 3.5%;
+}
+div.stand {
+		box-shadow: inset 7px 0px 15px -10px #6b7785, inset -7px 0px 15px -10px #6b7785;
+		background: #212830;
+		width: 50px;
+		height: 75px;
+		position: absolute;
+		left: 245px;
+		bottom: 100px;
+		border-radius: 0px;
+}
+div.base {
+		filter: drop-shadow(0 1px 5px rgba(0,0,0,.5));
+		border-bottom: 50px solid #28303a;
+		border-left: 25px solid transparent;
+		border-right: 25px solid transparent;
+		height: 0;
+		width: 100px;
+		position: absolute;
+		bottom: 75px;
+		left: 195px;
+		border-radius: 23px;
+}
+div.phoneDrawing {
+	position: absolute;
+	bottom: 0px;
+	right: 20px;
+	background: #28303a;
+	width: 150px;
+	height: 250px;
+	border-radius: 20px 20px 20px 20px ;
+}
+div.phoneScreen {
+	background: #dbdbdb;
+	width: 295px;
+	height: 325px;
+	margin-left: 15px;
+	margin-top: 46px;
 }

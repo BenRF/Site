@@ -65,8 +65,13 @@
 				</div>
 			</div>
 			<div class="drawing">
+				<div class="base"></div>
+				<div class="stand"></div>
+				<div class="screen">
+						<div class="innerScreen"></div>
+				</div>
 				<div class="phoneDrawing">
-					<div class="phoneScreen"></div>
+					<!-- <div class="phoneScreen"></div> -->
 				</div>
 		</div>
 			</div>
