@@ -43,7 +43,7 @@
 					their energy usage to encrypting messages in python. While all aspects of computer science are intresting and all have their own
 					appeal and depth that someone can get lost in trying to perfect, I continuosly look to challenge myself in different ways with new challenges that
 					will leave me pulling out my hair trying to perfect the efficiency or the functionality. By doing this I not only expand my knowledge of a
-					certain programming enviroment but I can discover new ways of solving problems that I may not have thought of beforehand. 
+					certain programming enviroment but I can discover new ways of solving problems that I may not have thought of beforehand.
 				</p>
 			</div>
 		</div>
@@ -128,6 +128,10 @@
 					<div class="rock" style="width: 50px; height: 50px; top: 475px; left: 25px;"></div>
 
 					<div class="rock" style="width: 175px; height: 50px; top: -20px; left: 75px;"></div>
+					<div class="rock" style="width: 75px; height: 75px; top: -20px; left: 175px;"></div>
+					<div class="rock" style="width: 35px; height: 100px; top: -20px; left: 175px;"></div>
+
+					<div class="rock" style="width: 200px; height: 50px; top: -20px; left: 200px;"></div>
 
 					<div id="screep1" class="screep" style="left: -22.5px; top: 2.5px"></div>
 					<div id="screep2" class="screep" style="left: -47.5px; top: 350px"></div>
