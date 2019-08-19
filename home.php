@@ -39,9 +39,11 @@
 		<div class="aboutLock">
 			<div class="about">
 				<p class="about">
-					As a computer science student I find myself coding in a variety of languages and context's ranging from encrypting text in Python, implementing
-					lists in Java to controlling Sql with php. However one area that I keep going back to is design, its nice and all to create functional and
-					efficient code but if presented poorly or not designed well.
+					As a computer science student I find myself coding in a variety of languages and context's, from creating a phone app for the elderly to track
+					their energy usage to encrypting messages in python. While all aspects of computer science are intresting and all have their own
+					appeal and depth that someone can get lost in trying to perfect, I continuosly look to challenge myself in different ways with new challenges that
+					will leave me pulling out my hair trying to perfect the efficiency or the functionality. By doing this I not only expand my knowledge of a
+					certain programming enviroment but I can discover new ways of solving problems that I may not have thought of beforehand. 
 				</p>
 			</div>
 		</div>
