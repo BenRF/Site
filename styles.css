@@ -399,10 +399,13 @@ p.cmd {
 #cmd1 {
 	opacity: 1;
 	transition: 0.5s;
+	margin-top: 25vh;
 }
 #cmd2 {
 	opacity: 0;
-	transition: 0.5s;
+	position: absolute;
+	top: -100%;
+	left: 50%;
 }
 b.solid {
 	color: #c99149;
