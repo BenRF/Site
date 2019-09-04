@@ -389,6 +389,7 @@ p.cmd {
 	margin: 0px;
 	padding: 0px;
 	padding-top: 10%;
+	margin-top: 25vh;
 	-webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -399,7 +400,10 @@ p.cmd {
 #cmd1 {
 	opacity: 1;
 	transition: 0.5s;
-	margin-top: 25vh;
+}
+p.hiddenCmd {
+	opacity: 0;
+	transition: 0.5s;
 }
 #cmd2 {
 	opacity: 0;

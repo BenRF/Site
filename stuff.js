@@ -141,36 +141,43 @@ function start() {
 		clearInterval(message);
 		var script = [
 			["Hey",2,0,""],
-			["Hey, welcome to my site",4,0,""],
-			["This is a site about Ben",3.5,0,""],
-			["It tells you who he is",4,0,""],
-			["It tells you what he's done",3.5,0,""],
-			["It tells you what he can do",3.5,0,""],
-			["It tells you how to get in touch",4,0,""],
-			["So feel free to look around",8,0,""],
+			["Hey, welcome to my site",4.5,0,""],
+			["This is a site about Ben",4,0,""],
+			["It tells you who he is",4.5,0,""],
+			["It tells you what he's done",4,0,""],
+			["It tells you what he can do",4,0,""],
+			["It tells you how to get in touch",4.5,0,""],
+			["So feel free to look around",8.5,0,""],
 		];
 		if (script[position][2] === 1) {
-			//delete the blinker
-			var inner = document.getElementById("cmd1").innerHTML;
-			inner = inner.replace("&gt;",">");
-			inner = inner.replace("&lt;","<");
-			inner = inner.replace('<b id="bl" class="blink"> _</b>',"");
-			inner = inner.replace('<b id="bl" class="solid"> _</b>',"");
-			document.getElementById("cmd1").innerHTML = inner;
-			//remove the last element
-			var el = document.getElementById("cmd2");
-			el.parentNode.removeChild(el);
-			//move all elements up
-			document.getElementById("cmd1").id = "cmd2";
-			//create new element to go at the start
-			var first = document.createElement("p");
-			first.setAttribute("id","cmd1");
-			first.setAttribute("class","cmd");
-			first.innerHTML = script[position][3];
-			document.getElementById("main").appendChild(first);
-			document.getElementById("cmd1").innerHTML = document.getElementById("cmd1").innerHTML + '<b id="bl" class="blink"> _</b>';
-			target = script[position][0];
-			d = setInterval(delay,2000);
+			// //delete the blinker
+			// var inner = document.getElementById("cmd1").innerHTML;
+			// inner = inner.replace("&gt;",">");
+			// inner = inner.replace("&lt;","<");
+			// inner = inner.replace('<b id="bl" class="blink"> _</b>',"");
+			// inner = inner.replace('<b id="bl" class="solid"> _</b>',"");
+			// document.getElementById("cmd1").innerHTML = inner;
+			//
+			// //remove the last element
+			// var el = document.getElementById("cmd2");
+			// el.parentNode.removeChild(el);
+			//
+			// //move all elements up
+			// document.getElementById("cmd1").id = "cmd2";
+			//
+			// //create new element to go at the start
+			// var first = document.createElement("p");
+			// first.setAttribute("id","cmd1");
+			// first.setAttribute("class","cmd");
+			// first.innerHTML = script[position][3];
+			// document.getElementById("main").appendChild(first);
+			//
+			// //readd blinker
+			// document.getElementById("cmd1").innerHTML = document.getElementById("cmd1").innerHTML + '<b id="bl" class="blink"> _</b>';
+			// target = script[position][0];
+			// d = setInterval(delay,2000);
+			flush = setInterval(fade,4000);
+
 		} else {
 			target = script[position][0];
 			change(script[position][0]);
@@ -225,20 +232,43 @@ function change(target) {
 	function store() {
 		//delete the blinker
 		deleteBlink();
-		//move all elements up
-		for (var i = 1; i < 7; i++) {
-				document.getElementById("cmd" + i).id = "cmd" + (i+1);
-		}
-		//remove the last element
-		destroy("cmd7");
-		//create new element to go at the start
-		var first = document.createElement("p");
-		first.setAttribute("id","cmd1");
-		first.setAttribute("class","cmd");
-		document.getElementById("main").appendChild(first);
-		current = document.getElementById("cmd1");
+
+		// //move all elements up
+		// for (var i = 1; i < 7; i++) {
+		// 		document.getElementById("cmd" + i).id = "cmd" + (i+1);
+		// }
+		// //remove the last element
+		// destroy("cmd7");
+		// //create new element to go at the start
+		// var first = document.createElement("p");
+		// first.setAttribute("id","cmd1");
+		// first.setAttribute("class","cmd");
+		// document.getElementById("main").appendChild(first);
+		// current = document.getElementById("cmd1");
+		fade();
+
 		createBlink();
 		typing = setInterval(pause, 600);
+	}
+
+	var flush;
+	function fade() {
+		clearInterval(flush);
+		var items = ["cmd1","cmd2"];
+		for (var i = 0; i < items.length; i++) {
+			document.getElementById(items[i]).className = "cmd hide";
+		}
+		flush = setInterval(reappear,500);
+	}
+
+	function reappear() {
+		clearInterval(flush);
+		var items = ["cmd1","cmd2"];
+		for (var i = 0; i < items.length; i++) {
+			document.getElementById(items[i]).innerHTML = "";
+			document.getElementById(items[i]).className = "cmd";
+		}
+		document.getElementById("cmd1").innerHTML = '<b id="bl" class="blink"> _</b>';
 	}
 
   var el;
