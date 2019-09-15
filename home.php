@@ -127,14 +127,15 @@
 					<div class="rock" style="width: 75px; height: 150px; top: 425px; left: -20px;"></div>
 					<div class="rock" style="width: 50px; height: 50px; top: 475px; left: 25px;"></div>
 
-					<div class="rock" style="width: 175px; height: 50px; top: -20px; left: 75px;"></div>
-					<div class="rock" style="width: 75px; height: 75px; top: -20px; left: 175px;"></div>
+					<div class="rock" style="width: 175px; height: 40px; top: -20px; left: 75px;"></div>
+					<div class="rock" style="width: 75px; height: 65px; top: -20px; left: 175px;"></div>
 					<div class="rock" style="width: 35px; height: 100px; top: -20px; left: 175px;"></div>
-
 					<div class="rock" style="width: 200px; height: 50px; top: -20px; left: 200px;"></div>
+					<div class="rock" style="width: 35px; height: 75px; top: -20px; left: 325px;"></div>
 
 					<div id="screep1" class="screep" style="left: -22.5px; top: 2.5px"></div>
 					<div id="screep2" class="screep" style="left: -47.5px; top: 350px"></div>
+					<div id="screep3" class="screep" style="left: 27.5px; top: -45.5px"></div>
 				</div>
 				<div class="stats">
 					<div class="innerStat">
