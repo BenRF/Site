@@ -1,1 +1,0 @@
-Phone app to recieve and respond to messages from the web client. Coded in React Native with push notifications handled by Google Firebase.

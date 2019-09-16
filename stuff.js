@@ -1,8 +1,9 @@
 //Aren't you a nosy one?
 
 var alert;
-function copy() {
+function copy(text) {
 	var copyText = document.getElementById("discord");
+	copyText.value = text;
   copyText.select();
   copyText.setSelectionRange(0, 99999)
   document.execCommand("copy");
@@ -25,6 +26,7 @@ function sTo(target) {
 	return false;
 }
 
+var on;
 function scrollCheck() {
 	var height = window.innerHeight;
 	var scrolled = document.body.scrollTop;
@@ -42,19 +44,28 @@ function scrollCheck() {
 		document.getElementById("t4").className = "header a attachedH";
 	}
 	var height = window.innerWidth;
-	scrolled = scrolled + (0.08 * window.innerHeight);
+	scrolled = scrolled + (0.3 * window.innerHeight);
 	var s = document.getElementById("scroll");
-	var step1 = 600;
-	var step2 = 1000;
-	var step3 = height * 2.95;
-	if (scrolled < step1) {
+
+	var scrollPosition = window.pageYOffset;
+	var windowSize     = window.innerHeight;
+	var bodyHeight     = document.body.offsetHeight;
+
+	var about = windowSize;
+	var projects = windowSize + 400;
+	var scrollFromTop = document.body.scrollHeight - window.innerHeight - window.scrollY;
+	if (scrolled < about && on != "title") {
 		s.className = "scroll underTitle";
-	} else if (scrolled >= step1 && scrolled < step2) {
+		on = "title";
+	} else if (scrolled >= about && scrolled < projects && on != "about") {
 		s.className = "scroll underAbout";
-	} else if (scrolled >= step2 && scrolled < step3) {
+		on = "about";
+	} else if (scrolled >= projects && scrollFromTop > 300 && on != "project") {
 		s.className = "scroll underProjects";
-	} else if (scrolled >= step3) {
+		on = "project";
+	} else if (scrollFromTop <= 300 && on != "contact") {
 		s.className = "scroll underContact";
+		on = "contact";
 	}
 }
 
@@ -68,7 +79,7 @@ var position = 0;
 var target = "";
 function pause() {
 	clearInterval(message);
-	clearInterval(movement);
+	//clearInterval(movement);
 	movement = null;
 }
 
@@ -76,80 +87,11 @@ function resume() {
 	start();
 }
 
-
-//  0  1  2
-//  7  C  3
-//  6  5  4
-
-var screeps = [
-	[0,[3,3,5,4,5,5,4,5,5,5,6,5,5,5,6,6,7,1,1,1,1,1,1,1,1,1,1,1,1,1,1]],
-	[0,[3,4,3,4,3,3,3,3,4,3,3,2,3,2,2,2,1,2,2,3,3,5,4,4,4,6,7,7,7,7,7,7,7,6,7,7,7,7,7,7,7,0,7,7,7,7,7,7,1]],
-	[0,[5,4,4,3,4,4,3,3,2,2,3,3,4,3,3,2,1,7,7,7,7,7,7,7,7,7,7,7,7]]
-];
-var movement;
-function screep() {
-	for (var i = 1; i <= screeps.length; i++) {
-		var s = document.getElementById("screep" + i);
-		var currentMove = screeps[i-1][0];
-		var p = screeps[i-1][1][currentMove];
-		if (p == 0) {
-			screepUp(s);
-			screepLeft(s);
-		} else if (p == 1) {
-			screepUp(s);
-		} else if (p == 2) {
-		  screepUp(s);
-			screepRight(s);
-		} else if (p == 3) {
-			screepRight(s);
-		} else if (p == 4) {
-			screepDown(s);
-			screepRight(s);
-		} else if (p == 5) {
-			screepDown(s);
-		} else if (p == 6) {
-			screepDown(s);
-			screepLeft(s);
-		} else if (p == 7) {
-			screepLeft(s);
-		}
-		if (currentMove == screeps[i-1][1].length) {
-			screeps[i-1][0] = 0;
-		} else {
-			screeps[i-1][0] = screeps[i-1][0] + 1;
-		}
-	}
-}
-
-function screepLeft(screep) {
-	var currentPos = screep.style.left;
-	currentPos = currentPos.substring(0, currentPos.length - 2);
-	screep.style.left = parseInt(currentPos,10) - 25;
-}
-
-function screepRight(screep) {
-	var currentPos = screep.style.left;
-	currentPos = currentPos.substring(0, currentPos.length - 2);
-	screep.style.left = parseInt(currentPos,10) + 25;
-}
-
-function screepUp(screep) {
-	var currentPos = screep.style.top;
-	currentPos = currentPos.substring(0, currentPos.length - 2);
-	screep.style.top = parseInt(currentPos,10) - 25;
-}
-
-function screepDown(screep) {
-	var currentPos = screep.style.top;
-	currentPos = currentPos.substring(0, currentPos.length - 2);
-	screep.style.top = parseInt(currentPos,10) + 25;
-}
-
 function start() {
   message = setInterval(update, 5000);
-	if (movement == null) {
-		movement = setInterval(screep, 2000);
-	}
+	// if (movement == null) {
+	// 	movement = setInterval(screep, 2000);
+	// }
 	var flush;
 	var count = 0;
 

@@ -1,1 +1,0 @@
-Web based client for making and sending messages to the phone app, Coded in Javascript. Runnable demo is available in the contact section.
