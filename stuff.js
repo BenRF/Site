@@ -1,5 +1,20 @@
 //Aren't you a nosy one?
 
+var alert;
+function copy() {
+	var copyText = document.getElementById("discord");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  document.getElementById("alert").className = "alert showAlert";
+	alert = setInterval(hideAlert,2000);
+}
+
+function hideAlert() {
+	clearInterval(alert);
+	document.getElementById("alert").className = "alert hideAlert";
+}
+
 var overProject = false;
 function projectHover(status) {
 	overProject = status;

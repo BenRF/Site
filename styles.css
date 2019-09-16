@@ -87,9 +87,10 @@ div.projectLock {
 div.contactLock {
 	float: left;
 	width: 100%;
-	height: 250px;
+	height: 600px;
 	padding-left: 0.5%;
 	padding-right: 0.5%;
+	background-color: #434242;
 }
 div.card {
 	transition: 0.5s;
@@ -388,8 +389,7 @@ p.cmd {
 	font-weight: 500;
 	margin: 0px;
 	padding: 0px;
-	padding-top: 10%;
-	margin-top: 25vh;
+	margin-top: 40vh;
 	-webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -513,28 +513,6 @@ div.desc {
 	padding-top: 125px;
 	margin-left: 100px;
 	height: 100%;
-}
-div.details {
-	width: 276px;
-	height: 60px;
-	position: relative;
-	left: calc(50% - 138px);
-	top: calc(50% - 50px);
-}
-div.detail {
-	float: left;
-	width: 55px;
-	height: 55px;
-	margin-left: 5px;
-	margin-right: 5px;
-	border: 2px solid black;
-	border-radius: 100px;
-}
-img.detail {
-	margin-left: 25%;
-	margin-top: 25%;
-	height: 50%;
-	width: 50%;
 }
 div.screen {
 		box-shadow: 1px 1px 3px #28303a;
@@ -776,4 +754,112 @@ div.msgBarP {
 	margin-left: 2px;
 	width: 100%;
 	height: 20px;
+}
+p.contactTitle {
+	font-size: 55px;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	color: white;
+	opacity: 0.8;
+	margin-top: 90px;
+	margin-bottom: 10px;
+}
+div.details {
+	position: absolute;
+	z-index: 2;
+	background-color: #434242;
+	width: 60%;
+	margin-left: 20%;
+	height: 200px;
+	border-top: 1px solid #616060;
+	border-bottom: 1px solid #616060;
+}
+div.outerDetail {
+	margin: 0px;
+	height: 60px;
+	padding-top: 25px;
+	width: calc(50% - 10px);
+	padding-left: 10px;
+	float: left;
+	margin-bottom: 3px;
+}
+div.detail {
+	margin: 0px;
+	padding-left: 25px;
+	padding-top: 13px;
+	width: calc(90% - 25px);
+	height: 50px;
+	opacity: 0.4;
+	transition: 0.25s;
+}
+div.detail:hover {
+	opacity: 0.8;
+	transition: 0.25s;
+}
+p.info {
+	color: white;
+	font-size: 20px;
+	margin: 0px;
+	margin-top: 10px;
+	text-decoration: none;
+}
+p.infoU {
+	color: white;
+	font-size: 20px;
+	margin: 0px;
+	margin-top: 10px;
+	text-decoration: underline;
+	text-decoration-color: #ffa500;
+}
+svg {
+	height: 40px;
+	width: 40px;
+	float: left;
+	margin: 0px;
+	margin-right: 10px;
+	fill: white;
+}
+div.hideAlert {
+	transition: 0.25s;
+	top: 33%;
+}
+div.showAlert {
+	transition: 0.25s;
+	top: 40%;
+}
+div.alert {
+	z-index: 1;
+	left: 23%;
+	color: white;
+	position: relative;
+	background: #616060;
+	width: 200px;
+	height: 35px;
+	padding-top: 5px;
+	border-radius: 0px 0px 15px 15px;
+}
+p.alert {
+	text-align: center;
+	margin: 5px;
+}
+::-webkit-input-placeholder {
+  color: #000;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+:hover::-webkit-input-placeholder {
+  opacity: 1;
+  -webkit-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+:focus::-webkit-input-placeholder {
+  opacity: 0.1;
+  -webkit-transition: opacity 0.35s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
+}
+.outOfTheWay {
+	position: absolute;
+	top: -5%;
+	right: 150%;
 }
