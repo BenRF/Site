@@ -2,6 +2,9 @@
 
 var alert;
 function copy(text) {
+	if (alert === null) {
+		clearInterval(alert);
+	}
 	var copyText = document.getElementById("discord");
 	copyText.value = text;
   copyText.select();

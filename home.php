@@ -54,7 +54,7 @@
 			?>
 		</div>
 		<div id="contact" class="contactLock">
-			<p class="contactTitle">Get in touch</p>
+			<p class="contactTitle">Have a question?</p>
 			<div id="alert" class="alert hideAlert">
 				<p class="alert">Copied to your clipboard</p>
 			</div>
