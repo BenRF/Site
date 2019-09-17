@@ -6,7 +6,12 @@ body {
 	margin: 0px;
 	font-family: 'Roboto', sans-serif;
 }
+div.shortHeader {
+	transition: 0.75s;
+	width: 70% !important;
+}
 div.header {
+	transition: 0.75s;
 	position: fixed;
 	background: transparent;
 	float: left;
@@ -17,12 +22,10 @@ div.header {
 }
 div.attached {
 	color: white !important;
-	transition: 0.25s;
 	box-shadow: 0px 1px 10px transparent;
 }
 div.detached {
 	color: #949494 !important;
-	transition: 0.25s;
 }
 div.scroll {
 	border-style: solid;

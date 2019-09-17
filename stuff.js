@@ -1,10 +1,24 @@
 //Aren't you a nosy one?
 
+var short = false;
 function toggleBox() {
 	var box = document.getElementById("box");
+	var header = document.getElementById("header");
 	if (box.className === "msgBox shownBox") {
+		if (header.className === "header detached") {
+			header.className = "header detached";
+		} else {
+			header.className = "header attached";
+		}
+		short = false;
 		box.className = "msgBox hiddenBox";
 	} else {
+		if (header.className === "header detached") {
+			header.className = "header shortHeader detached";
+		} else {
+			header.className = "header shortHeader attached";
+		}
+		short = true;
 		box.className = "msgBox shownBox";
 	}
 }
@@ -43,13 +57,21 @@ function scrollCheck() {
 	var height = window.innerHeight;
 	var scrolled = document.body.scrollTop;
 	if (scrolled > (height - 50) && scrolled < (height + 350)) {
-		document.getElementById("header").className = "header detached";
+		if (short) {
+			document.getElementById("header").className = "header shortHeader detached";
+		} else {
+			document.getElementById("header").className = "header detached";
+		}
 		document.getElementById("t1").className = "title";
 		document.getElementById("t2").className = "header c";
 		document.getElementById("t3").className = "header p";
 		document.getElementById("t4").className = "header a";
 	} else {
-		document.getElementById("header").className = "header attached";
+		if (short) {
+			document.getElementById("header").className = "header shortHeader attached";
+		} else {
+			document.getElementById("header").className = "header attached";
+		}
 		document.getElementById("t1").className = "title attachedT";
 		document.getElementById("t2").className = "header c attachedH";
 		document.getElementById("t3").className = "header p attachedH";
