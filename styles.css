@@ -761,7 +761,7 @@ p.contactTitle {
 	text-align: center;
 	color: white;
 	opacity: 0.8;
-	margin-top: 80px;
+	margin-top: 70px;
 	margin-bottom: 0px;
 }
 p.contactDesc {
@@ -813,12 +813,26 @@ p.infoU {
 	text-decoration: underline;
 	text-decoration-color: #ffa500;
 }
-svg {
+svg.detail {
 	height: 40px;
 	width: 40px;
 	float: left;
 	margin: 0px;
 	margin-right: 20px;
+	fill: white;
+}
+svg.close {
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	fill: white;
+}
+svg.open {
+	height: 60%;
+	width: 60%;
+	margin: 0px;
+	margin-left: 20%;
+	margin-top: 20%;
 	fill: white;
 }
 div.hideAlert {
@@ -846,8 +860,8 @@ p.alert {
 	opacity: 0.8;
 }
 ::-webkit-input-placeholder {
-  color: #000;
-  opacity: 0.5;
+  color: white;
+  opacity: 0.3;
   -webkit-transition: opacity 0.35s ease-in-out;
   transition: opacity 0.35s ease-in-out;
 }
@@ -865,4 +879,85 @@ p.alert {
 	position: absolute;
 	top: -5%;
 	right: 150%;
+}
+div.shownBox {
+	transition: 0.75s;
+	right: 0px;
+}
+div.hiddenBox {
+	transition: 0.75s;
+	right: -40%;
+}
+div.msgBox {
+	z-index: 5;
+	position: fixed;
+	height: 100%;
+	width: 30%;
+	top: 0px;
+	background: #4192cc;
+	box-shadow: 0px 0px 8px #707070;
+}
+div.register {
+	width: 90%;
+	height: 240px;
+	position: relative;
+	left: 5%;
+	top: calc(35% - 120px);
+}
+input.msgRegister {
+	position: relative;
+	margin-top: 10%;
+	left: 5%;
+	height: 40px;
+	width: 90%;
+	background: #3980b3;
+	font-size: 20px;
+	border-radius: 15px;
+	border: 0px;
+	transition: 0.8s;
+	color: white;
+	padding-left: 15px;
+}
+input.msgRegister:focus {
+	transition: 0.8s;
+	outline-width: 0px;
+	box-shadow: inset 0px 0px 8px 0px #3372a1;
+}
+p.registerTitle {
+	color: white;
+	font-size: 35px;
+	margin: 0px;
+	position: relative;
+	top: 25px;
+}
+div.BenMToggle {
+	z-index: 4;
+	height: 60px;
+	width: 60px;
+	background: #4192cc;
+	position: fixed;
+	bottom: 25px;
+	right: 25px;
+	border-radius: 30px;
+	box-shadow: 0px 0px 8px #5e5e5e;
+	opacity: 0.8;
+	transition: 0.5s;
+}
+div.BenMToggle:hover {
+	opacity: 1;
+	transition: 0.5s;
+}
+div.close {
+	background: transparent;
+	opacity: 0.6;
+	width: 50px;
+	height: 40px;
+	position: relative;
+	top: 20px;
+	left: calc(90% - 20px);
+	transition: 0.8s;
+}
+div.close:hover {
+	opacity: 1;
+	transition: 0.8s;
 }

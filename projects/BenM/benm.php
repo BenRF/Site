@@ -10,11 +10,6 @@
       A web application that allows for a site owner to offer live chat functionality on their website using their mobile phone. Using NodeJS for websockets between the
       Javascript web client and the React Native phone app allowing for easier and more accessible communication with potential customers.
     </p>
-    <div class="projectLinks">
-      <div class="projectLink">
-        <p class="projectButtonTag">Try it out</p>
-      </div>
-    </div>
   </div>
   <div class="drawing">
     <div class="base"></div>

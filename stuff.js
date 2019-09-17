@@ -1,5 +1,14 @@
 //Aren't you a nosy one?
 
+function toggleBox() {
+	var box = document.getElementById("box");
+	if (box.className === "msgBox shownBox") {
+		box.className = "msgBox hiddenBox";
+	} else {
+		box.className = "msgBox shownBox";
+	}
+}
+
 var alert;
 function copy(text) {
 	if (alert === null) {
