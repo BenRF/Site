@@ -74,6 +74,7 @@ div.aboutLock {
 	width: 100%;
 	height: 400px;
 	background: #dbdbdb;
+	box-shadow: inset 0px 0px 8px 0px #28303a;
 }
 div.about {
 	position: absolute;
@@ -807,6 +808,9 @@ div.detail:hover {
 	opacity: 0.8;
 	transition: 0.25s;
 }
+div.detail:active {
+	opacity: 0.2;
+}
 p.infoU {
 	font-family: 'Blinker', sans-serif;
 	color: white;
@@ -950,6 +954,9 @@ div.BenMToggle:hover {
 	opacity: 1;
 	transition: 0.5s;
 }
+div.BenMToggle:active {
+	opacity: 0.2;
+}
 div.close {
 	background: transparent;
 	opacity: 0.6;
@@ -963,4 +970,7 @@ div.close {
 div.close:hover {
 	opacity: 1;
 	transition: 0.8s;
+}
+div.close:active {
+	opacity: 0.1;
 }
