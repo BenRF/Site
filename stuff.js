@@ -11,6 +11,7 @@ function toggleBox() {
 			header.className = "header attached";
 		}
 		short = false;
+		document.getElementById("clickArea").className = "clickArea";
 		box.className = "msgBox hiddenBox";
 	} else {
 		if (header.className === "header detached") {
@@ -19,6 +20,7 @@ function toggleBox() {
 			header.className = "header shortHeader attached";
 		}
 		short = true;
+		document.getElementById("clickArea").className = "clickArea showArea";
 		box.className = "msgBox shownBox";
 	}
 }

@@ -59,6 +59,9 @@
 				</svg>
 			</div>
 		</a>
+		<a href="javascript:void(0)" onclick="toggleBox()">
+			<div id="clickArea" class="clickArea"></div>
+		</a>
 		<div id="box" class="msgBox hiddenBox">
 			<a href="javascript:void(0)" onclick="toggleBox()">
 				<div class="close">
@@ -68,7 +71,7 @@
 				</div>
 			</a>
 			<div class="register">
-				<div class="icon">
+				<div class="icon" style="margin-left: 15px;">
 		      <?php
 		        echo file_get_contents("./projects/BenM/icon.svg");
 		      ?>
