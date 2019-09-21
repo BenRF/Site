@@ -12,6 +12,9 @@ function toggleBox() {
 		}
 		short = false;
 		//document.getElementById("clickArea").className = "clickArea";
+		if (stage == 0) {
+			document.getElementById("name").blur();
+		}
 		box.className = "msgBox hiddenBox";
 	} else {
 		if (header.className === "header detached") {
@@ -21,6 +24,9 @@ function toggleBox() {
 		}
 		short = true;
 		//document.getElementById("clickArea").className = "clickArea showArea";
+		if (stage == 0) {
+			document.getElementById("name").focus();
+		}
 		box.className = "msgBox shownBox";
 	}
 }
