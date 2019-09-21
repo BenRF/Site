@@ -57,7 +57,9 @@ function sendMsg() {
     t.innerHTML = box.value;
     msg.appendChild(t);
     row.appendChild(msg);
-    document.getElementById("msgs").appendChild(row);
+    var msgs = document.getElementById("msgs");
+    msgs.appendChild(row);
+    msgs.scrollTop = msgs.scrollHeight;
     console.log("SENT: " + box.value);
     box.value = "";
     return false;
@@ -79,6 +81,8 @@ function recieveMsg(m) {
   t.innerHTML = m;
   msg.appendChild(t);
   row.appendChild(msg);
-  document.getElementById("msgs").appendChild(row);
+  var msgs = document.getElementById("msgs");
+  msgs.appendChild(row);
+  msgs.scrollTop = msgs.scrollHeight;
   console.log("BEN: " + m);
 }
