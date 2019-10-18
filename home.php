@@ -180,14 +180,12 @@
 			</div>
 		</div>
 		<div id="projects" class="projectLock">
-			<p class="recentWork">My Recent work</p>
 			<div class="projectList">
-
+				<?php
+					include("./projects/BenM/benm.php");
+					// include("./projects/Screeps/screeps.php");
+				?>
 			</div>
-			<?php
-				//include("./projects/BenM/benm.php")
-				// include("./projects/Screeps/screeps.php");
-			?>
 		</div>
 		<div id="contact" class="contactLock">
 			<p class="contactTitle">Have a question?</p>

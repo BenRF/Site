@@ -64,7 +64,7 @@ div.typingLock {
 	width: 100%;
 	top: 0px;
 	left: 0px;
-	background: #28303a;
+	background: #1c1c1c;
 	text-align: center;
 }
 div.aboutLock {
@@ -74,7 +74,6 @@ div.aboutLock {
 	width: 100%;
 	height: 400px;
 	background: #dbdbdb;
-	box-shadow: inset 0px 0px 8px 0px #28303a;
 }
 div.about {
 	position: absolute;
@@ -83,30 +82,56 @@ div.about {
 	padding: 5%;
 }
 div.projectLock {
-	height: 100%;
+	height: auto;
 	width: 100%;
 	float: left;
-	background: #a8a7ac;
+	background: #dbdbdb;
 	position: relative;
+	border: 1px solid black;
 }
 div.projectList {
-	width: 70%;
-	height: 60%;
-	position: absolute;
-	left: 15%;
-	top: 30%;
-	background: red;
+	width: 95%;
+	height: auto;
+	margin-left: 2.5%;
+	margin-top: 2%;
+	margin-bottom: 2%;
 }
-p.recentWork {
-	color: white;
-	font-size: 2.3em;
-	width: 100%;
-	text-align: center;
+div.project {
+	width: 95%;
+	height: 300px;
+	margin: 2.5%;
+	float: left;
+	overflow: hidden;
+	position: relative;
+	border: 1px solid white;
+}
+div.icon svg {
+	height: 15%;
+	width: 15%;
+	margin: 0px;
+	padding: 0px;
 	position: absolute;
-	top: 15%;
-
+	top: 13%;
+	left: 0px;
+}
+p.projectTitle {
+	font-weight: bold;
+	color: #1c1c1c;
+	position: absolute;
+	top: 3%;
+	left: 100px;
+	font-size: 2em
+}
+p.projectDescription {
+	color: #7a7a7a;
+	width: 40%;
+	position: absolute;
+	top: 28%;
+	left: 50px;
+	font-size: 1.2em;
 }
 div.contactLock {
+	box-shadow: 0px 0px 8px 0px #28303a;
 	float: left;
 	width: 99%;
 	height: 600px;
@@ -122,129 +147,8 @@ div.title {
 	width: 49%;
 	float: left;
 }
-p.projectDesc {
-	color: #28303a;
-	padding: 0px;
-	margin: 0px;
-	padding-left: 30px;
-	height: 78%;
-	width: 50%;
-}
-div.icon svg {
-	height: 80px;
-	width: 80px;
-	margin-top: 10px;
-	margin-left: 10px;
-	margin-right: 15px;
-	float: left;
-}
 div.innerProjects {
 	position: absolute;
-}
-div.project {
-	padding-bottom: 155px;
-	height: auto;
-	position: relative;
-	overflow: hidden;
-}
-p.projectTitle {
-	font-size: 40px;
-	color: #f3f3f1;
-	margin: 0px;
-	padding: 0px;
-	padding-top: 20px;
-}
-p.projectDescription {
-	font-size: 18px;
-	color: #f3f3f1;
-	margin: 0px;
-	padding: 0px;
-	padding-top: 40px;
-	padding-left: 20px;
-	max-width: 40%;
-}
-div.projectLinks {
-	background: green;
-	margin-top: 15px;
-	margin-left: 10px;
-}
-div.projectLink {
-	transition: 0.5s;
-	display: inline-block;
-	padding-left: 20px;
-	padding-top: 8px;
-	padding-bottom: 8px;
-	padding-right: 20px;
-	border-radius: 5px;
-	border: 2px solid #4192cc;
-	float: left;
-	margin-left: 10px;
-}
-div.projectLink:hover {
-	transition: 0.5s;
-	background: #4192cc;
-}
-div.projectLink:hover .projectButtonTag{
-	transition: 0.5s;
-	color: white;
-}
-p.projectButtonTag {
-	transition: 0.5s;
-	margin: 0px;
-	font-size: 20px;
-	color: #4192cc;
-}
-div.screepsDrawing {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-}
-div.rock {
-	background: #343738;
-	position: absolute;
-	border-radius: 20px 20px 20px 20px;
-	box-shadow: 0px 0px 5px 0px #363536;
-}
-div.screep {
-	box-shadow: 0px 0px 5px 0px #706f70;
-	background: red;
-	width: 20px;
-	height: 20px;
-	border-radius: 12.5px;
-	position: absolute;
-	transition: 1s;
-}
-div.stats {
-	position: absolute;
-	height: 100%;
-	width: 750px;
-}
-div.innerStat {
-	position: relative;
-	top: 20%;
-	left: 15%;
-	width: 80%;
-	height: 55%;
-}
-div.stat {
-	float: left;
-	text-align: center;
-	position: relative;
-	width: 33%;
-	height: 50%;
-}
-p.statLabel {
-	color: white;
-	font-size: 1.5em;
-	margin-bottom: 0px;
-	padding-bottom: 0px;
-}
-p.stat {
-	margin: 0px;
-	margin-top: 10px;
-	padding: 0px;
-	color: white;
-	font-size: 3em;
 }
 div.benM {
 	height: 80vh;
@@ -382,13 +286,12 @@ p.hide {
 p.cmd {
 	font-family: 'Blinker', sans-serif;
 	transition: 0.5s;
-	line-height: 3.5vw;
 	font-size: 4em;
 	color: #f3f3f1;
 	font-weight: 500;
 	margin: 0px;
 	padding: 0px;
-	margin-top: 40vh;
+	margin-top: 45vh;
 	-webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
