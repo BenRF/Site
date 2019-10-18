@@ -99,8 +99,12 @@
 			</div>
 		</div>
 		<div id="projects" class="projectLock">
+			<p class="recentWork">My Recent work</p>
+			<div class="projectList">
+
+			</div>
 			<?php
-				include("./projects/BenM/benm.php")
+				//include("./projects/BenM/benm.php")
 				// include("./projects/Screeps/screeps.php");
 			?>
 		</div>
