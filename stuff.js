@@ -64,7 +64,7 @@ var on;
 function scrollCheck() {
 	var height = window.innerHeight;
 	var scrolled = document.body.scrollTop;
-	if (scrolled > (height - 50) && scrolled < (height + 350)) {
+	if (scrolled > (height - 50)) {
 		if (short) {
 			document.getElementById("header").className = "header shortHeader detached";
 		} else {

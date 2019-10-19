@@ -97,28 +97,26 @@ div.projectList {
 	margin-bottom: 2%;
 }
 div.project {
-	width: 95%;
-	height: 300px;
-	margin: 2.5%;
+	width: 98%;
+	height: 400px;
+	margin: 1%;
 	float: left;
 	overflow: hidden;
 	position: relative;
-	border: 1px solid white;
 }
 div.icon svg {
-	height: 15%;
-	width: 15%;
+	height: 50px;
+	width: 50px;
 	margin: 0px;
 	padding: 0px;
-	position: absolute;
-	top: 13%;
-	left: 0px;
+	margin-top: 40px;
+	margin-left: 40px;
 }
 p.projectTitle {
 	font-weight: bold;
 	color: #1c1c1c;
 	position: absolute;
-	top: 3%;
+	top: 10px;
 	left: 100px;
 	font-size: 2em
 }
@@ -126,9 +124,10 @@ p.projectDescription {
 	color: #7a7a7a;
 	width: 40%;
 	position: absolute;
-	top: 28%;
+	top: 80px;
 	left: 50px;
 	font-size: 1.2em;
+	max-width: 500px;
 }
 div.contactLock {
 	box-shadow: 0px 0px 8px 0px #28303a;
@@ -410,22 +409,26 @@ div.drawing {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border: 1px solid green;
 }
-div.desc {
-	padding-top: 125px;
-	margin-left: 100px;
-	height: 100%;
+div.dummy {
+	margin-top: 41.25%;
+}
+div.monitor {
+	position: relative;
+	height: 70%;
+	width: 70%;
+	margin-top: 8%;
 }
 div.screen {
 		box-shadow: 1px 1px 3px #28303a;
 		position: absolute;
-		height: 275px;
-		width: 450px;
+		top: 0px;
+		height: 70%;
+		width: 90%;
 		background: #28303a;
 		border-radius: 20px;
-		bottom: 150px;
-		left: 80px;
-		padding: 0px;
+		padding: 5%;
 }
 div.innerScreen {
 		box-shadow: inset 0px 0px 6px 0px #28303a;
@@ -435,92 +438,88 @@ div.innerScreen {
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
-		width: 93%;
-		height: 88%;
+		width: 100%;
+		height: 100%;
 		border-radius: 3px;
-		margin-left: 3.5%;
-		margin-top: 3.5%;
-		position: relative;
+		overflow: hidden;
 }
 div.stand {
 		box-shadow: 0px 0px 2px 0px #28303a;
 		background: #212830;
-		width: 50px;
-		height: 75px;
+		width: 10%;
+		height: 10%;
 		position: absolute;
-		left: 290px;
-		bottom: 100px;
+		left: 45%;
+		bottom: 10%;
 		border-radius: 0px;
 }
 div.base {
 		filter: drop-shadow(0 1px 5px rgba(0,0,0,.5));
-		border-bottom: 50px solid #28303a;
-		border-left: 25px solid transparent;
-		border-right: 25px solid transparent;
+		border-bottom: 35px solid #28303a;
+		border-left: 30px solid transparent;
+		border-right: 30px solid transparent;
 		height: 0;
-		width: 100px;
+		width: 16%;
 		position: absolute;
-		bottom: 75px;
-		left: 240px;
+		bottom: 0px;
+		left: 33%;
 		border-radius: 23px;
 }
 div.taskBar {
-	position: absolute;
-	top: calc(100% - 10px);
+	margin-top: 8%;
 	background: #808080;
-	width: 100%;
-	height: 10px;
+	width: 99%;
+	height: 4%;
+	padding-left: 1%;
+	padding-top: 1%;
 }
 div.windowStart {
 	background: #d9d9d9;
-	height: 5px;
+	height: 50%;
 	width: 5px;
 	border-radius: 2px;
-	margin-top: 2.5px;
-	margin-left: 3px;
 }
 div.window {
-	position: absolute;
 	background: white;
-	width: 200px;
-	height: 150px;
+	width: 50%;
+	height: 70%;
 	border-radius: 5px;
-	top: calc(45% - 75px);
-	left: calc(55% - 100px);
+	margin-top: 8%;
+	margin-left: 20%;
 	overflow: hidden;
 }
 div.windowHeader {
 	z-index: 1;
 	background: #e3e3e3;
-	width: 100%;
-	height: 30px;
-	position: relative;
+	width: 97%;
+	height: 9%;
+	padding-top: 4%;
+	padding-left: 3%;
+	box-shadow: 0px 0px 2px 0px #909cad;
 }
 div.headerBar {
-	position: absolute;
+	float: left;
 	background: white;
 	width: 70%;
-	height: 10px;
+	height: 60%;
 	font-size: 50%;
 	border-radius: 5px;
 	padding-left: 5px;
-	top: 45%;
-	left: 4%;
 }
 div.headerButtons {
-	position: absolute;
-	top: 45%;
-	right: 10px;
+	float: left;
 	background: white;
 	border-radius: 5px;
 	width: 15%;
-	height: 10px;
+	height: 60%;
+	margin-left: 3%;
 }
 div.headerForward {
 	font-size: 50%;
 	width: calc(50% - 0.75px);
 	text-align: center;
 	float: left;
+	padding: 0px;
 }
 div.headerBack {
 	font-size: 50%;
@@ -529,34 +528,11 @@ div.headerBack {
 	float: left;
 	border-right: 1.5px solid #e3e3e3;
 }
-div.windowTabs {
-	position: relative;
-	width: 30px;
-	height: 10px;
-	top: 2.5px;
-	left: 87%;
-}
-div.windowMini {
-	background: #ffa500;
-	height: 8px;
-	width: 8px;
-	border-radius: 5px;
-	float: left;
-}
-div.windowClose {
-	background: #c92a2a;
-	margin-left: 3px;
-	height: 8px;
-	width: 8px;
-	border-radius: 5px;
-	float: left;
-}
 div.msgBarC {
 	background: #ededed;
 	width: 100%;
-	height: 15px;
-	position: absolute;
-	top: calc(100% - 15px);
+	height: 10%;
+	box-shadow: 0px 0px 2px 0px #909cad;
 }
 div.msgInput {
 	width: 80%;
@@ -567,12 +543,12 @@ div.msgInput {
 }
 div.chatC {
 	z-index: 0.5;
-	position: relative;
-	top: -10px;
+	margin-top: 0%;
 	width: calc(100% - 10px);
-	height: 80%;
+	height: 70%;
 	padding: 5px;
 	padding-top: 0px;
+	overflow: hidden;
 }
 div.msgC {
 	width: 100%;
@@ -585,8 +561,8 @@ div.sentC {
 	padding: 3px;
 	padding-left: 6px;
 	padding-right: 6px;
-	font-size: 85%;
-	background: #037ffc;
+	font-size: 70%;
+	background: #4287f5;
 	color: white;
 	text-align: right;
 	border-radius: 8px 8px 0px 8px;
@@ -597,10 +573,16 @@ div.recievedC {
 	padding: 3px;
 	padding-left: 6px;
 	padding-right: 6px;
-	font-size: 85%;
+	font-size: 70%;
 	background: #bababa;
 	text-align: left;
 	border-radius: 8px 8px 8px 0px;
+}
+div.phone {
+	background: red;
+	height: 40%;
+	width: 30%;
+	float: right;
 }
 div.phoneDrawing {
 	box-shadow: 0px 0px 2px 0px #28303a;
@@ -639,7 +621,7 @@ div.drawnMsgP {
 	padding: 5px;
 }
 .sentP {
-	background: #037ffc;
+	background: #4287f5;
 	color: white;
 	text-align: right;
 	margin-left: 10px;
