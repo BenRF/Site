@@ -127,7 +127,7 @@ p.projectDescription {
 	top: 80px;
 	left: 50px;
 	font-size: 1.2em;
-	max-width: 500px;
+	max-width: 600px;
 }
 div.contactLock {
 	box-shadow: 0px 0px 8px 0px #28303a;
@@ -136,7 +136,7 @@ div.contactLock {
 	height: 600px;
 	padding-left: 0.5%;
 	padding-right: 0.5%;
-	background-color: #434242;
+	background-color: #1c1c1c;
 }
 div.title {
 	padding-top: 20px;
@@ -409,235 +409,9 @@ div.drawing {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border: 1px solid green;
 }
 div.dummy {
 	margin-top: 41.25%;
-}
-div.monitor {
-	position: relative;
-	height: 70%;
-	width: 70%;
-	margin-top: 8%;
-}
-div.screen {
-		box-shadow: 1px 1px 3px #28303a;
-		position: absolute;
-		top: 0px;
-		height: 70%;
-		width: 90%;
-		background: #28303a;
-		border-radius: 20px;
-		padding: 5%;
-}
-div.innerScreen {
-		box-shadow: inset 0px 0px 6px 0px #28303a;
-		padding: 0px;
-		background: #dbdbdb;
-		background-image: url("icons/wallpaper.jpg");
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-		width: 100%;
-		height: 100%;
-		border-radius: 3px;
-		overflow: hidden;
-}
-div.stand {
-		box-shadow: 0px 0px 2px 0px #28303a;
-		background: #212830;
-		width: 10%;
-		height: 10%;
-		position: absolute;
-		left: 45%;
-		bottom: 10%;
-		border-radius: 0px;
-}
-div.base {
-		filter: drop-shadow(0 1px 5px rgba(0,0,0,.5));
-		border-bottom: 35px solid #28303a;
-		border-left: 30px solid transparent;
-		border-right: 30px solid transparent;
-		height: 0;
-		width: 16%;
-		position: absolute;
-		bottom: 0px;
-		left: 33%;
-		border-radius: 23px;
-}
-div.taskBar {
-	margin-top: 8%;
-	background: #808080;
-	width: 99%;
-	height: 4%;
-	padding-left: 1%;
-	padding-top: 1%;
-}
-div.windowStart {
-	background: #d9d9d9;
-	height: 50%;
-	width: 5px;
-	border-radius: 2px;
-}
-div.window {
-	background: white;
-	width: 50%;
-	height: 70%;
-	border-radius: 5px;
-	margin-top: 8%;
-	margin-left: 20%;
-	overflow: hidden;
-}
-div.windowHeader {
-	z-index: 1;
-	background: #e3e3e3;
-	width: 97%;
-	height: 9%;
-	padding-top: 4%;
-	padding-left: 3%;
-	box-shadow: 0px 0px 2px 0px #909cad;
-}
-div.headerBar {
-	float: left;
-	background: white;
-	width: 70%;
-	height: 60%;
-	font-size: 50%;
-	border-radius: 5px;
-	padding-left: 5px;
-}
-div.headerButtons {
-	float: left;
-	background: white;
-	border-radius: 5px;
-	width: 15%;
-	height: 60%;
-	margin-left: 3%;
-}
-div.headerForward {
-	font-size: 50%;
-	width: calc(50% - 0.75px);
-	text-align: center;
-	float: left;
-	padding: 0px;
-}
-div.headerBack {
-	font-size: 50%;
-	width: calc(50% - 0.75px);
-	text-align: center;
-	float: left;
-	border-right: 1.5px solid #e3e3e3;
-}
-div.msgBarC {
-	background: #ededed;
-	width: 100%;
-	height: 10%;
-	box-shadow: 0px 0px 2px 0px #909cad;
-}
-div.msgInput {
-	width: 80%;
-	height: 8.7px;
-	border-bottom: 1.2px solid #ffa500;
-	margin-top: 3px;
-	margin-left: 5px;
-}
-div.chatC {
-	z-index: 0.5;
-	margin-top: 0%;
-	width: calc(100% - 10px);
-	height: 70%;
-	padding: 5px;
-	padding-top: 0px;
-	overflow: hidden;
-}
-div.msgC {
-	width: 100%;
-	height: auto;
-}
-div.sentC {
-	float: right;
-	margin-top: 3px;
-	margin-left: 15px;
-	padding: 3px;
-	padding-left: 6px;
-	padding-right: 6px;
-	font-size: 70%;
-	background: #4287f5;
-	color: white;
-	text-align: right;
-	border-radius: 8px 8px 0px 8px;
-}
-div.recievedC {
-	float: left;
-	margin-top: 3px;
-	padding: 3px;
-	padding-left: 6px;
-	padding-right: 6px;
-	font-size: 70%;
-	background: #bababa;
-	text-align: left;
-	border-radius: 8px 8px 8px 0px;
-}
-div.phone {
-	background: red;
-	height: 40%;
-	width: 30%;
-	float: right;
-}
-div.phoneDrawing {
-	box-shadow: 0px 0px 2px 0px #28303a;
-	position: absolute;
-	bottom: 30px;
-	right: 130px;
-	background: #28303a;
-	width: 150px;
-	height: 250px;
-	border-radius: 20px 20px 20px 20px ;
-}
-div.phoneScreen {
-	box-shadow: inset 0px 0px 6px 0px #28303a;
-	background: #e8e8e8;
-	width: 80%;
-	height: 76%;
-	margin-left: 10%;
-	margin-top: 18%;
-	padding-top: 5px;
-	overflow: hidden;
-}
-div.phoneButton {
-	background: #333d4a;
-	width: 23px;
-	height: 23px;
-	border-radius: 11.5px;
-	box-shadow: inset 0px 0px 6px 0px #28303a;
-	margin-top: 3px;
-	margin-left: calc(50% - 11.5px);
-}
-div.drawnMsgP {
-	position: relative;
-	display: inline-block;
-	font-size: 70%;
-	margin: 5px;
-	padding: 5px;
-}
-.sentP {
-	background: #4287f5;
-	color: white;
-	text-align: right;
-	margin-left: 10px;
-	border-radius: 8px 8px 0px 8px;
-}
-.recievedP {
-	background: #bababa;
-	text-align: left;
-	margin-right: 10px;
-	border-radius: 8px 8px 8px 0px;
-}
-div.msgBarP {
-	margin-top: 18px;
-	margin-left: 2px;
-	width: 100%;
-	height: 20px;
 }
 p.contactTitle {
 	font-size: 55px;
@@ -657,14 +431,15 @@ p.contactDesc {
 	margin-bottom: 15px;
 }
 div.details {
-	position: absolute;
+	position: sticky;
 	z-index: 2;
-	background-color: #434242;
+	background-color: #1c1c1c;
 	width: 60%;
-	margin-left: 20%;
+	margin: auto;
 	height: 210px;
 	border-top: 1px solid #616060;
 	border-bottom: 1px solid #616060;
+	max-width: 700px;
 }
 div.outerDetail {
 	margin: 0px;
@@ -731,11 +506,10 @@ div.showAlert {
 	top: 42%;
 }
 div.alert {
-	z-index: 1;
-	left: calc(50% - 125px);
+	margin-left: calc(50% - 125px);
 	color: white;
 	position: relative;
-	background: #616060;
+	background: #363636;
 	width: 250px;
 	height: 35px;
 	padding-top: 5px;
@@ -763,9 +537,9 @@ p.alert {
   transition: opacity 0.35s ease-in-out;
 }
 .outOfTheWay {
+	/* opacity: 0; */
 	position: absolute;
-	top: -5%;
-	right: 150%;
+	left: 50%;
 }
 div.shownBox {
 	transition: 0.75s;
