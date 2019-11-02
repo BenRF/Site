@@ -146,7 +146,7 @@ div.chatC {
 }
 div.msgC {
 	width: 100%;
-	height: auto;
+	height: 30px;
 }
 div.sentC {
 	float: right;

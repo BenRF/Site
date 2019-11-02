@@ -38,10 +38,10 @@ function copy(text) {
 	}
 	var copyText = document.getElementById("discord");
 	copyText.value = text;
-  copyText.select();
-  copyText.setSelectionRange(0, 99999)
-  document.execCommand("copy");
-  document.getElementById("alert").className = "alert showAlert";
+  	copyText.select();
+  	copyText.setSelectionRange(0, 99999)
+  	document.execCommand("copy");
+  	document.getElementById("alert").className = "alert showAlert";
 	alert = setInterval(hideAlert,2000);
 }
 
@@ -53,6 +53,10 @@ function hideAlert() {
 var overProject = false;
 function projectHover(status) {
 	overProject = status;
+}
+
+function newBenM() {
+	window.open('./benm.php','popUpWindow','height=600,width=400,left=100,top=100,resizable=no,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no,status=no');
 }
 
 function sTo(target) {

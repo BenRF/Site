@@ -11,34 +11,37 @@ div.shortHeader {
 	width: 70% !important;
 }
 div.header {
-	transition: 0.75s;
+	transition: 0.5s;
 	position: fixed;
 	background: transparent;
 	float: left;
 	width: 100%;
 	font-family: 'Fira Sans', sans-serif;
 	z-index : 1;
-	height: 100px
+	height: 30px;
+	box-shadow: 0px 0px 0px 0px transparent;
 }
 div.attached {
 	color: white !important;
-	box-shadow: 0px 1px 10px transparent;
 }
 div.detached {
-	color: #949494 !important;
+	color: #121212 !important;
+	background-color: rgba(219, 219, 219,0.6);
+	box-shadow: 0px 0px 10px 45px rgba(219, 219, 219,0.6);
+	transition: 0.2s;
 }
 div.scroll {
 	border-style: solid;
 	border-color: #c8895f;
 	border-width: 0px 0px 3px 0px;
 	position: absolute;
-	border-radius: 2px;
+	border-radius: 5px;
 }
 div.underTitle {
 	transition: 0.5s;
-	width: 211px;
+	width: 207px;
 	top: 60px;
-	left: 50px;
+	left: 51px;
 }
 div.underAbout {
 	transition: 0.5s;
@@ -244,7 +247,7 @@ p.title {
 	position: absolute;
 	height: 20px;
 	left: 50px;
-	font-size: 25px;
+	font-size: 1.55em;
 	font-weight: bold;
 	margin-bottom: 3px;
 	-webkit-touch-callout: none;
@@ -419,7 +422,7 @@ p.contactTitle {
 	text-align: center;
 	color: white;
 	opacity: 0.8;
-	margin-top: 70px;
+	margin-top: 80px;
 	margin-bottom: 0px;
 }
 p.contactDesc {
@@ -451,10 +454,10 @@ div.outerDetail {
 	margin-bottom: 3px;
 }
 div.detail {
-	margin: 0px;
+	margin: auto;
 	padding-left: 25px;
 	padding-top: 13px;
-	width: calc(100% - 15px);
+	width: 80%;
 	height: 50px;
 	opacity: 0.5;
 	transition: 0.25s;
@@ -540,268 +543,5 @@ p.alert {
 	/* opacity: 0; */
 	position: absolute;
 	left: 50%;
-}
-div.shownBox {
-	transition: 0.75s;
-	right: 0px;
-}
-div.hiddenBox {
-	transition: 0.75s;
-	right: -40%;
-}
-div.msgBox {
-	z-index: 8;
-	position: fixed;
-	height: 100%;
-	width: 30%;
-	top: 0px;
-	background: #4192cc;
-	box-shadow: 0px 0px 8px #707070;
-	overflow: hidden;
-}
-div.register {
-	transition: 0.5s;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	position: relative;
-}
-div.waiting {
-	transition: 0.5s;
-	position: absolute;
-	top: 0px;
-	height: 100%;
-	width: 100%;
-}
-p.waitingTitle {
-	text-align: center;
-	color: #7a7a7a;
-	font-size: 35px;
-	margin: 0px;
-	margin-top: calc(65% - 35px);
-	position: relative;
-	top: 0px;
-}
-div.rejected {
-	transition: 0.5s;
-	position: absolute;
-	top: 0px;
-	height: 80%;
-	width: 100%;
-	margin-top: 15%;
-}
-p.rejectText {
-	color: #7a7a7a;
-	text-align: center;
-	font-size: 1.25em;
-}
-div.approved {
-	transition: 0.5s;
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	background: #f7f7f7;
-	top: 0px;
-}
-.msgLeft {
-	left: -200%;
-}
-.msgCenter {
-	left: 0%;
-}
-.msgRight {
-	left: 200%;
-}
-#reject {
-	fill: #ea484c;
-}
-input.msgRegister {
-	position: relative;
-	margin-top: 10%;
-	left: 5%;
-	height: 40px;
-	width: 90%;
-	background: white;
-	font-size: 20px;
-	border-radius: 15px;
-	border: 1px solid #d6d6d6;
-	transition: 0.8s;
-	color: #7a7a7a;
-	padding-left: 15px;
-}
-input.msgRegister:focus {
-	transition: 0.8s;
-	outline-width: 0px;
-	box-shadow: inset 0px 0px 8px 0px #e6e6e6;
-}
-p.registerTitle {
-	color: #7a7a7a;
-	font-size: 35px;
-	margin: 0px;
-	position: relative;
-	top: 25px;
-}
-div.BenMToggle {
-	z-index: 4;
-	height: 60px;
-	width: 60px;
-	background: #4192cc;
-	position: fixed;
-	bottom: 25px;
-	right: 25px;
-	border-radius: 30px;
-	box-shadow: 0px 0px 8px #5e5e5e;
-	opacity: 0.8;
-	transition: 0.5s;
-}
-div.BenMToggle:hover {
-	opacity: 1;
-	transition: 0.5s;
-}
-div.BenMToggle:active {
-	opacity: 0.2;
-}
-div.benmActions {
-	position: absolute;
-	top: 0px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	width: 180px;
-	transition: 1.5s;
-}
-.hiddenActions {
-	left: calc(100% - 60px);
-}
-.shownActions {
-	left: calc(100% - 120px);
-}
-div.close {
-	background: transparent;
-	opacity: 0.6;
-	width: 50px;
-	height: 40px;
-	transition: 0.8s;
-	float: left;
-	margin-right: 10px;
-}
-div.close:hover {
-	opacity: 1;
-	transition: 0.8s;
-}
-div.close:active {
-	opacity: 0.1;
-}
-div.clickArea {
-	position: fixed;
-	height: 100%;
-	width: 100%;
-	top: 0px;
-	left: 0px;
-	z-index: 6;
-	display: none;
-}
-div.showArea {
-	display: block;
-}
-div.logo svg {
-	height: 80px;
-	width: 80px;
 	margin-top: 10px;
-	margin-left: 10px;
-	margin-right: 15px;
-	float: left;
-}
-div.benmicon {
-	position: relative;
-	width: 125px;
-	height: 125px;
-	left: calc(50% - 62.5px);
-	top: 0%;
-}
-div.innerBox {
-	overflow: hidden;
-	background: white;
-	position: relative;
-	transition: 0.5s;
-	background: white;
-	padding-top: 15px;
-	padding-bottom: 15px;
-}
-.smallBox {
-	top: 20%;
-	height: 35%;
-	width: 90%;
-	left: 5%;
-	border-radius: 30px;
-	box-shadow: inset 0px 0px 6px 0px #28303a;
-}
-.bigBox {
-	top: 8%;
-	height: 90%;
-	left: 0%;
-	border-radius: 0px;
-	width: 100%;
-	box-shadow: inset 0px 7px 5px -6px #28303a;
-	padding: 0px;
-}
-div.msgContainer {
-	box-shadow: inset 0px 7px 5px -6px #dbdbdb;
-	width: 100%;
-	height: 88%;
-	overflow: auto;
-}
-div.msgChin {
-	position: absolute;
-	bottom: 0px;
-	left: 0px;
-	box-shadow: 0px 0px 4px 0px #dbdbdb;
-	background: white;
-	width: 100%;
-	height: 9%;
-	position: relative;
-	transition: 1s;
-	top: 0%;
-}
-.hiddenChin {
-	top: 25% !important;
-}
-div.benmRow {
-	width: 100%;
-	height: 50px;
-}
-div.benmmsg {
-	margin: 3px;
-	padding: 8px;
-}
-p.benmmsg {
-	margin: 0px;
-	margin-left: 5px;
-	margin-right: 5px;
-	font-size: 20px;
-}
-div.benmsent {
-	background: #0091ff;
-	color: white;
-	float: right;
-	border-radius: 20px 20px 0px 20px;
-}
-div.benmrecieved {
-	background: #dedede;
-	float: left;
-	color: #2b2b2b;
-	border-radius: 20px 20px 20px 0px;
-}
-input.benmmsg {
-	color: #7a7a7a;
-	width: 80%;
-	height: 60%;
-	margin-top: 2.5%;
-	margin-left: 2.5%;
-	border-color: transparent;
-	border-bottom: 1.5px solid #c2c2c2;
-	font-size: 20px;
-}
-input.benmmsg:focus {
-	outline: 0px;
-	transition: 0.5s;
-	border-bottom: 2px solid #4192cc;
 }
