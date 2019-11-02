@@ -170,9 +170,63 @@
         }
         div.acceptedIcon {
             transition: 2s;
-            margin-top: 5px;
+            margin-top: 10px;
             width: 10vw;
             margin-left: 5px;
+        }
+        div.accepted {
+            width: 100%;
+            height: 100%;
+            top: 0px;
+        }
+        div.topBar {
+            width: 100%;
+            height: 10%;
+        }
+        div.msgBox {
+            background: white;
+            box-shadow: inset 0px 0px 3px 1px #9c9c9c;
+            width: 100%;
+            height: 80%;
+        }
+        input.msg {
+            transition: 0.5s;
+            height: 30px;
+            width: 70%;
+            margin: 0px;
+            margin-left: 15px;
+            margin-top: 13px;
+            font-size: 100%;
+            padding: 0px;
+            padding-left: 5px;
+            border: 0px;
+            border-bottom: 1.25px solid #a1a1a1;
+            background-color: transparent;
+            outline: none;
+            color: #424242;
+            font-family: 'Roboto', sans-serif;
+            float: left;
+        }
+        input.msg:hover {
+            border-bottom: 1.35px solid #878787;
+        }
+        input.msg:focus {
+            transition: 0.5s;
+            outline: none;
+            border-bottom: 1.35px solid #878787;
+        }
+        div.sendIcon {
+            margin-top: 10px;
+            margin-right: 30px;
+            height: 40px;
+            width: 40px;
+            float: right;
+            fill: #595959;
+            opacity: 0.6;
+        }
+        div.sendIcon:hover {
+            transition: 0.5s;
+            opacity: 1;
         }
     </style>
     <script>
@@ -206,11 +260,11 @@
                 count = 0;
             }
             //tips();
-            accepted();
         }
 
         function accepted() {
             clearInterval(fading);
+            document.getElementById("reg").className = "registration left";
             document.getElementById("wait").className = "waiting left";
             document.getElementById("icon").className = "acceptedIcon";
             document.getElementById("accepted").className = "accepted center";
@@ -235,7 +289,7 @@
         <p class="regDesc">Please fill out your name to continue</p>
         <p class="name">Name</p>
         <input type="text" id="name"/>
-        <button class="btn" type="button" onclick="register()"><span>Start chat</span></button>
+        <button class="btn" type="button" onclick="accepted()"><span>Start chat</span></button>
     </div>
     <div id="wait" class="waiting right">
         <p id="tips" class="waitingTips hidden">Lets see who's home</p>
@@ -247,7 +301,20 @@
         <button class="btn" type="button" onclick="register()" style="margin-top: 20px; width:60%;"><span>Send</span></button>
     </div>
     <div id="accepted" class="accepted right">
-        <p>CONGRATS</p>
+        <div class="topBar">
+
+        </div>
+        <div class="msgBox">
+
+        </div>
+        <div class="msgChin">
+            <input id="msg" class="msg"/>
+        </div>
+        <div class="sendIcon">
+            <?php
+                echo file_get_contents("send.svg");
+            ?>
+        </div>
     </div>
 </body>
 </html>
