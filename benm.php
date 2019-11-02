@@ -169,7 +169,7 @@
             transition: 1s;
         }
         div.acceptedIcon {
-            transition: 2s;
+            transition: 1s;
             margin-top: 10px;
             width: 10vw;
             margin-left: 5px;
@@ -230,11 +230,30 @@
         }
     </style>
     <script>
+        var server;
         function register() {
+            connection = new WebSocket("ws://localhost:8080");
+            connection.onopen = () => {
+                console.log("connection made");
+                connection.send(JSON.stringify({status: '0',name: document.getElementById("name").value}));
+            }
+            connection.onmessage = e => { recieve(e); }
             document.getElementById("reg").className = "registration left";
             document.getElementById("icon").className = "waitIcon";
             document.getElementById("wait").className = "waiting center";
             fading = setInterval(tips,2000);
+        }
+
+        function recieve(e) {
+            var message = JSON.parse(e.data);
+            if (message.status == "3") {
+              accepted();
+            } else if (message.status == "4") {
+              declined();
+              connection.close();
+            } else if (message.status == "7") {
+              write("BEN: " + message.message)
+            }
         }
 
         var fading;
@@ -259,7 +278,7 @@
             if (count >= tipOptions.length) {
                 count = 0;
             }
-            //tips();
+            tips();
         }
 
         function accepted() {
@@ -276,6 +295,22 @@
             document.getElementById("icon").className = "waitIcon";
             document.getElementById("declined").className = "declined center";
         }
+
+        function send() {
+            var box = document.getElementById("msg");
+            connection.send(JSON.stringify({status: "6",msg: box.value}));
+            write("YOU: " + box.value);
+            box.value = "";
+            return false;
+        }
+
+        function message() {
+            console.log("DO SOMETHING!");
+        }
+
+        function write(msg) {
+            console.log(msg);
+        }
     </script>
 </head>
 <body>
@@ -289,7 +324,7 @@
         <p class="regDesc">Please fill out your name to continue</p>
         <p class="name">Name</p>
         <input type="text" id="name"/>
-        <button class="btn" type="button" onclick="accepted()"><span>Start chat</span></button>
+        <button class="btn" type="button" onclick="register()"><span>Start chat</span></button>
     </div>
     <div id="wait" class="waiting right">
         <p id="tips" class="waitingTips hidden">Lets see who's home</p>
@@ -298,7 +333,7 @@
         <p class="declinedTitle">Ben isn't available right now,</p>
         <p class="declinedDesc">would you like to leave a message?</p>
         <textarea rows="4" cols="50" id="leftMsg"></textarea>
-        <button class="btn" type="button" onclick="register()" style="margin-top: 20px; width:60%;"><span>Send</span></button>
+        <button class="btn" type="button" onclick="message()" style="margin-top: 20px; width:60%;"><span>Send</span></button>
     </div>
     <div id="accepted" class="accepted right">
         <div class="topBar">
@@ -310,11 +345,13 @@
         <div class="msgChin">
             <input id="msg" class="msg"/>
         </div>
-        <div class="sendIcon">
-            <?php
-                echo file_get_contents("send.svg");
-            ?>
-        </div>
+        <a href="javascript:void(0)" onclick="send()">
+            <div class="sendIcon">
+                <?php
+                    echo file_get_contents("send.svg");
+                ?>
+            </div>
+        </a>
     </div>
 </body>
 </html>
