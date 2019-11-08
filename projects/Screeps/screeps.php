@@ -67,51 +67,76 @@ function screepDown(screep) {
   screep.style.top = parseInt(currentPos,10) + 25;
 }
 </script>
-
-<div class="project" style="background: #686e70; height: 375px; box-shadow: inset 0px 0px 8px 0px #545354;">
-  <div class="screepsDrawing">
-    <div class="rock" style="width: 50px; height: 325px; top: 25px; left: -25px;"></div>
-    <div class="rock" style="width: 50px; height: 100px; top: 75px; left: -5px;"></div>
-    <div class="rock" style="width: 75px; height: 100px; top: 125px; left: -5px;"></div>
-    <div class="rock" style="width: 75px; height: 75px; top: 250px; left: -25px;"></div>
-
-    <div class="rock" style="width: 50px; height: 175px; top: 400px; left: -20px;"></div>
-    <div class="rock" style="width: 75px; height: 150px; top: 425px; left: -20px;"></div>
-    <div class="rock" style="width: 50px; height: 50px; top: 475px; left: 25px;"></div>
-
-    <div class="rock" style="width: 175px; height: 45px; top: -20px; left: 75px;"></div>
-    <div class="rock" style="width: 75px; height: 70px; top: -20px; left: 175px;"></div>
-    <div class="rock" style="width: 45px; height: 95px; top: -20px; left: 175px;"></div>
-    <div class="rock" style="width: 187px; height: 45px; top: -20px; left: 208px;"></div>
-    <div class="rock" style="width: 45px; height: 70px; top: -20px; left: 325px;"></div>
-
-    <div id="screep1" class="screep" style="left: -22.5px; top: 2.5px"></div>
-    <div id="screep2" class="screep" style="left: -47.5px; top: 350px"></div>
-    <div id="screep3" class="screep" style="left: 27.5px; top: -45.5px"></div>
-  </div>
-  <div class="stats">
-    <div class="innerStat">
+<style>
+    div.statView {
+        width: 50%;
+        height: 95%;
+        float: left;
+        margin-left: 50px;
+    }
+    p.screepDesc {
+        color: #7a7a7a;
+        width: calc(40% - 50px - 40px);
+        font-size: 1.2em;
+        float: left;
+        margin-left: 40px;
+    }
+    p.screepTitle {
+        font-weight: bold;
+    	color: #1c1c1c;
+    	font-size: 2em;
+        float: left;
+        margin-top: 35px;
+        margin-left: 20px;
+    }
+    div.sicon svg {
+    	height: 50px;
+    	width: 50px;
+    	margin: 0px;
+    	padding: 0px;
+        margin-top: 30px;
+    	margin-left: 40px;
+        float: left;
+    }
+    div.stat {
+        width: 33%;
+        height: 50%;
+        float: left;
+    }
+    p.stat {
+        text-align: center;
+        color: #7a7a7a;
+        font-size: 23px;
+        margin-top: 45px;
+    }
+    p.statVal {
+        text-align: center;
+        color: #7a7a7a;
+        font-size: 45px;
+        margin-top: 5px;
+    }
+</style>
+<div class="project" style="box-shadow: inset 0px 0px 50px 50px #dbdbdb;">
+    <div class="statView">
+        <?php
+            $stats = ["Room count","Avg room lvl","Unit count", "Avg unit cost"];
+            foreach ($stats as $stat) {
+                echo '<div class="stat">';
+                echo '<p class="stat">'. $stat .'</p>';
+                echo '<p class="statVal">2</p>';
+                echo '</div>';
+            }
+        ?>
+    </div>
+    <div class="Sicon">
       <?php
-        $stats = array("Rooms owned","Units","Average unit cost","Average room level");
-        foreach ($stats as $s) {
-          echo '<div class="stat">';
-            echo '<p class="statLabel">'.$s.'</p>';
-            echo '<p class="stat">0</p>';
-          echo '</div>';
-        }
+        echo file_get_contents("./projects/screeps/icon.svg");
       ?>
     </div>
-  </div>
-  <div class="desc" style="padding-left: 650px;">
-    <div class="icon">
-      <?php
-        echo file_get_contents("./projects/Screeps/icon.svg");
-      ?>
-    </div>
-    <p class="projectTitle">Screeps</p>
-    <p class="projectDescription" style="max-width: 80%;">
-      An online MMO based around programming units using Javascript. Requires solutions to be scalable and robust to deal with both other players
-      and AI opponents. A good passtime to keep occupied between projects and to introduce new problems to solve without compromising previous work.
+    <p class="screepTitle" style="color: #542FBF;">Screeps</p>
+    <p class="screepDesc">
+        An online game based around programming, a fun passtime between projects to
+        keep me
     </p>
   </div>
 </div>

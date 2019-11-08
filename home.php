@@ -52,10 +52,12 @@
 			</div>
 		</div>
 		<div id="projects" class="projectLock">
-			<!-- <p class="projectsTitle">Previous work</p> -->
 			<div class="projectList">
 				<?php
-					include("./projects/BenM/benm.php");
+					$dir = new DirectoryIterator("./projects");
+					foreach ($dir as $p) {
+						include("./projects/".$p."/$p.php");
+					}
 				?>
 			</div>
 		</div>
