@@ -18,7 +18,7 @@ div.header {
 	width: 100%;
 	font-family: 'Fira Sans', sans-serif;
 	z-index : 1;
-	height: 30px;
+	height: 40px;
 	box-shadow: 0px 0px 0px 0px transparent;
 }
 div.attached {
@@ -28,7 +28,7 @@ div.detached {
 	color: #121212 !important;
 	background-color: rgba(219, 219, 219,0.6);
 	box-shadow: 0px 0px 10px 45px rgba(219, 219, 219,0.6);
-	transition: 0.2s;
+	transition: 2.5s;
 }
 div.scroll {
 	border-style: solid;
@@ -75,12 +75,12 @@ div.aboutLock {
 	top: 100%;
 	left: 0%;
 	width: 100%;
-	height: 400px;
+	height: 525px;
 	background: #dbdbdb;
 }
 div.about {
 	position: absolute;
-	height: 100%;
+	height: auto;
 	width: 90%;
 	padding: 5%;
 }
@@ -90,7 +90,6 @@ div.projectLock {
 	float: left;
 	background: #dbdbdb;
 	position: relative;
-	border: 1px solid black;
 }
 div.projectList {
 	width: 95%;
@@ -122,6 +121,16 @@ p.projectTitle {
 	top: 10px;
 	left: 100px;
 	font-size: 2em
+}
+p.projectsTitle {
+	font-weight: bold;
+	text-decoration: underline;
+	text-decoration-color: #e8913a;
+	color: #7a7a7a;
+	width: 100%;
+	text-align: center;
+	font-size: 3vw;
+	margin: 0px;
 }
 p.projectDescription {
 	color: #7a7a7a;
@@ -204,6 +213,7 @@ p.detail {
 	font-weight: bold;
 }
 p.header {
+	cursor: pointer;
 	color: #7a7a7a;
 	transition: 0.75s;
 	font-size: 20px;
@@ -241,6 +251,7 @@ p.header:hover {
 	color: #c99149 !important;
 }
 p.title {
+	cursor: pointer;
 	transition: 0.25s;
 	color: #7a7a7a;
 	top: 10px;
@@ -261,7 +272,19 @@ p.about {
 	color: #7a7a7a;
 	font-size: 21px;
 	margin: 0px;
-	width: 100%;
+	width: 60%;
+	max-width: 500px;
+	text-align: left;
+	float: left;
+}
+p.aboutTitle {
+	color: #e8913a;
+	font-size: 10vw;
+	font-weight: bold;
+	text-align: right;
+	margin: auto;
+	margin-top: 20px;
+	margin-right: 15px;
 }
 b.highlight {
 	color: #c99149;

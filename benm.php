@@ -79,6 +79,7 @@
             color: #424242;
         }
         .btn {
+          cursor: pointer;
           position: relative;
           display: block;
           margin: 24px auto;

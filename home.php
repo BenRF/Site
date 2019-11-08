@@ -27,10 +27,10 @@
 	</head>
 	<body id="b" onload="start()">
 		<div id="header" class="header attached">
-			<a href="javascript:void(0)" onclick="sTo(0)"> <p id="t1" class="title attachedT">Ben Ramsay Foster</p> </a>
-			<a href="javascript:void(0)" onclick="sTo(3)"> <p id="t2" class="header c attachedH">Contact</p> </a>
-			<a href="javascript:void(0)" onclick="sTo(2)"> <p id="t3" class="header p attachedH">Projects</p> </a>
-			<a href="javascript:void(0)" onclick="sTo(1)"> <p id="t4" class="header a attachedH">About</p> </a>
+			<p id="t1" onclick="sTo(0)" class="title attachedT">Ben Ramsay Foster</p>
+			<p id="t2" onclick="sTo(3)" class="header c attachedH">Contact</p>
+			<p id="t3" onclick="sTo(2)" class="header p attachedH">Projects</p>
+			<p id="t4" onclick="sTo(1)" class="header a attachedH">About</p>
 			<div id="scroll" class="scroll underTitle"></div>
 		</div>
 		<div id="main" class="typingLock">
@@ -40,12 +40,19 @@
 		<div class="aboutLock">
 			<div class="about">
 				<p class="about">
-					I'm a Computer science student with experience in a range of topics
-					from Computer Security to Web Development.
+					I'm Ben, a Computer Science graduate with experience in topics
+					such as Computer security, web development and software engineering.<br/>
+					My passion is in creating software solutions that help make people's jobs and lives easier whether its
+					a simple energy tracking app for the elderly to automating the process of merging excel tables.
+					<br/>
+					A strong believer in the power of clean, maintainable code that focuses on readability and
+					potential expandability just as much as working correctly.
 				</p>
+				<p class="aboutTitle">Hello world!</p>
 			</div>
 		</div>
 		<div id="projects" class="projectLock">
+			<!-- <p class="projectsTitle">Previous work</p> -->
 			<div class="projectList">
 				<?php
 					include("./projects/BenM/benm.php");
