@@ -116,7 +116,7 @@ function screepDown(screep) {
         margin-top: 5px;
     }
 </style>
-<div class="project" style="box-shadow: inset 0px 0px 50px 50px #dbdbdb;">
+<div class="project">
     <div class="statView">
         <?php
             $stats = ["Room count","Avg room lvl","Unit count", "Avg unit cost"];
