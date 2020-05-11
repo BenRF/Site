@@ -1,14 +1,14 @@
 <style>
 div.monitor {
 	height: 85%;
-	width: 45vh;
+	width: 60vh;
 	position: absolute;
 	top: 10px;
 	left: calc(45% - 22.5vh);
 }
 div.phone {
 	height: 60%;
-	width: 15vh;
+	width: 20vh;
 	left: calc(70% - 7.5vh);
 	top: 40%;
 	position: absolute;
