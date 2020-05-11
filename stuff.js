@@ -142,10 +142,7 @@ function resume() {
 }
 
 function start() {
-  message = setInterval(update, 5000);
-	// if (movement == null) {
-	// 	movement = setInterval(screep, 2000);
-	// }
+  message = setInterval(update, 1000);
 	var flush;
 	var count = 0;
 
