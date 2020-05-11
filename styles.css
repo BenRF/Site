@@ -299,7 +299,7 @@ p.about {
 	color: #7a7a7a;
 	font-size: 22px;
 	margin: 0px;
-	margin-top: 80px;
+	margin-top: 0px;
 	margin-left: 100px;
 	width: 40%;
 	max-width: 550px;
@@ -313,6 +313,7 @@ p.aboutTitle {
 	display: inline-block;
 	margin-top: 20px;
 	margin-right: 15px;
+	float: right;
 	text-shadow: 0 1px 0 #ccc,
                0 2px 0 #c9c9c9,
                0 3px 0 #bbb,

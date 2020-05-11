@@ -38,7 +38,6 @@
 		</div>
 		<div class="aboutLock">
 			<div class="about">
-				<p class="aboutTitle">Hello world!</p>
 				<p class="about">
 					I'm Ben, a Computer Science graduate with experience in topics
 					such as Computer security, web development and software engineering.<br/>
@@ -48,6 +47,7 @@
 					A strong believer in the power of clean, maintainable code that focuses on readability and
 					potential expandability just as much as working correctly.
 				</p>
+				<p class="aboutTitle">Hello world!</p>
 			</div>
 		</div>
 		<div id="projects" class="projectLock">
