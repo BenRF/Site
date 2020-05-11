@@ -2,7 +2,7 @@ html {
 	scroll-behavior: smooth;
 }
 body {
-	background: white;
+	background: #f4f3f0;
 	margin: 0px;
 	font-family: 'Roboto', sans-serif;
 }
@@ -25,9 +25,9 @@ div.attached {
 	color: white !important;
 }
 div.detached {
-	color: #121212 !important;
-	background-color: rgba(219, 219, 219,0.6);
-	box-shadow: 0px 0px 10px 45px rgba(219, 219, 219,0.6);
+	/*color: #121212 !important;*/
+	/*background-color: rgba(219, 219, 219,0.6);*/
+	/*box-shadow: 0px 0px 10px 45px rgba(219, 219, 219,0.6);*/
 	transition: 2.5s;
 }
 div.scroll {
@@ -75,36 +75,54 @@ div.aboutLock {
 	top: 100%;
 	left: 0%;
 	width: 100%;
-	height: 400px;
-	background: #dbdbdb;
+	height: 450px;
+	background: transparent;
+	padding-top: 30px;
 }
 div.about {
 	position: absolute;
 	height: auto;
 	width: 90%;
 	padding: 5%;
+	padding-bottom: 0%;
 }
 div.projectLock {
 	height: auto;
 	width: 100%;
 	float: left;
-	background: #dbdbdb;
+	background: transparent;
 	position: relative;
 }
 div.projectList {
 	width: 95%;
 	height: auto;
 	margin-left: 2.5%;
-	margin-top: 2%;
 	margin-bottom: 2%;
 }
 div.project {
-	width: 98%;
-	height: 400px;
-	margin: 1%;
+	width: 100%;
+	height: 450px;
 	float: left;
 	overflow: hidden;
-	position: relative;
+	margin-bottom: 35px;
+	margin-top: 25px;
+}
+div.projectLeft {
+	float: left;
+	width: calc(40% - 60px);
+	height: 70%;
+	margin-left: calc(10% + 30px);
+}
+div.projectRight {
+	float: left;
+	width: calc(40% - 60px);
+	height: 300px;
+	margin-left: 5%;
+}
+img.projectImg {
+	width: 75%;
+	margin: 0px;
+	margin-left: 10%;
 }
 div.icon svg {
 	height: 50px;
@@ -116,11 +134,10 @@ div.icon svg {
 }
 p.projectTitle {
 	font-weight: bold;
-	color: #1c1c1c;
-	position: absolute;
-	top: 10px;
-	left: 100px;
-	font-size: 2em
+	color: #3a3a35;
+	font-size: 2.5em;
+	text-align: center;
+	padding-top: 70px;
 }
 p.projectsTitle {
 	font-weight: bold;
@@ -133,13 +150,11 @@ p.projectsTitle {
 	margin: 0px;
 }
 p.projectDescription {
-	color: #7a7a7a;
-	width: 40%;
-	position: absolute;
-	top: 80px;
-	left: 50px;
+	color: #808078;
+	width: 80%;
+	margin-left: 10%;
+	text-align: center;
 	font-size: 1.2em;
-	max-width: 600px;
 }
 div.contactLock {
 	box-shadow: 0px 0px 8px 0px #28303a;
@@ -214,7 +229,7 @@ p.detail {
 }
 p.header {
 	cursor: pointer;
-	color: #7a7a7a;
+	color: #3a3e41;
 	transition: 0.75s;
 	font-size: 20px;
 	font-weight: bold;
@@ -247,13 +262,17 @@ p.c {
 	right: 50px;
 }
 p.header:hover {
-	transition: 0.75s;
-	color: #c99149 !important;
+	transition: 0.5s;
+	opacity: 0.5;
+}
+p.header:active {
+	transition: 0.5s;
+	opacity: 0.2;
 }
 p.title {
 	cursor: pointer;
 	transition: 0.25s;
-	color: #7a7a7a;
+	color: #3a3e41;
 	top: 10px;
 	position: absolute;
 	height: 20px;
@@ -267,6 +286,14 @@ p.title {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+p.title:hover {
+	transition: 0.5s;
+	opacity: 0.5;
+}
+p.title:active {
+	transition: 0.5s;
+	opacity: 0.2;
 }
 p.about {
 	color: #7a7a7a;
@@ -285,19 +312,18 @@ p.aboutTitle {
 	margin: auto;
 	margin-top: 20px;
 	margin-right: 15px;
-	text-shadow:
-    0 1px 0 #ccc,
-    0 2px 0 #c9c9c9,
-    0 3px 0 #bbb,
-    0 4px 0 #b9b9b9,
-    0 5px 0 #aaa,
-    0 6px 1px rgba(0,0,0,.1),
-    0 0 5px rgba(0,0,0,.1),
-    0 1px 3px rgba(0,0,0,.3),
-    0 3px 5px rgba(0,0,0,.2),
-    0 5px 10px rgba(0,0,0,.25),
-    0 10px 10px rgba(0,0,0,.2),
-    0 20px 20px rgba(0,0,0,.15);
+	text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
 }
 b.highlight {
 	color: #c99149;

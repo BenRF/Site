@@ -60,7 +60,15 @@ function newBenM() {
 }
 
 function sTo(target) {
-	document.body.scrollTop = window.innerHeight * target;
+	if (target === 0) {
+		document.body.scrollTop = 0;
+	} else if (target == 1) {
+		document.body.scrollTop = window.innerHeight;
+	} else if (target == 2) {
+		document.body.scrollTop = window.innerHeight + 400;
+	} else {
+		document.body.scrollTop = window.innerHeight * 20;
+	}
 	return false;
 }
 

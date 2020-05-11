@@ -18,7 +18,6 @@
 		<link href="https://fonts.googleapis.com/css?family=Blinker|Fira+Sans|Roboto&display=swap" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 		<script src="stuff.js"></script>
-		<script src="./benM/benM.js"></script>
 		<script>
 			window.onscroll = scrollCheck;
 			window.onfocus = resume;
@@ -53,12 +52,18 @@
 		</div>
 		<div id="projects" class="projectLock">
 			<div class="projectList">
-				<?php
-					$dir = new DirectoryIterator("./projects");
-					foreach ($dir as $p) {
-						include("./projects/".$p."/$p.php");
-					}
-				?>
+				<div class="project">
+					<div class="projectLeft">
+						<p class="projectTitle">BenM app</p>
+						<p class="projectDescription">
+							A livechat application allowing for users on a website to speak with the site owner via their phone. Utilizing NodeJS and Websockets to provide bi-directional communication
+							along with 2048 bit keys to ensure secure communication.
+						</p>
+					</div>
+					<div class="projectRight">
+						<img class="projectImg" src="./projects/BenM/img0.png"/>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div id="contact" class="contactLock">

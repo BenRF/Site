@@ -4,7 +4,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap" rel="stylesheet">
     <style>
         body {
-            background: #e6e6e6;
+            background: #f4f3f0;
             overflow: hidden;
         }
         div.left {
@@ -107,6 +107,49 @@
           display: block;
           padding: 15px 30px;
         }
+		div.MSG {
+			width: 100%;
+			float: left;
+			transform: rotate(180deg);
+		}
+		p.MSGtext {
+			font-size: 20px;
+			font-family: 'Roboto', sans-serif;
+			padding: 0px;
+			margin: 0px;
+		}
+		div.sentMSG {
+			display: inline-block;
+			background-color: #4286f4;
+			border-radius: 25px 25px 0px 25px;
+			padding-left: 15px;
+			padding-right: 15px;
+			padding-top: 8px;
+			padding-bottom: 8px;
+			float: right;
+			margin-right: 8px;
+			margin-top: 5px;
+		}
+		p.sentText {
+			color: white;
+			text-align: right;
+		}
+		div.recievedMSG {
+			display: inline-block;
+			background-color: #d6d6d6;
+			border-radius: 25px 25px 25px 0px;
+			padding-left: 15px;
+			padding-right: 15px;
+			padding-top: 8px;
+			padding-bottom: 8px;
+			float: left;
+			margin-left: 8px;
+			margin-top: 5px;
+		}
+		p.recievedText {
+			color: black;
+			text-align: right;
+		}
         div.waitIcon {
             transition: 2s;
             margin-top: 25%;
@@ -189,6 +232,8 @@
             box-shadow: inset 0px 0px 3px 1px #9c9c9c;
             width: 100%;
             height: 80%;
+			transform: rotate(180deg);
+			padding-top: 8px;
         }
         input.msg {
             transition: 0.5s;
@@ -233,7 +278,7 @@
     <script>
         var server;
         function register() {
-            connection = new WebSocket("ws://localhost:8080");
+            connection = new WebSocket("ws://192.168.1.220:8080");
             connection.onopen = () => {
                 console.log("connection made");
                 connection.send(JSON.stringify({status: '0',name: document.getElementById("name").value}));
@@ -253,7 +298,7 @@
               declined();
               connection.close();
             } else if (message.status == "7") {
-              write("BEN: " + message.message)
+              write(false,message.message)
             }
         }
 
@@ -300,7 +345,7 @@
         function send() {
             var box = document.getElementById("msg");
             connection.send(JSON.stringify({status: "6",msg: box.value}));
-            write("YOU: " + box.value);
+            write(true,box.value);
             box.value = "";
             return false;
         }
@@ -309,8 +354,29 @@
             console.log("DO SOMETHING!");
         }
 
-        function write(msg) {
-            console.log(msg);
+        function write(sent,msgText) {
+            console.log(sent + ", " + msg);
+			var msg = document.createElement("div");
+			msg.className = "MSG";
+			if (sent) {
+				var sentM = document.createElement("div");
+				sentM.className = "sentMSG";
+				var text = document.createElement("p");
+				text.className = "MSGtext sentText";
+				text.innerHTML = msgText;
+				sentM.appendChild(text);
+				msg.appendChild(sentM);
+			} else {
+				var recievedM = document.createElement("div");
+				recievedM.className = "recievedMSG";
+				var text = document.createElement("p");
+				text.className = "MSGtext recievedText";
+				text.innerHTML = msgText;
+				recievedM.appendChild(text);
+				msg.appendChild(recievedM);
+			}
+			var outerBox = document.getElementById("msgBox");
+			outerBox.insertBefore(msg,outerBox.firstChild);
         }
     </script>
 </head>
@@ -325,6 +391,14 @@
         <p class="regDesc">Please fill out your name to continue</p>
         <p class="name">Name</p>
         <input type="text" id="name"/>
+		<script>
+			document.getElementById("name").addEventListener("keyup", function(event) {
+			  if (event.keyCode === 13) {
+				event.preventDefault();
+				register();
+			  }
+			});
+		</script>
         <button class="btn" type="button" onclick="register()"><span>Start chat</span></button>
     </div>
     <div id="wait" class="waiting right">
@@ -340,11 +414,18 @@
         <div class="topBar">
 
         </div>
-        <div class="msgBox">
-
+        <div id="msgBox" class="msgBox">
         </div>
         <div class="msgChin">
             <input id="msg" class="msg"/>
+			<script>
+				document.getElementById("msg").addEventListener("keyup", function(event) {
+				  if (event.keyCode === 13) {
+					event.preventDefault();
+					send();
+				  }
+				});
+			</script>
         </div>
         <a href="javascript:void(0)" onclick="send()">
             <div class="sendIcon">
