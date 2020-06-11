@@ -160,7 +160,7 @@ div.contactLock {
 	box-shadow: 0px 0px 8px 0px #28303a;
 	float: left;
 	width: 99%;
-	height: 600px;
+	height: 650px;
 	padding-left: 0.5%;
 	padding-right: 0.5%;
 	background-color: #1c1c1c;
@@ -503,7 +503,7 @@ div.details {
 	background-color: #1c1c1c;
 	width: 60%;
 	margin: auto;
-	height: 210px;
+	height: 295px;
 	border-top: 1px solid #616060;
 	border-bottom: 1px solid #616060;
 	max-width: 700px;
@@ -570,7 +570,7 @@ div.hideAlert {
 }
 div.showAlert {
 	transition: 0.25s;
-	top: 42%;
+	top: 51.5%;
 }
 div.alert {
 	margin-left: calc(50% - 125px);
