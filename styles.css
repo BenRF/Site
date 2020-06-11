@@ -67,7 +67,7 @@ div.typingLock {
 	width: 100%;
 	top: 0px;
 	left: 0px;
-	background: #1c1c1c;
+	background: radial-gradient(circle, rgba(28,28,28,1) 74%, rgba(17,17,17,1) 100%);
 	text-align: center;
 }
 div.aboutLock {

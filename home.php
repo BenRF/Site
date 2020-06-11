@@ -36,7 +36,7 @@
 		</div>
 		<div id="main" class="typingLock">
 		  <p id="cmd2" class="cmd"></p>
-		  <p id="cmd1" class="cmd"><b id="bl" class="blink"> _</b></p>
+		  <p id="cmd1" class="cmd"><b id="bl" class="blink"> ▏</b></p>
 		</div>
 		<div class="aboutLock">
 			<div class="about">

@@ -160,7 +160,7 @@ function start() {
 			document.getElementById(items[i]).innerHTML = "";
 			document.getElementById(items[i]).className = "cmd";
 		}
-		document.getElementById("cmd1").innerHTML = '<b id="bl" class="blink"> _</b>';
+		document.getElementById("cmd1").innerHTML = '<b id="bl" class="blink"> 	▏</b>';
 	}
 }
 
@@ -201,13 +201,13 @@ function change(target) {
 			document.getElementById(items[i]).innerHTML = "";
 			document.getElementById(items[i]).className = "cmd";
 		}
-		document.getElementById("cmd1").innerHTML = '<b id="bl" class="blink"> _</b>';
+		document.getElementById("cmd1").innerHTML = '<b id="bl" class="blink"> 	▏</b>';
 	}
 
 	function getGoodCode() {
 		var result = current.innerHTML;
-		result = result.replace('<b id="bl" class="blink"> _</b>',"");
-		result = result.replace('<b id="bl" class="solid"> _</b>',"");
+		result = result.replace('<b id="bl" class="blink"> 	▏</b>',"");
+		result = result.replace('<b id="bl" class="solid"> 	▏</b>',"");
 		result = result.replace("&gt;",">");
 		result = result.replace("&lt;","<");
 		return result;
@@ -226,17 +226,17 @@ function change(target) {
 	}
 
 	function createSolid() {
-		current.innerHTML = current.innerHTML + '<b id="bl" class="solid"> _</b>';
+		current.innerHTML = current.innerHTML + '<b id="bl" class="solid"> 	▏</b>';
 	}
 
 	function createBlink() {
-		current.innerHTML = current.innerHTML + '<b id="bl" class="blink"> _</b>';
+		current.innerHTML = current.innerHTML + '<b id="bl" class="blink"> 	▏</b>';
 	}
 
 	function deleteBlink() {
 		var inner = getGoodCode();
-		current.innerHTML = inner.replace('<b id="bl" class="blink"> _</b>',"");
-		current.innerHTML = inner.replace('<b id="bl" class="solid"> _</b>',"");
+		current.innerHTML = inner.replace('<b id="bl" class="blink"> 	▏</b>',"");
+		current.innerHTML = inner.replace('<b id="bl" class="solid"> 	▏</b>',"");
 	}
 
 	function add() {
@@ -252,8 +252,8 @@ function change(target) {
 	}
 
 	function trim(s1,s2) {
-		s1 = s1.replace('<b id="bl" class="blink"> _</b>',"");
-		s2 = s2.replace('<b id="bl" class="blink"> _</b>',"");
+		s1 = s1.replace('<b id="bl" class="blink"> 	▏</b>',"");
+		s2 = s2.replace('<b id="bl" class="blink"> 	▏</b>',"");
 		s1 = s1.replace("&gt;",">");
 		s2 = s2.replace("&gt;",">");
     var target;
@@ -271,8 +271,8 @@ function change(target) {
 	}
 
 	function difference(s1,s2) {
-		s1 = s1.replace('<b id="bl" class="blink"> _</b>',"");
-		s2 = s2.replace('<b id="bl" class="blink"> _</b>',"");
+		s1 = s1.replace('<b id="bl" class="blink"> 	▏</b>',"");
+		s2 = s2.replace('<b id="bl" class="blink"> 	▏</b>',"");
 		s1 = s1.replace("&gt;",">");
 		s2 = s2.replace("&gt;",">");
     var target;
