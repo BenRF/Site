@@ -274,13 +274,21 @@
             transition: 0.5s;
             opacity: 1;
         }
+		div.hidden {
+			transition: 0.5s;
+			opacity: 0 !important;
+		}
+		div.reveal {
+			transition: 0.5s;
+			opacity: 1 !important;
+		}
     </style>
     <script>
         var server;
+		var waiting;
         function register() {
-            connection = new WebSocket("ws://192.168.1.220:8080");
+            connection = new WebSocket("ws://192.168.1.72:3000");
             connection.onopen = () => {
-                console.log("connection made");
                 connection.send(JSON.stringify({status: '0',name: document.getElementById("name").value}));
             }
             connection.onmessage = e => { recieve(e); }
@@ -288,7 +296,17 @@
             document.getElementById("icon").className = "waitIcon";
             document.getElementById("wait").className = "waiting center";
             fading = setInterval(tips,2000);
+			waiting = setInterval(timedOut,120000);
         }
+		
+		function timedOut() {
+			connection.send(JSON.stringify({status: "14"}));
+			clearInterval(fading);
+			clearInterval(waiting);
+            document.getElementById("wait").className = "waiting left";
+            document.getElementById("icon").className = "waitIcon";
+            document.getElementById("declined").className = "declined center";
+		}
 
         function recieve(e) {
             var message = JSON.parse(e.data);
@@ -296,7 +314,6 @@
               accepted();
             } else if (message.status == "4") {
               declined();
-              connection.close();
             } else if (message.status == "7") {
               write(false,message.message)
             }
@@ -329,6 +346,7 @@
 
         function accepted() {
             clearInterval(fading);
+			clearInterval(waiting);
             document.getElementById("reg").className = "registration left";
             document.getElementById("wait").className = "waiting left";
             document.getElementById("icon").className = "acceptedIcon";
@@ -337,6 +355,7 @@
 
         function declined() {
             clearInterval(fading);
+			clearInterval(waiting);
             document.getElementById("wait").className = "waiting left";
             document.getElementById("icon").className = "waitIcon";
             document.getElementById("declined").className = "declined center";
@@ -350,9 +369,20 @@
             return false;
         }
 
+		var confirmation;
         function message() {
-            console.log("DO SOMETHING!");
+			var message = document.getElementById("leftMsg");
+			connection.send(JSON.stringify({status: "15",msg: message.value}));
+			document.getElementById("leaveMsgForm").className = "hidden";
+			confirmation = setInterval(confirmMsg,500);
         }
+		
+		function confirmMsg() {
+			clearInterval(confirmation);
+			document.getElementById("leaveMsgForm").remove();
+			document.getElementById("leaveMsgConfirm").className = "reveal";
+			connection.close();
+		}
 
         function write(sent,msgText) {
             console.log(sent + ", " + msg);
@@ -378,6 +408,10 @@
 			var outerBox = document.getElementById("msgBox");
 			outerBox.insertBefore(msg,outerBox.firstChild);
         }
+		
+		function close() {
+			window.close();
+		}
     </script>
 </head>
 <body>
@@ -405,11 +439,16 @@
         <p id="tips" class="waitingTips hidden">Lets see who's home</p>
     </div>
     <div id="declined" class="declined right">
-        <p class="declinedTitle">Ben isn't available right now,</p>
-        <p class="declinedDesc">would you like to leave a message?</p>
-        <textarea rows="4" cols="50" id="leftMsg"></textarea>
-        <button class="btn" type="button" onclick="message()" style="margin-top: 20px; width:60%;"><span>Send</span></button>
-    </div>
+		<div id="leaveMsgForm">
+			<p id="reason" class="declinedTitle">Ben isn't available right now</p>
+			<p class="declinedDesc">would you like to leave a message?</p>
+			<textarea rows="4" cols="50" id="leftMsg"></textarea>
+			<button class="btn" type="button" onclick="message()" style="margin-top: 20px; width:60%;"><span>Send</span></button>
+		</div>
+		<div id="leaveMsgConfirm" class="hidden">
+			<p id="reason" class="declinedTitle">Your message has been passed on</p>
+			<p class="declinedDesc">Have a nice day.</p>
+	</div>
     <div id="accepted" class="accepted right">
         <div class="topBar">
 

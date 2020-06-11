@@ -20,11 +20,13 @@
 		<script src="stuff.js"></script>
 		<script>
 			window.onscroll = scrollCheck;
-			window.onfocus = resume;
+			window.onfocus = begin;
 			window.onblur = pause;
+			window.onload = begin;
+			window.onunload = pause;
 		</script>
 	</head>
-	<body id="b" onload="start()">
+	<body id="b">
 		<div id="header" class="header attached">
 			<p id="t1" onclick="sTo(0)" class="title attachedT">Ben Ramsay Foster</p>
 			<p id="t2" onclick="sTo(3)" class="header c attachedH">Contact</p>

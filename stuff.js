@@ -1,58 +1,24 @@
 //Aren't you a nosy one?
 
 var short = false;
-function toggleBox() {
-	var box = document.getElementById("box");
-	var header = document.getElementById("header");
-	if (box.className === "msgBox shownBox") {
-		if (header.className === "header detached") {
-			header.className = "header detached";
-		} else {
-			header.className = "header attached";
-		}
-		short = false;
-		//document.getElementById("clickArea").className = "clickArea";
-		if (stage == 0) {
-			document.getElementById("name").blur();
-		}
-		box.className = "msgBox hiddenBox";
-	} else {
-		if (header.className === "header detached") {
-			header.className = "header shortHeader detached";
-		} else {
-			header.className = "header shortHeader attached";
-		}
-		short = true;
-		//document.getElementById("clickArea").className = "clickArea showArea";
-		if (stage == 0) {
-			document.getElementById("name").focus();
-		}
-		box.className = "msgBox shownBox";
-	}
-}
 
-var alert;
+var a;
 function copy(text) {
 	if (alert === null) {
-		clearInterval(alert);
+		clearInterval(a);
 	}
 	var copyText = document.getElementById("discord");
 	copyText.value = text;
   	copyText.select();
-  	copyText.setSelectionRange(0, 99999)
+  	copyText.setSelectionRange(0, 99999);
   	document.execCommand("copy");
   	document.getElementById("alert").className = "alert showAlert";
-	alert = setInterval(hideAlert,2000);
+	a = setInterval(hideAlert,2000);
 }
 
 function hideAlert() {
-	clearInterval(alert);
+	clearInterval(a);
 	document.getElementById("alert").className = "alert hideAlert";
-}
-
-var overProject = false;
-function projectHover(status) {
-	overProject = status;
 }
 
 function newBenM() {
@@ -97,13 +63,10 @@ function scrollCheck() {
 		document.getElementById("t3").className = "header p attachedH";
 		document.getElementById("t4").className = "header a attachedH";
 	}
-	var height = window.innerWidth;
 	scrolled = scrolled + (0.3 * window.innerHeight);
 	var s = document.getElementById("scroll");
 
-	var scrollPosition = window.pageYOffset;
 	var windowSize     = window.innerHeight;
-	var bodyHeight     = document.body.offsetHeight;
 
 	var about = windowSize;
 	var projects = windowSize + 400;
@@ -129,28 +92,36 @@ function jump(target) {
 
 var message;
 var typing;
+var flush;
 var position = 0;
 var target = "";
+var started = false;
+var movement = 0;
 function pause() {
 	clearInterval(message);
-	//clearInterval(movement);
+	clearInterval(typing);
+	clearInterval(flush);
 	movement = null;
+	started = false;
 }
 
-function resume() {
-	start();
+function begin() {
+	console.log("Begun: " + document.hasFocus());
+	if (!started && document.hasFocus()) {
+		started = true;
+		console.log("Started");
+		start();
+	}
 }
 
 function start() {
-  message = setInterval(update, 1000);
-	var flush;
-	var count = 0;
+  message = setInterval(update, 10);
 
 	function update() {
 		clearInterval(message);
 		var script = [
 			["Hey",2,0,""],
-			["Hey, welcome to my site",4.5,0,""],
+			["Hey, welcome to my site",2.5,0,""],
 			["This is a site about Ben",4,0,""],
 			["It tells you who he is",4.5,0,""],
 			["It tells you what he's done",4,0,""],
@@ -159,32 +130,6 @@ function start() {
 			["So feel free to look around",8.5,0,""],
 		];
 		if (script[position][2] === 1) {
-			// //delete the blinker
-			// var inner = document.getElementById("cmd1").innerHTML;
-			// inner = inner.replace("&gt;",">");
-			// inner = inner.replace("&lt;","<");
-			// inner = inner.replace('<b id="bl" class="blink"> _</b>',"");
-			// inner = inner.replace('<b id="bl" class="solid"> _</b>',"");
-			// document.getElementById("cmd1").innerHTML = inner;
-			//
-			// //remove the last element
-			// var el = document.getElementById("cmd2");
-			// el.parentNode.removeChild(el);
-			//
-			// //move all elements up
-			// document.getElementById("cmd1").id = "cmd2";
-			//
-			// //create new element to go at the start
-			// var first = document.createElement("p");
-			// first.setAttribute("id","cmd1");
-			// first.setAttribute("class","cmd");
-			// first.innerHTML = script[position][3];
-			// document.getElementById("main").appendChild(first);
-			//
-			// //readd blinker
-			// document.getElementById("cmd1").innerHTML = document.getElementById("cmd1").innerHTML + '<b id="bl" class="blink"> _</b>';
-			// target = script[position][0];
-			// d = setInterval(delay,2000);
 			flush = setInterval(fade,4000);
 
 		} else {
@@ -198,12 +143,6 @@ function start() {
 		} else {
 			position++;
 		}
-	}
-
-	var d;
-	function delay() {
-		clearInterval(d);
-		change(target);
 	}
 
 	var items = ["cmd1","cmd2"];
@@ -233,31 +172,16 @@ function change(target) {
 		typing = setInterval(remove, 50);
 	}
 
-	function pause() {
+	function pauseType() {
 		clearInterval(typing);
 		typing = setInterval(remove, 50);
 	}
 
 	function store() {
-		//delete the blinker
 		deleteBlink();
-
-		// //move all elements up
-		// for (var i = 1; i < 7; i++) {
-		// 		document.getElementById("cmd" + i).id = "cmd" + (i+1);
-		// }
-		// //remove the last element
-		// destroy("cmd7");
-		// //create new element to go at the start
-		// var first = document.createElement("p");
-		// first.setAttribute("id","cmd1");
-		// first.setAttribute("class","cmd");
-		// document.getElementById("main").appendChild(first);
-		// current = document.getElementById("cmd1");
 		fade();
-
 		createBlink();
-		typing = setInterval(pause, 600);
+		typing = setInterval(pauseType, 600);
 	}
 
 	var flush;
@@ -278,12 +202,6 @@ function change(target) {
 			document.getElementById(items[i]).className = "cmd";
 		}
 		document.getElementById("cmd1").innerHTML = '<b id="bl" class="blink"> _</b>';
-	}
-
-  var el;
-	function destroy(id) {
-		el = document.getElementById(id);
-		el.parentNode.removeChild(el);
 	}
 
 	function getGoodCode() {
@@ -338,10 +256,11 @@ function change(target) {
 		s2 = s2.replace('<b id="bl" class="blink"> _</b>',"");
 		s1 = s1.replace("&gt;",">");
 		s2 = s2.replace("&gt;",">");
+    var target;
 		if (s1.length > s2.length) {
-			var target = s1.length;
+			target = s1.length;
 		} else {
-			var target = s2.length;
+			target = s2.length;
 		}
 		for (var i = 0; i < target; i++) {
 			if (s1.charAt(i) != s2.charAt(i)) {
@@ -356,10 +275,11 @@ function change(target) {
 		s2 = s2.replace('<b id="bl" class="blink"> _</b>',"");
 		s1 = s1.replace("&gt;",">");
 		s2 = s2.replace("&gt;",">");
+    var target;
 		if (s1.length > s2.length) {
-			var target = s1.length;
+			target = s1.length;
 		} else {
-			var target = s2.length;
+			target = s2.length;
 		}
 		for (var i = 0; i < target; i++) {
 			if (s1.charAt(i) !== s2.charAt(i)) {
