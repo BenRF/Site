@@ -4,12 +4,15 @@
 			session_start();
 			$id = session_id();
 			$projects = scandir("projects/");
+			if (!isset($filePath)) {
+				$filePath = "";
+			}
 			//https://realfavicongenerator.net/, for when you have an actual icon
 		?>
 		<title>Ben RF</title>
-		<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="<?php echo $filePath; ?>apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="<?php echo $filePath; ?>favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="<?php echo $filePath; ?>favicon-16x16.png">
 		<link rel="manifest" href="site.webmanifest">
 		<link rel="mask-icon" href="safari-pinned-tab.svg" color="#4287f5">
 		<meta name="msapplication-TileColor" content="#ffffff">
@@ -58,12 +61,22 @@
 					<div class="projectLeft">
 						<p class="projectTitle">BenM app</p>
 						<p class="projectDescription">
-							A livechat application allowing for users on a website to speak with the site owner via their phone. Utilizing NodeJS and Websockets to provide bi-directional communication
-							along with 2048 bit keys to ensure secure communication.
+							A livechat application allowing for users on a website to speak with the site owner via their phone. Utilizing NodeJS and Websockets to provide bi-directional communication.
 						</p>
 					</div>
 					<div class="projectRight">
 						<img class="projectImg" src="./projects/BenM/img0.png"/>
+					</div>
+				</div>
+				<div class="project">
+					<div class="projectLeft">
+						<p class="projectTitle">Querying semi structured data</p>
+						<p class="projectDescription">
+							For my final year project, I am creating an application to automatically parse Excel files for tables and allow the user to merge with other files that contain overlapping content.
+						</p>
+					</div>
+					<div class="projectRight">
+						<img class="projectImg" src="./projects/QSSD/img0.png"/>
 					</div>
 				</div>
 			</div>
