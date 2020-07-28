@@ -3,10 +3,10 @@
 		<?php
 			session_start();
 			$id = session_id();
-			$projects = scandir("projects/");
 			if (!isset($filePath)) {
 				$filePath = "";
 			}
+			$projects = scandir($filePath."projects/");
 			//https://realfavicongenerator.net/, for when you have an actual icon
 		?>
 		<title>Ben RF</title>
@@ -17,10 +17,10 @@
 		<link rel="mask-icon" href="safari-pinned-tab.svg" color="#4287f5">
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="theme-color" content="#ffffff">
-		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="<?php echo $filePath; ?>styles.css">
 		<link href="https://fonts.googleapis.com/css?family=Blinker|Fira+Sans|Roboto&display=swap" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-		<script src="stuff.js"></script>
+		<script src="<?php echo $filePath; ?>stuff.js"></script>
 		<script>
 			window.onscroll = scrollCheck;
 			window.onfocus = begin;
@@ -65,7 +65,7 @@
 						</p>
 					</div>
 					<div class="projectRight">
-						<img class="projectImg" src="./projects/BenM/img0.png"/>
+						<img class="projectImg" src="<?php echo $filePath; ?>projects/BenM/img0.png"/>
 					</div>
 				</div>
 				<div class="project">
@@ -76,7 +76,7 @@
 						</p>
 					</div>
 					<div class="projectRight">
-						<img class="projectImg" src="./projects/QSSD/img0.png"/>
+						<img class="projectImg" src="<?php echo $filePath; ?>projects/QSSD/img0.png"/>
 					</div>
 				</div>
 			</div>
