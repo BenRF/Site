@@ -609,3 +609,31 @@ p.alert {
 	left: 50%;
 	margin-top: 10px;
 }
+
+a.projectTitleLink {
+	transition: 0.5s;
+	color: inherit;
+	text-decoration-color: rgb(255, 166, 0, 0.3);
+}
+a.projectTitleLink:hover {
+	text-decoration-color: rgb(255, 166, 0, 0.8);
+}
+a.projectDescriptionLink {
+	text-decoration: none;
+	color: inherit;
+}
+a.projectDescriptionLink:visited {
+	text-decoration: none;
+	color: inherit;
+}
+a.projectDescriptionLink:hover ~ a.projectTitleLink {
+	text-decoration-color: rgb(255, 166, 0, 0.8);
+}
+p.projectSectionTitle {
+	font-weight: bold;
+	color: #3a3a35;
+	font-size: 3em;
+	text-align: center;
+	text-decoration: none;
+	text-decoration-color: #ffa500;
+}

@@ -56,6 +56,7 @@
 			</div>
 		</div>
 		<div id="projects" class="projectLock">
+			<p class="projectSectionTitle">Previous work<b class="blink">:</b></p>
 			<div class="projectList">
 				<div class="project">
 					<div class="projectLeft">
@@ -70,9 +71,11 @@
 				</div>
 				<div class="project">
 					<div class="projectLeft">
-						<p class="projectTitle">Querying semi structured data</p>
+						<p class="projectTitle"><a class="projectTitleLink" href="https://github.com/BenRF/Querying-semi-structured-data" target="_blank">Querying semi structured data</a></p>
 						<p class="projectDescription">
-							For my final year project, I am creating an application to automatically parse Excel files for tables and allow the user to merge with other files that contain overlapping content.
+							<a class="projectDescriptionLink" href="https://github.com/BenRF/Querying-semi-structured-data" target="_blank">
+								For my final year project, I created an application to automatically parse Excel files for tables and allow the user to merge with other files that contain overlapping content.
+							</a>
 						</p>
 					</div>
 					<div class="projectRight">
