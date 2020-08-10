@@ -132,7 +132,7 @@
 						</div>
 					</a>
 				</div>
-				<div class="outerDetail">
+				<!-- <div class="outerDetail">
 					<a class="hidden" href="javascript:void(0)" onclick="newBenM()">
 						<div class="detail">
 							<svg class="detail" version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -161,7 +161,7 @@
 							<p class="infoU">Start A BenM chat</p>
 						</div>
 					</a>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</body>
